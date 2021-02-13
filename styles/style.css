@@ -1,0 +1,244 @@
+/** Classes de base **/
+body {
+  font-family: Roboto;
+  color: #fff;
+  background-color: #121212;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  letter-spacing: 0;
+}
+
+a {
+  color: #fff;
+}
+h1,
+h2 {
+  font-family: Amethysta;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1.3rem;
+}
+
+/** Règles générales **/
+.container {
+  min-height: calc(100vh - 70px - 100px);
+}
+.content {
+  padding-top: 50px;
+}
+.centered {
+  text-align: center;
+}
+.padding--small {
+  padding: 10px;
+}
+.padding--medium {
+  padding: 20px;
+}
+.padding--large {
+  padding: 40px;
+}
+
+/** Page livre **/
+.cover {
+  border-style: solid;
+  border-color: #121212;
+  border-width: 2px;
+  box-shadow: 5px 5px 5px #121212;
+  max-width: 90%;
+  max-height: calc(100vh - 178px);
+}
+.book-background {
+  width: 100%;
+}
+.background--classic {
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+.background--suzuha {
+  background-image: url("../assets/artwork-suzuha.jpg");
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+.background--ede {
+  background-image: url("../assets/artwork-ede.png");
+  background-size: cover;
+  background-position: center left;
+  background-repeat: no-repeat;
+}
+
+.book {
+  background-color: rgba(43, 9, 42, 0.5);
+}
+.quote{
+  text-align: center;
+  padding: 5px;
+}
+
+.image-header-side {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.pure-button {
+  box-shadow: 2px 2px 2px #121212;
+  margin-bottom: 10px;
+}
+
+.pure-button--black {
+  color: #fff;
+  background-color: #222;
+}
+
+.pure-button--black:hover {
+  background-color: #332B38;
+}
+
+.download-button {
+  margin-right: 3px;
+  padding: 0px;
+  padding-top: 5px;
+  height: 60px;
+  width: 112px;
+}
+.download-button img {
+  height: 50px;
+}
+
+.borderwhite {
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.borderwhite p {
+  padding: 0px;
+  margin: 5px;
+}
+
+/** Page d'info **/
+#info .info-item {
+  background-color: rgb(25, 24, 24);
+  background-color: rgba(25, 24, 24, 0.3);
+  text-align: justify;
+}
+
+#info .title {
+  background-color: rgba(124, 60, 123, 0.5);
+}
+
+#info .title h2 {
+  margin: 0px;
+}
+
+#info p {
+  margin-top: 0px;
+}
+
+/** Footer **/
+.footer {
+  height: 60px;
+  padding-top: 40px;
+  letter-spacing: 0;
+}
+
+/* Cache des pages */
+.hidden {
+  display: none;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.7);
+  color: #000;
+}
+
+.modal .modal-content {
+  border: 1px solid #888;
+  border-radius: 6px;
+  background-color: #fefefe;
+  margin: 30px auto;
+  width: 90%;
+  height: calc(100% - 60px);
+}
+
+.modal .close {
+  color: #757575;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 10px;
+  line-height: 40px;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* EPUB */
+.modal .modal-content--epub {
+  background-image: url("assets/paper.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.epub {
+  width: 100%;
+  height: calc(100% - 80px);
+  display: inline-flex;
+}
+
+.epub #epub {
+  width: 100%;
+  height: 100%;
+}
+
+.epub #epub iframe {
+  border: none;
+}
+
+.epub .arrow {
+  color: #757575;
+  font-weight: bold;
+  cursor: pointer;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 120px;
+  height: 65%;
+  padding-top: 35%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.epub .arrow:hover,
+.epub .arrow:focus {
+  color: #000;
+}

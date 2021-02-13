@@ -1,0 +1,2 @@
+Librairie pour rendre un epub dans la page Web: 
+https://github.com/futurepress/epub.js/

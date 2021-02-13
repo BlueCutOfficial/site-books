@@ -1,0 +1,11 @@
+/* Pure CSS override */
+
+.pure-checkbox.pure-checkbox--accessible {
+  display: initial;
+  margin-left: 0.5em;
+}
+
+/* Custom CSS */
+.checkbox-wrapper {
+  padding: 0.5em;
+}

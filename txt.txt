@@ -1,0 +1,55 @@
+<!-- Page "Info" -->
+    <div id="info" class="hidden pure-g">
+      <!-- Première colonne d'info -->
+      <div class="pure-u-1 pure-u-lg-1-2">
+        <!-- Info Gumroad -->
+        <div class="info-item left">
+          <div class="title padding--small">
+            <h2>A propos de Gumroad</h2>
+          </div>
+          <div class="padding--large">
+            <div>
+              <h4>Le bouton d'achat m'envoie sur "Gumroad", qu'est-ce donc ?</h4>
+              <p>C'est un service qui permet de vendre des produits en ligne, comme des e-books, par exemple. Acheter via l'interface sécurisée de Gumroad, c'est la même chose qu'acheter via l'interface sécurisée de Kobo ou n'importe quel autre site.</p>
+            </div>
+            <div>
+              <h4>Pourquoi ce choix ?</h4>
+              <p>Parce que c'est un service assez honnête envers les petits auteurs et leurs acheteurs : ils se prennent des marges raisonnables. Imaginez que pour gagner la même somme par vente sur Amazon, je devrais fixer le prix du e-book à environ 6€ au lieu de 2.40€. Tous ces euros de différence vont dans les poches d'Amazon.</p>
+            </div>
+            <div>
+              <h4>Mais ça semble super ! Pourquoi est-ce si peu connu ?</h4>
+              <p>Tout simplement parce que ce n'est pas un site de vente ! Le site que vous visitez actuellement est mon site personnel de vente, c'est moi qui l'ai réalisé. Beaucoup de petits vendeurs ne sont pas en mesure de coder une page, et les sites de vente proposent de la publicité : des mises en avant et des promotions et, évidemment, l'apparition du produit dans les recherches par catégorie. Moi, je dois me débrouiller toute seule.</p>
+            </div>
+            <div>
+              <h4>Et la cerise sur le gâteau</h4>
+              <p>Avec Gumroad, le produit numérique que l'on vend peut se décomposer en plusieurs fichiers. Ainsi, en achetant via cette plateforme, vous aurez droit aux fichiers PDF, EPUB et MOBI et pourrez utiliser celui adapté à votre liseuse. Vous n'avez pas de liseuse ? Le PDF passe à peu près partout. Les plateformes comme Kobo ou Kindle ne proposent aux auteurs qu'un seul format de fichier pour leur livre.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Deuxième colonne d'info -->
+      <div class="pure-u-1 pure-u-lg-1-2">
+        <!-- Info Kobo -->
+        <div class="info-item right">
+          <div class="title padding--small">
+            <h2>A propos de Kobo</h2>
+          </div>
+          <div class="padding--large">
+            <div>
+              <h4>C'est quoi, "Kobo" ?</h4>
+              <p>C'est un site spécialisé dans la vente de e-books. Les auteurs peuvent y poster leurs publications sous le format numérique de leur choix. Si vous achetez "Suzuha" sur Kobo, vous l'aurez au format EPUB.</p>
+            </div>
+            <div>
+              <h4>C'est un peu plus cher mais ça m'aide plus</h4>
+              <p>C'est 60 petits centimes de plus, parce qu'ils se prennent un peu plus de marge que Gumroad, et j'ai calculé de sorte que ça revienne à peu près au même pour moi. En fait, Kobo c'est bien parce que c'est un site de vente, avec un système de recherche ! Sur Kobo, le livre peut potentiellement apparaître dans les recherches des utilisateurs qui ne connaissent pas du tout le livre. Encore faut-il apparaître assez haut dans le classement, et se sont les livres les plus vendus qui apparaissent en premier. Donc plus on achète Suzuha sur Kobo, plus on achète Suzuha sur Kobo. Vous voyez le problème quand on vient de se lancer...</p>
+            </div>
+            <div>
+              <h4>D'autres infos sur Kobo ?</h4>
+              <p>On peut choisir ou non d'activer les DRM, moi je ne l'ai pas fait. J'ai repéré une modification de mon fichier EPUB, par exemple il n'y a plus le CSS qui y est normalement implémenté pour la police d'écriture. Vous trouverez sur la page Kobo un extrait du livre, qui correspond aux premières pages, et vous pourrez y rédiger un bon avis 5 étoiles pour m'encourager :)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

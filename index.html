@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Académie des Renards</title>
+  <meta name="description" content="Site officiel de l'Académie des Renards. Retrouvez tous les romans, ainsi que les liens vers les réseaux sociaux."/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CAmethysta">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+  <link rel="stylesheet" type="text/css" href="styles/menu.css">
+  <link rel="stylesheet" type="text/css" href="styles/buttons.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<script src="js/utils/variables.js"></script>
+<script src="js/utils/generic.js"></script>
+<script src="js/utils/sidebar.js"></script>
+<script src="js/utils/header.js"></script>
+<script src="js/utils/setup-page.js"></script>
+<script src="js/ui.js"></script>
+
+<div id="layout">
+  <!-- Menu toggle -->
+  <a href="#menu" id="menuLink" class="menu-link" onclick="toggleMenu()">
+    <!-- Hamburger icon -->
+    <span></span>
+  </a>
+
+  <div id="menu">
+    <nav class="pure-menu centered" aria-label="Menu principal">
+      <div>
+        <div class="image-header-side">
+          <img src="assets/LogoAdR_white.png" width="70%" alt="Logo Académie des Renards" />
+        </div>
+        <ul class="pure-menu-list">
+          <li id="booksLink" class="pure-menu-item pure-menu-selected" onclick="showMenuBooks()">
+            <a href="#livres" class="pure-menu-link">Livres</a>
+          </li>
+          <li id="infoLink" class="pure-menu-item" onclick="showMenuInfo()">
+            <a href="#info" class="pure-menu-link">A propos</a>
+          </li>
+        </ul>
+      </div>
+      <div class="rs-links">
+        <a href="https://www.facebook.com/academiedesrenards/" target="_blank"><div class="rs-link">
+          <img src="assets/facebook.png" width="25px" height="25px" alt="Facebook" />
+        </div></a>
+        <a href="https://twitter.com/academierenards" target="_blank"><div class="rs-link">
+          <img src="assets/twitter.png" width="25px" height="25px" alt="Twitter" />
+        </div></a>
+        <a href="https://www.instagram.com/academie_des_renards/" target="_blank"><div class="rs-link">
+          <img src="assets/instagram.png" width="25px" height="25px" alt="Instagram" />
+        </div></a>
+      </div>
+    </nav>
+  </div>
+
+  <main id="main" class="container" onclick="deactivateMenu()">
+
+    <!-- Menu horizontal -->
+    <nav id="sorting-menu" class="pure-menu pure-menu-horizontal" aria-label="Menu de tri des romans">
+      <!-- Dropdown de tri -->
+      <label for="sorting-dropdown" class="padding--small">Trier par </label>
+      <ul id="sorting-dropdown" class="pure-menu-list">
+        <li id="sorting-trigger" class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+          <a id="sorting" href="#livres?sorting=latest" class="pure-menu-link">Plus récent</a>
+          <ul class="pure-menu-children">
+            <li class="pure-menu-item">
+              <a id="sorting-latest" href="#" class="pure-menu-link" onclick="setSorting('latest')">
+                Plus récent
+              </a>
+            </li>
+            <li class="pure-menu-item">
+              <a id="sorting-date" href="#" class="pure-menu-link" onclick="setSorting('date')">
+                Date de publication
+              </a>
+            </li>
+            <li class="pure-menu-item">
+              <a id="sorting-chrono" href="#" class="pure-menu-link" onclick="setSorting('chrono')">
+                Ordre chronologique
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- Dropdown d'affichage -->
+      <label for="details-dropdown" class="padding--small">Afficher </label>
+      <ul id="details-dropdown" class="pure-menu-list">
+        <li id="details-trigger" class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+          <a id="details" href="#livres?details=pitch" class="pure-menu-link">le résumé</a>
+          <ul class="pure-menu-children">
+            <li class="pure-menu-item">
+              <a id="details-pitch" href="#" class="pure-menu-link" onclick="setDetails('pitch')">
+                le résumé
+              </a>
+            </li>
+            <li class="pure-menu-item">
+              <a id="details-tech" href="#" class="pure-menu-link" onclick="setDetails('tech')">
+                la fiche technique
+              </a>
+            </li>
+            <li class="pure-menu-item">
+              <a id="details-theme" href="#" class="pure-menu-link" onclick="setDetails('theme')">
+                les thèmes
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Page "Livre" -->
+    <div id="books" class="pure-g">
+
+      <!-- Présentation Le Voeu de Yoko -->
+      <div id="le-voeu-de-yoko" data-latest="1" data-date="2021" data-chrono="682" class="book-background background--classic">
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
+          <div class="book padding--large">
+            <h1>Le Voeu de Yoko</h1>
+            <div id="le-voeu-de-yoko-pitch">
+            </div>
+            <div id="le-voeu-de-yoko-tech" class="hidden">
+            </div>
+            <p>En cours d'écriture...</p>
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-6-24">
+        </div>
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-11-24 pure-u-lg-8-24">
+        </div>
+      </div>
+
+      <!-- Présentation Enfant des Esprits -->
+      <div id="ede" data-latest="2" data-date="2020" data-chrono="782" class="book-background background--ede">
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
+          <div class="book padding--large">
+            <h1>L'Enfant des Esprits</h1>
+
+            <div id="ede-pitch">
+              <p>Les esprits existent-ils vraiment&nbsp;?</p>
+              <p>Certains le pensent, et leurs croyances influencent les pas des enfants de ce monde&nbsp;; ceux de cette jeune Rêveuse, cloîtrée dans son temple sous-marin, ou ceux de ce garçon maudit, résigné à un avenir fade.</p>
+              <p>Entre relique du Rêve qui ne fonctionne plus et manifestation de pouvoirs étranges, c'est ensemble qu'ils quittent leur foyer en quête de réponses. Mais le destin les sépare déjà et les entraine en un même lieu&nbsp;: la mystérieuse Académie des Renards.<p>On raconte qu'on peut tout y apprendre... y apprendront-ils l'évidence qui se cache en eux&nbsp;?</p>
+            </div>
+            <adr-details-tech id="ede-tech" class="hidden"
+              nbWords='150 000'
+              nbPages='553'
+              readingTime='12 à 13 heures'
+              isbnEpub='978-2-9561497-3-6'
+              isbnMobi='978-2-9561497-4-3'
+              isbnPdf='978-2-9561497-4-3'
+              publishingDate='Mars 2020'
+              lastUpdate='Décembre 2020'
+            ></adr-details-tech>
+            <adr-extract-button
+              file="enfant-des-esprits-extrait.pdf"
+            ></adr-extract-button>
+            <adr-gumroad-button
+              title="L'Enfant des Esprits"
+              link="https://gum.co/VqfHp"
+            ></adr-gumroad-button>
+
+          </div>      
+        </div>
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-4-24">
+        </div>
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-11-24 pure-u-lg-10-24">
+          <div class="padding--large">
+            <div class="quote">
+              <q><em>Une nouvelle aventure rythmée avec des héros aussi attachants les uns que les autres. On a hâte de les retrouver au détour d'un téléporteur.</em></q>
+            </div>
+            <div class="quote">
+              <q><em>Les personnages ont tous une personnalité unique et voyagent dans des lieux tous très différents qu'on prend plaisir à découvrir. Il y a une bonne immersion dans l'univers et l'histoire garde le tout très rythmé. J'ai particulièrement apprécié les chapitres dans le désert.</em></q>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <!-- Présentation Suzuha -->
+      <div id="suzuha" data-latest="3" data-date="2017" data-chrono="784" class="book-background background--suzuha">
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
+          <div class="book padding--large">
+            <h1>Suzuha</h1>
+
+            <div id="suzuha-pitch">
+              <p>Les enfants de l'île aux voix naissent sans voix ni reflet.</p>
+              <p>C'est aussi le cas de Melle qui, à seulement huit ans, décide de fuir son île natale afin de découvrir le continent qui se cache derrière l'océan.</p>
+              <p>Elle y trouvera un nouveau nom et poussera les portes de la mystérieuse Académie des Renards, où de riches rencontres l'attendent.</p>
+            </div>
+            <adr-details-tech id="suzuha-tech" class="hidden"
+              nbWords='58 000'
+              nbPages='215'
+              readingTime='4 à 5 heures'
+              isbnEpub='978-2-9561497-0-5'
+              isbnMobi='978-2-9561497-1-2'
+              isbnPdf='978-2-9561497-2-9'
+              publishingDate='Juin 2017'
+              lastUpdate='Octobre 2020'
+            ></adr-details-tech>
+            <adr-extract-button
+              file="Suzuha-extrait.pdf"
+            ></adr-extract-button>
+            <adr-gumroad-button
+              title="Suzuha"
+              link="https://gumroad.com/l/jWam"
+            ></adr-gumroad-button>
+
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-6-24"></div>
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-11-24 pure-u-lg-8-24">
+          <div class="padding--large">
+            <div class="quote">
+              <q><em>Dès les premières lignes, on est embarqué dans ce voyage extraordinaire mêlant magie et combat et on ne veut plus quitter l'héroïne jusqu'à la fin. Bien écrit et facile à lire, c'est un livre super pour les jeunes.</em></q>
+            </div>
+            <div class="quote">
+              <q><em>Les personnages sont attachants. L'histoire entretient un rythme qui nous donne envie de le lire d'une traite, sans s'arrêter. Très bon livre fantasy ! Adapté aux jeunes comme aux adultes.</em></q>
+            </div>
+          </div>   
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page "Info" -->
+    <div id="info" class="hidden background--classic">
+
+      <div class="info-item">
+        <div class="title padding--small">
+          <h2>Les romans</h2>
+        </div>
+        <div class="padding--large"> 
+
+          <p><em>Les Renards</em></p>
+          <p>L'Académie des Renards est une série de romans fantasy auto-éditée disponible uniquement au format numérique. La série compte à ce jour deux romans publiés et un troisième en cours d'écriture.</p>
+          
+          <p><em>Les Renards n'ont qu'un terrier</em></p>
+          <p>Les différentes histoires se déroulent dans un univers unique. Elles peuvent se lire dans n'importe quel ordre, et il arrive d'y croiser des visages familiers de l'une à l'autre. À travers leurs pages, vous partagerez les aventures de nombreuses âmes ayant fréquenté la mystérieuse académie de Tobias Fènnel, et découvrirez le monde qui s'étend au-delà de ses murs.</p>
+
+          <p><em>Les Renards aiment expérimenter</em></p>
+          <p>Les histoires de l'académie ne se distinguent pas seulement par le lieu et le temps en lesquels elles prennent place, elles possèdent aussi leur propre style. Contrairement aux sagas fantasy classiques, chaque narration possède son propre temps, son propre rythme, sa propre ambiance. Ainsi, selon vos goûts et votre âge, certaines histoires pourraient vous parler davantage que d'autres.</p>
+
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="title padding--small">
+          <h2>L'auteure</h2>
+        </div>
+        <div class="padding--large">
+          <p>Je m'appelle Marine Dunstetter. Je suis une personne à l'équilibre, un peu rêveuse mais pragmatique tout de même, un peu artiste mais scientifique tout de même. Développeuse de métier, graphiste à mes heures perdues, la lecture et l'écriture sont pour moi des passe-temps sans prétention et des moments de détente.</p> 
+          <p>Après une enfance plongée dans les romans fantasy, c'est sans doute le réalisateur Hayao Miyazaki qui m'a donné le goût des histoires grises et simples, belles par leur fil épuré et leurs personnages attachants, occupés à bien autre chose qu'appartenir à un camp.</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="title padding--small">
+          <h2>L'auto-édition</h2>
+        </div>
+        <div class="padding--large"> 
+
+          <p>L'auto-édition c'est...</p>
+
+          <p><em>La liberté d'écrire pour soi</em></p>
+          <p>L'auto-édition, c'est raconter l'histoire qu'on a envie de raconter, faire partager au lecteur ce qu'on a besoin de partager ; c'est la possibilité de se libérer des formats et des attentes.</p>
+          
+          <p><em>La fierté de mener son projet jusqu'au bout</em></p>
+          <p>L'auto-édition permet de mettre en oeuvre toutes les compétences que l'on possède et d'en acquérir de nouvelles, de l'écriture jusqu'à la distribution, en passant par la couverture, la génération des fichers numériques et la promotion.</p>
+
+          <p><em>Un choix</em></p>
+          <p>J'ai choisi l'auto-édition. L'Enfant des Esprits n'a jamais été envoyé à un éditeur. Comme moi, de nombreux auteurs se sont détournés de l'édition classique pour se lancer dans l'aventure. Nous fournissons un travail de qualité, mais peu mis en avant dans le monde littéraire d'aujourd'hui. Pour nous découvrir, il vous faut nous chercher, sur les réseaux sociaux et dans les salons.</p>
+
+        </div>
+      </div>
+
+      <!-- <div class="info-item">
+        <div class="title padding--small">
+          <h2>Par quel livre commencer ?</h2>
+        </div>
+        <div class="padding--large">
+          <adr-questions
+            questions=questions
+            keywords=keywords
+          ></adr-questions>
+        </div>
+      </div> -->
+
+    </div>
+
+  <!-- End main container -->
+  </main>
+
+  <footer class="footer padding--small">
+    <p>Pour échanger avec l'auteure : <a href="mailto:academiedesrenards@gmail.com">academiedesrenards@gmail.com</a></p>
+  </footer>
+
+<!-- End layout -->
+</div>
+<script src="js/pure-dropdown.js"></script>
+<script src="js/adr-details-tech.js"></script>
+<script src="js/adr-extract-button.js"></script>
+<script src="js/adr-gumroad-button.js"></script>
+<script src="js/adr-questions.js"></script>
+</body>
+</html>
