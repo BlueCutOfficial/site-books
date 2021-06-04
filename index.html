@@ -6,11 +6,11 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CAmethysta">
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
-  <link rel="stylesheet" type="text/css" href="styles/menu.css">
-  <link rel="stylesheet" type="text/css" href="styles/buttons.css">
-  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="menu.css">
+  <link rel="stylesheet" href="buttons.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
@@ -31,11 +31,6 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-<script src="js/utils/variables.js"></script>
-<script src="js/utils/generic.js"></script>
-<script src="js/utils/sidebar.js"></script>
-<script src="js/utils/header.js"></script>
-<script src="js/utils/setup-page.js"></script>
 <script src="js/ui.js"></script>
 
 <div id="layout">
@@ -67,7 +62,7 @@
         <a href="https://twitter.com/academierenards" target="_blank"><div class="rs-link">
           <img src="assets/twitter.png" width="25px" height="25px" alt="Twitter" />
         </div></a>
-        <a href="https://www.instagram.com/academie_des_renards/" target="_blank"><div class="rs-link">
+        <a href="https://www.instagram.com/academiedesrenards/" target="_blank"><div class="rs-link">
           <img src="assets/instagram.png" width="25px" height="25px" alt="Instagram" />
         </div></a>
       </div>
@@ -76,51 +71,24 @@
 
   <main id="main" class="container" onclick="deactivateMenu()">
 
-    <!-- Menu horizontal -->
     <nav id="sorting-menu" class="pure-menu pure-menu-horizontal" aria-label="Menu de tri des romans">
-      <!-- Dropdown de tri -->
-      <label for="sorting-dropdown" class="padding--small">Trier par </label>
-      <ul id="sorting-dropdown" class="pure-menu-list">
+      <ul class="pure-menu-list">
         <li id="sorting-trigger" class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
           <a id="sorting" href="#livres?sorting=latest" class="pure-menu-link">Plus récent</a>
           <ul class="pure-menu-children">
             <li class="pure-menu-item">
-              <a id="sorting-latest" href="#" class="pure-menu-link" onclick="setSorting('latest')">
+              <a id="sorting-latest" href="#livres?sorting=latest" class="pure-menu-link" onclick="sortByLatest()">
                 Plus récent
               </a>
             </li>
             <li class="pure-menu-item">
-              <a id="sorting-date" href="#" class="pure-menu-link" onclick="setSorting('date')">
+              <a id="sorting-date" href="#livres?sorting=date" class="pure-menu-link" onclick="sortByDate()">
                 Date de publication
               </a>
             </li>
             <li class="pure-menu-item">
-              <a id="sorting-chrono" href="#" class="pure-menu-link" onclick="setSorting('chrono')">
+              <a id="sorting-chrono" href="#livres?sorting=chrono" class="pure-menu-link" onclick="sortByChrono()">
                 Ordre chronologique
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <!-- Dropdown d'affichage -->
-      <label for="details-dropdown" class="padding--small">Afficher </label>
-      <ul id="details-dropdown" class="pure-menu-list">
-        <li id="details-trigger" class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-          <a id="details" href="#livres?details=pitch" class="pure-menu-link">le résumé</a>
-          <ul class="pure-menu-children">
-            <li class="pure-menu-item">
-              <a id="details-pitch" href="#" class="pure-menu-link" onclick="setDetails('pitch')">
-                le résumé
-              </a>
-            </li>
-            <li class="pure-menu-item">
-              <a id="details-tech" href="#" class="pure-menu-link" onclick="setDetails('tech')">
-                la fiche technique
-              </a>
-            </li>
-            <li class="pure-menu-item">
-              <a id="details-theme" href="#" class="pure-menu-link" onclick="setDetails('theme')">
-                les thèmes
               </a>
             </li>
           </ul>
@@ -132,14 +100,10 @@
     <div id="books" class="pure-g">
 
       <!-- Présentation Le Voeu de Yoko -->
-      <div id="le-voeu-de-yoko" data-latest="1" data-date="2021" data-chrono="682" class="book-background background--classic">
+      <div id="le-voeu-de-yoko" data-latest="3" data-date="2021" data-chrono="682" class="book-background background--classic">
         <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
           <div class="book padding--large">
             <h1>Le Voeu de Yoko</h1>
-            <div id="le-voeu-de-yoko-pitch">
-            </div>
-            <div id="le-voeu-de-yoko-tech" class="hidden">
-            </div>
             <p>En cours d'écriture...</p>
           </div>
         </div>
@@ -150,34 +114,20 @@
       </div>
 
       <!-- Présentation Enfant des Esprits -->
-      <div id="ede" data-latest="2" data-date="2020" data-chrono="782" class="book-background background--ede">
+      <div id="ede" data-latest="1" data-date="2020" data-chrono="782" class="book-background background--ede">
         <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
           <div class="book padding--large">
             <h1>L'Enfant des Esprits</h1>
-
-            <div id="ede-pitch">
-              <p>Les esprits existent-ils vraiment&nbsp;?</p>
-              <p>Certains le pensent, et leurs croyances influencent les pas des enfants de ce monde&nbsp;; ceux de cette jeune Rêveuse, cloîtrée dans son temple sous-marin, ou ceux de ce garçon maudit, résigné à un avenir fade.</p>
-              <p>Entre relique du Rêve qui ne fonctionne plus et manifestation de pouvoirs étranges, c'est ensemble qu'ils quittent leur foyer en quête de réponses. Mais le destin les sépare déjà et les entraine en un même lieu&nbsp;: la mystérieuse Académie des Renards.<p>On raconte qu'on peut tout y apprendre... y apprendront-ils l'évidence qui se cache en eux&nbsp;?</p>
-            </div>
-            <adr-details-tech id="ede-tech" class="hidden"
-              nbWords='150 000'
-              nbPages='553'
-              readingTime='12 à 13 heures'
-              isbnEpub='978-2-9561497-3-6'
-              isbnMobi='978-2-9561497-4-3'
-              isbnPdf='978-2-9561497-4-3'
-              publishingDate='Mars 2020'
-              lastUpdate='Décembre 2020'
-            ></adr-details-tech>
+            <p>Les esprits existent-ils vraiment&nbsp;?</p>
+            <p>Certains le pensent, et leurs croyances influencent les pas des enfants de ce monde&nbsp;; ceux de cette jeune Rêveuse, cloîtrée dans son temple sous-marin, ou ceux de ce garçon maudit, résigné à un avenir fade.</p>
+            <p>Entre relique du Rêve qui ne fonctionne plus et manifestation de pouvoirs étranges, c'est ensemble qu'ils quittent leur foyer en quête de réponses. Mais le destin les sépare déjà et les entraine en un même lieu&nbsp;: la mystérieuse Académie des Renards.<p>On raconte qu'on peut tout y apprendre... y apprendront-ils l'évidence qui se cache en eux&nbsp;?</p>
             <adr-extract-button
               file="enfant-des-esprits-extrait.pdf"
             ></adr-extract-button>
             <adr-gumroad-button
               title="L'Enfant des Esprits"
               link="https://gum.co/VqfHp"
-            ></adr-gumroad-button>
-
+            ></adr-gumroad-button> 
           </div>      
         </div>
         <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-4-24">
@@ -195,26 +145,13 @@
       </div> 
 
       <!-- Présentation Suzuha -->
-      <div id="suzuha" data-latest="3" data-date="2017" data-chrono="784" class="book-background background--suzuha">
+      <div id="suzuha" data-latest="2" data-date="2017" data-chrono="784" class="book-background background--suzuha">
         <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
           <div class="book padding--large">
             <h1>Suzuha</h1>
-
-            <div id="suzuha-pitch">
-              <p>Les enfants de l'île aux voix naissent sans voix ni reflet.</p>
-              <p>C'est aussi le cas de Melle qui, à seulement huit ans, décide de fuir son île natale afin de découvrir le continent qui se cache derrière l'océan.</p>
-              <p>Elle y trouvera un nouveau nom et poussera les portes de la mystérieuse Académie des Renards, où de riches rencontres l'attendent.</p>
-            </div>
-            <adr-details-tech id="suzuha-tech" class="hidden"
-              nbWords='58 000'
-              nbPages='215'
-              readingTime='4 à 5 heures'
-              isbnEpub='978-2-9561497-0-5'
-              isbnMobi='978-2-9561497-1-2'
-              isbnPdf='978-2-9561497-2-9'
-              publishingDate='Juin 2017'
-              lastUpdate='Octobre 2020'
-            ></adr-details-tech>
+            <p>Les enfants de l'île aux voix naissent sans voix ni reflet.</p>
+            <p>C'est aussi le cas de Melle qui, à seulement huit ans, décide de fuir son île natale afin de découvrir le continent qui se cache derrière l'océan.</p>
+            <p>Elle y trouvera un nouveau nom et poussera les portes de la mystérieuse Académie des Renards, où de riches rencontres l'attendent.</p>
             <adr-extract-button
               file="Suzuha-extrait.pdf"
             ></adr-extract-button>
@@ -222,7 +159,6 @@
               title="Suzuha"
               link="https://gumroad.com/l/jWam"
             ></adr-gumroad-button>
-
           </div>
         </div>
         <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-6-24"></div>
@@ -291,18 +227,6 @@
         </div>
       </div>
 
-      <!-- <div class="info-item">
-        <div class="title padding--small">
-          <h2>Par quel livre commencer ?</h2>
-        </div>
-        <div class="padding--large">
-          <adr-questions
-            questions=questions
-            keywords=keywords
-          ></adr-questions>
-        </div>
-      </div> -->
-
     </div>
 
   <!-- End main container -->
@@ -315,9 +239,7 @@
 <!-- End layout -->
 </div>
 <script src="js/pure-dropdown.js"></script>
-<script src="js/adr-details-tech.js"></script>
-<script src="js/adr-extract-button.js"></script>
 <script src="js/adr-gumroad-button.js"></script>
-<script src="js/adr-questions.js"></script>
+<script src="js/adr-extract-button.js"></script>
 </body>
 </html>

@@ -59,19 +59,19 @@ h2 {
   width: 100%;
 }
 .background--classic {
-  background-image: url("../assets/background.jpg");
+  background-image: url("assets/background.jpg");
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
 }
 .background--suzuha {
-  background-image: url("../assets/artwork-suzuha.jpg");
+  background-image: url("assets/artwork-suzuha.jpg");
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
 }
 .background--ede {
-  background-image: url("../assets/artwork-ede.png");
+  background-image: url("assets/artwork-ede.png");
   background-size: cover;
   background-position: center left;
   background-repeat: no-repeat;

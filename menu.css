@@ -127,9 +127,7 @@ This is the parent `<div>` that contains the menu and the content area.
 }
 
 #sorting-trigger.pure-menu-item,
-#sorting-trigger.pure-menu-item:focus,
-#details-trigger.pure-menu-item,
-#details-trigger.pure-menu-item:focus {
+#sorting-trigger.pure-menu-item:focus {
   background: #332B38;
 }
 
