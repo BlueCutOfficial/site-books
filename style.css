@@ -25,6 +25,10 @@ h1 {
 h2 {
   font-size: 1.3rem;
 }
+.mentions {
+  font-size: 0.8rem;
+  color: #999;
+}
 
 /** Règles générales **/
 .container {
@@ -151,7 +155,6 @@ h2 {
 /** Footer **/
 .footer {
   height: 60px;
-  padding-top: 40px;
   letter-spacing: 0;
 }
 
