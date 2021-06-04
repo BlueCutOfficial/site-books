@@ -3,7 +3,7 @@ import { select, toggleClass } from './generic'
 /**
  * Hide the whole menu to show only the burger icon
  */
-function deactivateMenu() {
+export function deactivateMenu() {
   toggleClass(['layout', 'menu', 'menuLink'], 'active', false)
 }
 

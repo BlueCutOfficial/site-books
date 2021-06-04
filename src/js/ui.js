@@ -1,5 +1,5 @@
 import { setSorting, setDetails, setUpPage } from './utils/setup-page'
-import { toggleMenu } from './utils/sidebar'
+import { deactivateMenu, toggleMenu } from './utils/sidebar'
 
 /**
  * Detection of a URL change reset the page
@@ -17,4 +17,5 @@ window.onload = function() {
 
 window.setSorting = setSorting
 window.setDetails = setDetails
+window.deactivateMenu = deactivateMenu
 window.toggleMenu = toggleMenu
