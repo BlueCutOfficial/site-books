@@ -1,8 +1,10 @@
 {
   "name": "site-books",
   "scripts": {
-    "start": "parcel serve src/index.html",
-    "build": "parcel build src/index.html",
+    "preparcel": "rm -rf dist",
+    "parcel": "parcel $RUN src/index.html",
+    "build": "RUN=build npm run parcel",
+    "start": "RUN=serve npm run parcel",
     "lint": "eslint . --fix"
   },
   "devDependencies": {
