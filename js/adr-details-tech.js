@@ -25,6 +25,7 @@ class AdrDetailsTech extends HTMLElement {
     var shadow = this.attachShadow({mode: 'closed'})
     shadow.innerHTML = `
       <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
+      <link rel="stylesheet" type="text/css" href="styles/style.css">
     `
     shadow.appendChild(wrapper)
   }
