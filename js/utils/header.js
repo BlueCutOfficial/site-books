@@ -57,7 +57,7 @@ function displayPitch() {
 
   toggleClass(['le-voeu-de-yoko-pitch', 'ede-pitch', 'suzuha-pitch'], 'hidden', false)
   toggleClass(['le-voeu-de-yoko-tech', 'ede-tech', 'suzuha-tech'], 'hidden', true)
-  // toggleClass(['le-voeu-de-yoko-theme', 'ede-theme', 'suzuha-theme'], 'hidden', true)
+  toggleClass(['le-voeu-de-yoko-theme', 'ede-theme', 'suzuha-theme'], 'hidden', true)
 };
 
 /**
@@ -71,7 +71,7 @@ function displayTech() {
 
   toggleClass(['le-voeu-de-yoko-pitch', 'ede-pitch', 'suzuha-pitch'], 'hidden', true)
   toggleClass(['le-voeu-de-yoko-tech', 'ede-tech', 'suzuha-tech'], 'hidden', false)
-  // toggleClass(['le-voeu-de-yoko-theme', 'ede-theme', 'suzuha-theme'], 'hidden', true)
+  toggleClass(['le-voeu-de-yoko-theme', 'ede-theme', 'suzuha-theme'], 'hidden', true)
 };
 
 /**
@@ -85,5 +85,5 @@ function displayTheme() {
 
   toggleClass(['le-voeu-de-yoko-pitch', 'ede-pitch', 'suzuha-pitch'], 'hidden', true)
   toggleClass(['le-voeu-de-yoko-tech', 'ede-tech', 'suzuha-tech'], 'hidden', true)
-  // toggleClass(['le-voeu-de-yoko-theme', 'ede-theme', 'suzuha-theme'], 'hidden', false)
+  toggleClass(['le-voeu-de-yoko-theme', 'ede-theme', 'suzuha-theme'], 'hidden', false)
 };

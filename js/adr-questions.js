@@ -67,31 +67,31 @@ class AdrQuestions extends HTMLElement {
       },
       {
         id: 'present',
-        label: 'Présent'
+        label: 'Narration au présent'
       },
       {
         id: 'past',
-        label: 'Passé'
+        label: 'Narration au passé'
       },
       {
         id: 'fast',
-        label: 'Rapide'
+        label: 'Rythme rapide'
       },
       {
         id: 'slow',
-        label: 'Calme'
+        label: 'Rythme calme'
       },
       {
         id: 'water',
-        label: 'Eau'
+        label: 'Magie de l\'eau'
       },
       {
         id: 'fire',
-        label: 'Feu'
+        label: 'Magie du feu'
       },
       {
         id: 'wind',
-        label: 'Vent'
+        label: 'Magie du vent'
       },
       {
         id: 'earth',

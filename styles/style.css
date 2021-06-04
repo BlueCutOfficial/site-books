@@ -1,7 +1,7 @@
 /** Classes de base **/
 body {
   font-family: Roboto;
-  color: #fff;
+  color: #e1e1e1;
   background-color: #121212;
   background-size: cover;
   background-position: center center;
@@ -10,7 +10,7 @@ body {
 }
 
 a {
-  color: #fff;
+  color: #e1e1e1;
 }
 h1,
 h2 {
@@ -24,6 +24,10 @@ h1 {
 }
 h2 {
   font-size: 1.3rem;
+}
+
+li {
+  margin-bottom: 10px;
 }
 
 /** Règles générales **/
