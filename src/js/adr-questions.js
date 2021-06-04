@@ -1,7 +1,7 @@
 class AdrQuestions extends HTMLElement {
   constructor() {
     super();
-    var wrapper = document.createElement('form');
+    let wrapper = document.createElement('form');
     wrapper.setAttribute('class', 'pure-form');
 
     this.getQuestions().forEach((question) => {
@@ -10,7 +10,7 @@ class AdrQuestions extends HTMLElement {
       );
     });
 
-    var shadow = this.attachShadow({mode: 'closed'});
+    let shadow = this.attachShadow({mode: 'closed'});
     shadow.innerHTML = `
       <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
       <link rel="stylesheet" type="text/css" href="styles/checkbox.css">
@@ -19,9 +19,9 @@ class AdrQuestions extends HTMLElement {
   }
 
   generateQuestion(question) {
-    var wrapper = document.createElement('div');
+    let wrapper = document.createElement('div');
 
-    var paragraphElement = document.createElement('p');
+    let paragraphElement = document.createElement('p');
     paragraphElement.innerText = `${question.label}`;
     wrapper.appendChild(paragraphElement);
 
@@ -35,10 +35,10 @@ class AdrQuestions extends HTMLElement {
   }
 
   generateCheckbox(id, name) {
-    var wrapper = document.createElement('div');
+    let wrapper = document.createElement('div');
     wrapper.setAttribute('class', 'checkbox-wrapper');
 
-    var inputElement = document.createElement('input');
+    let inputElement = document.createElement('input');
     inputElement.setAttribute('id', id);
     inputElement.setAttribute('type', 'checkbox');
     inputElement.setAttribute('name', name);
@@ -46,7 +46,7 @@ class AdrQuestions extends HTMLElement {
 
     let keyword = this.getKeywords().find(item => item.id === id)
 
-    var labelElement = document.createElement('label');
+    let labelElement = document.createElement('label');
     labelElement.setAttribute('class', 'pure-checkbox pure-checkbox--accessible');
     labelElement.setAttribute('for', id);
     labelElement.innerText = `${keyword.label}`;

@@ -1,9 +1,9 @@
 class AdrExtractButton extends HTMLElement {
   constructor() {
     super();
-    var wrapper = document.createElement('div');
+    let wrapper = document.createElement('div');
 
-    var extractLink = document.createElement('a');
+    let extractLink = document.createElement('a');
     extractLink.setAttribute('class', 'pure-button pure-button--black');
     extractLink.setAttribute('target', '_blank');
     extractLink.setAttribute('download', this.getAttribute('file'));
@@ -11,7 +11,7 @@ class AdrExtractButton extends HTMLElement {
     extractLink.textContent = 'Lire un extrait';
     wrapper.appendChild(extractLink);
 
-    var shadow = this.attachShadow({mode: 'closed'});
+    let shadow = this.attachShadow({mode: 'closed'});
     shadow.innerHTML = `
       <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
       <link rel="stylesheet" type="text/css" href="styles/buttons.css">

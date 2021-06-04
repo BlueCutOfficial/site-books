@@ -2,8 +2,8 @@
  * Get element by id
  * Elements that were already requested are registered in "selectors" array for performance
  */
-function select(id) {
-  var selector = selectors[id]
+export function select(id) {
+  let selector = selectors[id]
   if (!selector) {
     selector = document.getElementById(id)
     selectors.id = selector
@@ -14,7 +14,7 @@ function select(id) {
 /**
  * Add or remove the class "toggleClass" on all given selectors
  */
-function toggleClass(selectors, toggleClass, isAdd) {
+ export function toggleClass(selectors, toggleClass, isAdd) {
   selectors.forEach((id) => {
     if (isAdd) {
       select(id).classList.add(toggleClass)
@@ -25,9 +25,9 @@ function toggleClass(selectors, toggleClass, isAdd) {
 };
 
 /**
- * Return the part of the URL correponding to location hash according to current values,
+ * Return the part of the URL corresponding to location hash according to current values,
  * designed to work only when called on books page
  */
-function getURL(param) {
-  return `#${baseURL}?${sortingParam}&${detailsParam}`
+export function getURL() {
+  return `#${window.baseURL}?${window.sortingParam}&${window.detailsParam}`
 };

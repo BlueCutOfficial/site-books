@@ -1,7 +1,9 @@
+import { select, toggleClass, getURL } from './generic';
+
 /**
  * Rearrange the list of books
  */
-function sortBy(attribute) {
+export function sortBy(attribute) {
   [...select('books').children]
     .sort((a,b) => a.getAttribute(attribute) > b.getAttribute(attribute) ? 1 : -1)
     .forEach(node => select('books').appendChild(node))
@@ -10,7 +12,7 @@ function sortBy(attribute) {
 /**
  * Sort the list of books by chronological order
  */
-function sortByChrono() {
+ export function sortByChrono() {
   // Sort the list
   sortBy('data-chrono')
   // Update dropdown state
@@ -23,7 +25,7 @@ function sortByChrono() {
 /**
  * Sort the list of books by publishing date order (oldest first)
  */
-function sortByDate() {
+ export function sortByDate() {
   // Sort the list
   sortBy('data-date')
   // Update dropdown state
@@ -36,7 +38,7 @@ function sortByDate() {
 /**
  * Sort the list of books by publishing date order (latest first)
  */
-function sortByLatest() {
+ export function sortByLatest() {
   // Sort the list
   sortBy('data-latest')
   // Update dropdown state
@@ -49,7 +51,7 @@ function sortByLatest() {
 /**
  * Display the pitch for each book
  */
-function displayPitch() {
+ export function displayPitch() {
   select('details').textContent = 'le résumé'
   select('details').setAttribute('href', getURL())
   toggleClass(['details-tech', 'details-theme'], 'pure-menu-selected', false)
@@ -63,7 +65,7 @@ function displayPitch() {
 /**
  * Display the technical details for each book
  */
-function displayTech() {
+ export function displayTech() {
   select('details').textContent = 'la fiche technique'
   select('details').setAttribute('href', getURL())
   toggleClass(['details-pitch', 'details-theme'], 'pure-menu-selected', false)
@@ -77,7 +79,7 @@ function displayTech() {
 /**
  * Display the theme details for each book
  */
-function displayTheme() {
+ export function displayTheme() {
   select('details').textContent = 'les thèmes'
   select('details').setAttribute('href', getURL())
   toggleClass(['details-pitch', 'details-tech'], 'pure-menu-selected', false)

@@ -22,7 +22,7 @@ class AdrDetailsTech extends HTMLElement {
       <p>${strLastUpdate}</p>
     `
 
-    var shadow = this.attachShadow({mode: 'closed'})
+    let shadow = this.attachShadow({mode: 'closed'})
     shadow.innerHTML = `
       <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
       <link rel="stylesheet" type="text/css" href="styles/style.css">

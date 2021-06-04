@@ -1,12 +1,4 @@
-/**
- * Switch the menu from burger icon to full display
- */
-function toggleMenu() {
-  var active = 'active';
-  select('layout').classList.toggle(active);
-  select('menu').classList.toggle(active);
-  select('menuLink').classList.toggle(active);
-};
+import { select, toggleClass } from './generic';
 
 /**
  * Hide the whole menu to show only the burger icon
@@ -16,9 +8,19 @@ function deactivateMenu() {
 };
 
 /**
+ * Switch the menu from burger icon to full display
+ */
+export function toggleMenu() {
+  let active = 'active';
+  select('layout').classList.toggle(active);
+  select('menu').classList.toggle(active);
+  select('menuLink').classList.toggle(active);
+};
+
+/**
  * Show the info page
  */
-function showMenuInfo() {
+export function showMenuInfo() {
   select('booksLink').classList.remove('pure-menu-selected')
   select('booksLink').children[0].removeAttribute('aria-current')
   select('infoLink').classList.add('pure-menu-selected')
@@ -31,7 +33,7 @@ function showMenuInfo() {
 /**
  * Show the book page
  */
-function showMenuBooks() {
+export function showMenuBooks() {
   select('infoLink').classList.remove('pure-menu-selected')
   select('infoLink').children[0].removeAttribute('aria-current')
   select('booksLink').classList.add('pure-menu-selected')

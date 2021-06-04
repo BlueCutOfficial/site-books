@@ -1,27 +1,27 @@
 /**
  * Elements already found by id
  */
-var selectors = {}
+window.selectors = {}
 
 /**
  * First part of window.location.hash
  */
-var baseURL = 'livres'
+window.baseURL = 'livres'
 
 /**
  * Query param related to book sorting
  */
-var sortingParam = 'sorting=latest'
+window.sortingParam = 'sorting=latest'
 
 /**
  * Query param related to book details
  */
-var detailsParam = 'details=pitch'
+window.detailsParam = 'details=pitch'
 
 /**
  * Books main informations
  */
-var books = [
+window.books = [
   {
     id: 'suzuha',
     label: 'Suzuha',
@@ -42,7 +42,7 @@ var books = [
 /**
  * Books keywords
  */
-var keywords = [
+window.keywords = [
   {
     id: 'short',
     label: 'Court (moins de 10h de lecture)'

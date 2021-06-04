@@ -1,10 +1,14 @@
+import { select, getURL } from './generic';
+import { showMenuInfo, showMenuBooks } from "./sidebar"
+import { sortByDate, sortByChrono, sortByLatest, displayPitch, displayTech, displayTheme } from "./header"
+
 /**
  * Update sorting parameter
  * Change window location hash via href to trigger page set up
  */
-function setSorting(param) {
-  sortingParam = `sorting=${param}`
-  sortingLink = `sorting-${param}`
+export function setSorting(param) {
+  window.sortingParam = `sorting=${param}`
+  let sortingLink = `sorting-${param}`
   select(sortingLink).setAttribute('href', getURL())
 }
 
@@ -12,24 +16,24 @@ function setSorting(param) {
  * Update details parameter
  * Change window location hash via href to trigger page set up
  */
-function setDetails(param) {
-  detailsParam = `details=${param}`
-  detailsLink = `details-${param}`
+export function setDetails(param) {
+  window.detailsParam = `details=${param}`
+  let detailsLink = `details-${param}`
   select(detailsLink).setAttribute('href', getURL())
 }
 
 /**
  * Set up the page depending on the current URL
  */
-function setUpPage() {
+export function setUpPage() {
   let hash = window.location.hash
   if (hash.includes('#info')) {
     showMenuInfo()
   } else if (hash.includes('#livres')) {
     showMenuBooks()
     if (hash.includes('?')) {
-      var strParams = hash.split('?').reverse()[0]
-      var params = strParams.split('&') || strParams
+      let strParams = hash.split('?').reverse()[0]
+      let params = strParams.split('&') || strParams
       params.forEach((param) => {
         switch (param) {
         default:

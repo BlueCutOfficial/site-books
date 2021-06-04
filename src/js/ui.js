@@ -1,22 +1,20 @@
+import { setSorting, setDetails, setUpPage } from './utils/setup-page';
+import { toggleMenu } from "./utils/sidebar";
+
 /**
- * Auto-executed at init, bind events related to page setup
+ * Detection of a URL change reset the page
  */
-(function (window, document) {
+window.onhashchange = function() {
+  setUpPage()
+};
 
-  /**
-   * Detection of a URL change reset the page
-   */
-  window.onhashchange = function() {
-    setUpPage()
-  };
+/**
+ * setUpPage called when DOM is loaded
+ */
+window.onload = function() {
+  setUpPage()
+}
 
-  /**
-   * setUpPage called when DOM is loaded
-   */
-  window.onload = function() {
-    setUpPage()
-  }
-  
-
-}(this, this.document));
-
+window.setSorting = setSorting;
+window.setDetails = setDetails;
+window.toggleMenu = toggleMenu;
