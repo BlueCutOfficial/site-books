@@ -3,10 +3,10 @@
  * Elements that were already requested are registered in "selectors" array for performance
  */
 export function select(id) {
-  let selector = selectors[id]
+  let selector = window.selectors[id]
   if (!selector) {
     selector = document.getElementById(id)
-    selectors.id = selector
+    window.selectors.id = selector
   }
   return selector
 }
@@ -14,7 +14,7 @@ export function select(id) {
 /**
  * Add or remove the class "toggleClass" on all given selectors
  */
- export function toggleClass(selectors, toggleClass, isAdd) {
+export function toggleClass(selectors, toggleClass, isAdd) {
   selectors.forEach((id) => {
     if (isAdd) {
       select(id).classList.add(toggleClass)
@@ -22,7 +22,7 @@ export function select(id) {
       select(id).classList.remove(toggleClass)
     }
   })
-};
+}
 
 /**
  * Return the part of the URL corresponding to location hash according to current values,
@@ -30,4 +30,4 @@ export function select(id) {
  */
 export function getURL() {
   return `#${window.baseURL}?${window.sortingParam}&${window.detailsParam}`
-};
+}

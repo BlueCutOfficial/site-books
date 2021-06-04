@@ -1,6 +1,6 @@
-import { select, getURL } from './generic';
-import { showMenuInfo, showMenuBooks } from "./sidebar"
-import { sortByDate, sortByChrono, sortByLatest, displayPitch, displayTech, displayTheme } from "./header"
+import { select, getURL } from './generic'
+import { showMenuInfo, showMenuBooks } from './sidebar'
+import { sortByDate, sortByChrono, sortByLatest, displayPitch, displayTech, displayTheme } from './header'
 
 /**
  * Update sorting parameter

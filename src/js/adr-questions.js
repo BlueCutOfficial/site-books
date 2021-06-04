@@ -1,58 +1,58 @@
 class AdrQuestions extends HTMLElement {
   constructor() {
-    super();
-    let wrapper = document.createElement('form');
-    wrapper.setAttribute('class', 'pure-form');
+    super()
+    let wrapper = document.createElement('form')
+    wrapper.setAttribute('class', 'pure-form')
 
     this.getQuestions().forEach((question) => {
       wrapper.appendChild(
         this.generateQuestion(question)
-      );
-    });
+      )
+    })
 
-    let shadow = this.attachShadow({mode: 'closed'});
+    let shadow = this.attachShadow({mode: 'closed'})
     shadow.innerHTML = `
       <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
       <link rel="stylesheet" type="text/css" href="styles/checkbox.css">
-    `;
-    shadow.appendChild(wrapper);  
+    `
+    shadow.appendChild(wrapper)  
   }
 
   generateQuestion(question) {
-    let wrapper = document.createElement('div');
+    let wrapper = document.createElement('div')
 
-    let paragraphElement = document.createElement('p');
-    paragraphElement.innerText = `${question.label}`;
-    wrapper.appendChild(paragraphElement);
+    let paragraphElement = document.createElement('p')
+    paragraphElement.innerText = `${question.label}`
+    wrapper.appendChild(paragraphElement)
 
     question.choices.forEach((choice) => {
       wrapper.appendChild(
         this.generateCheckbox(choice, question.id)
-      );
-    });
+      )
+    })
 
-    return wrapper;
+    return wrapper
   }
 
   generateCheckbox(id, name) {
-    let wrapper = document.createElement('div');
-    wrapper.setAttribute('class', 'checkbox-wrapper');
+    let wrapper = document.createElement('div')
+    wrapper.setAttribute('class', 'checkbox-wrapper')
 
-    let inputElement = document.createElement('input');
-    inputElement.setAttribute('id', id);
-    inputElement.setAttribute('type', 'checkbox');
-    inputElement.setAttribute('name', name);
-    wrapper.appendChild(inputElement);
+    let inputElement = document.createElement('input')
+    inputElement.setAttribute('id', id)
+    inputElement.setAttribute('type', 'checkbox')
+    inputElement.setAttribute('name', name)
+    wrapper.appendChild(inputElement)
 
     let keyword = this.getKeywords().find(item => item.id === id)
 
-    let labelElement = document.createElement('label');
-    labelElement.setAttribute('class', 'pure-checkbox pure-checkbox--accessible');
-    labelElement.setAttribute('for', id);
-    labelElement.innerText = `${keyword.label}`;
-    wrapper.appendChild(labelElement);
+    let labelElement = document.createElement('label')
+    labelElement.setAttribute('class', 'pure-checkbox pure-checkbox--accessible')
+    labelElement.setAttribute('for', id)
+    labelElement.innerText = `${keyword.label}`
+    wrapper.appendChild(labelElement)
 
-    return wrapper;
+    return wrapper
   }
 
   getKeywords() {
@@ -192,4 +192,4 @@ class AdrQuestions extends HTMLElement {
 
 }
 
-customElements.define('adr-questions', AdrQuestions);
+customElements.define('adr-questions', AdrQuestions)

@@ -1,21 +1,21 @@
-import { select, toggleClass } from './generic';
+import { select, toggleClass } from './generic'
 
 /**
  * Hide the whole menu to show only the burger icon
  */
 function deactivateMenu() {
   toggleClass(['layout', 'menu', 'menuLink'], 'active', false)
-};
+}
 
 /**
  * Switch the menu from burger icon to full display
  */
 export function toggleMenu() {
-  let active = 'active';
-  select('layout').classList.toggle(active);
-  select('menu').classList.toggle(active);
-  select('menuLink').classList.toggle(active);
-};
+  let active = 'active'
+  select('layout').classList.toggle(active)
+  select('menu').classList.toggle(active)
+  select('menuLink').classList.toggle(active)
+}
 
 /**
  * Show the info page
@@ -28,7 +28,7 @@ export function showMenuInfo() {
   toggleClass(['books', 'sorting-menu'], 'hidden', true)
   toggleClass(['info'], 'hidden', false)
   deactivateMenu()
-};
+}
 
 /**
  * Show the book page
@@ -41,4 +41,4 @@ export function showMenuBooks() {
   toggleClass(['books', 'sorting-menu'], 'hidden', false)
   toggleClass(['info'], 'hidden', true)
   deactivateMenu()
-};
+}

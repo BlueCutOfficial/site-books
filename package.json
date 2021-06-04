@@ -2,9 +2,12 @@
   "name": "site-books",
   "scripts": {
     "start": "parcel serve src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "lint": "eslint . --fix"
   },
   "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-plugin-node": "^11.1.0",
     "parcel": "next"
   }
 }
