@@ -73,7 +73,7 @@ h2 {
   width: 100%;
 }
 
-@mixin theme($cover: url("assets/background.jpg"), $position: center right) {
+@mixin theme($cover: url("../assets/background.jpg"), $position: center right) {
   background-image: $cover;
   background-size: cover;
   background-position: $position;
@@ -83,10 +83,10 @@ h2 {
   @include theme;
 }
 .background--suzuha {
-  @include theme($cover: url("assets/artwork-suzuha.jpg"), $position: top right);
+  @include theme($cover: url("../assets/artwork-suzuha.jpg"), $position: top right);
 }
 .background--ede {
-  @include theme($cover: url("assets/artwork-ede.png"), $position: center left);
+  @include theme($cover: url("../assets/artwork-ede.png"), $position: center left);
 }
 
 .book {
