@@ -1,0 +1,144 @@
+@use 'variables';
+@use 'menu';
+
+/* Pure-button CSS override */
+.pure-button {
+  font-family: variables.$body-font;
+  box-shadow: 2px 2px 2px variables.$primary-color;
+  margin-bottom: 10px;
+}
+.pure-button--black {
+  color: variables.$primary-text-color;
+  background-color: variables.$primary-color;
+}
+.pure-button--black:hover,
+.pure-button--black:focus {
+  background-color: variables.$primary-color-light;
+}
+
+/** Basic classes and typography **/
+body {
+  font-family: variables.$body-font;
+  color: variables.$primary-text-color;
+  background-color: variables.$primary-color;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  letter-spacing: 0;
+}
+a {
+  color: variables.$primary-text-color;
+}
+@mixin typo() {
+  font-family: variables.$title-font;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+h1 {
+  @include typo;
+  font-size: 1.5rem;
+}
+h2 {
+  @include typo;
+  font-size: 1.3rem;
+}
+.mentions {
+  font-size: 0.8rem;
+  color: variables.$second-text-color;
+}
+
+/** Règles générales **/
+.container {
+  min-height: calc(100vh - 70px - 100px);
+}
+.content {
+  padding-top: 50px;
+}
+.centered {
+  text-align: center;
+}
+.padding--small {
+  padding: 10px;
+}
+.padding--medium {
+  padding: 20px;
+}
+.padding--large {
+  padding: 40px;
+}
+
+/** Page livre **/
+.book-background {
+  width: 100%;
+}
+
+@mixin theme($cover: url("../assets/background.jpg"), $position: center right) {
+  background-image: $cover;
+  background-size: cover;
+  background-position: $position;
+  background-repeat: no-repeat;
+}
+.background--classic {
+  @include theme;
+}
+.background--suzuha {
+  @include theme($cover: url("../assets/artwork-suzuha.jpg"), $position: top right);
+}
+.background--ede {
+  @include theme($cover: url("../assets/artwork-ede.png"), $position: center left);
+}
+
+.book {
+  background-color: rgba(43, 9, 42, 0.5);
+}
+
+.quote{
+  text-align: center;
+  padding: 5px;
+}
+
+.image-header-side {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/* Specific gumroad buttons */
+.download-button {
+  margin-right: 3px;
+  padding: 0px;
+  padding-top: 5px;
+  height: 60px;
+  width: 112px;
+  img {
+    height: 50px;
+  }
+}
+
+/** Page d'info **/
+#info {
+  p {
+    margin-top: 0px;
+  }
+  .title {
+    background-color: variables.$second-color-faded;
+    h2 {
+      margin: 0px;
+    }
+  }
+  .info-item {
+    background-color: variables.$primary-color-faded;
+    text-align: justify;
+  }
+}
+
+/** Footer **/
+.footer {
+  height: 60px;
+  letter-spacing: 0;
+}
+
+/* Cache des pages */
+.hidden {
+  display: none;
+}
