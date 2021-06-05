@@ -13,7 +13,7 @@
 }
 .pure-button--black:hover,
 .pure-button--black:focus {
-  background-color: variables.$primary-color-faded;
+  background-color: variables.$primary-color-light;
 }
 
 /** Basic classes and typography **/
@@ -79,15 +79,12 @@ h2 {
   background-position: $position;
   background-repeat: no-repeat;
 }
-
 .background--classic {
   @include theme;
 }
-
 .background--suzuha {
   @include theme($cover: url("assets/artwork-suzuha.jpg"), $position: top right);
 }
-
 .background--ede {
   @include theme($cover: url("assets/artwork-ede.png"), $position: center left);
 }
@@ -95,6 +92,7 @@ h2 {
 .book {
   background-color: rgba(43, 9, 42, 0.5);
 }
+
 .quote{
   text-align: center;
   padding: 5px;
@@ -112,42 +110,26 @@ h2 {
   padding-top: 5px;
   height: 60px;
   width: 112px;
-}
-.download-button img {
-  height: 50px;
-}
-
-.borderwhite {
-  border-style: solid;
-  border-width: 1px;
-  border-color: white;
-  padding: 10px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.borderwhite p {
-  padding: 0px;
-  margin: 5px;
+  img {
+    height: 50px;
+  }
 }
 
 /** Page d'info **/
-#info .info-item {
-  background-color: rgb(25, 24, 24);
-  background-color: rgba(25, 24, 24, 0.3);
-  text-align: justify;
-}
-
-#info .title {
-  background-color: variables.$second-color-faded;
-}
-
-#info .title h2 {
-  margin: 0px;
-}
-
-#info p {
-  margin-top: 0px;
+#info {
+  p {
+    margin-top: 0px;
+  }
+  .title {
+    background-color: variables.$second-color-faded;
+    h2 {
+      margin: 0px;
+    }
+  }
+  .info-item {
+    background-color: variables.$primary-color-faded;
+    text-align: justify;
+  }
 }
 
 /** Footer **/

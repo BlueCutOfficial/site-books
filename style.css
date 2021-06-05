@@ -1,11 +1,49 @@
 @charset "UTF-8";
-body {
-  color: #777;
-}
-
+/* Fonts */
+/* Backgrounds colors */
+/* Texts colors */
+/* Other colors */
+/* Pure-menu CSS override */
 .pure-img-responsive {
   max-width: 100%;
   height: auto;
+}
+
+.pure-menu {
+  background: #191818;
+  color: #999;
+  border: none;
+}
+.pure-menu a {
+  color: #999;
+  border: none;
+  padding: 0.6em 0.6em 0.6em 0.6em;
+}
+.pure-menu a.pure-menu-selected {
+  color: #eee;
+}
+.pure-menu ul {
+  border: none;
+  background: #191818;
+  border-top: 1px solid #333;
+}
+.pure-menu .menu-item-divided {
+  border-top: 1px solid #333;
+}
+.pure-menu li a:hover {
+  background: #332B38;
+  color: #eee;
+}
+.pure-menu li a:focus {
+  text-transform: none;
+  background: #7c3c7b;
+}
+.pure-menu .pure-menu-selected {
+  text-transform: none;
+  background: #7c3c7b;
+}
+.pure-menu .pure-menu-selected .pure-menu-link:visited {
+  color: #eee;
 }
 
 /*
@@ -29,12 +67,10 @@ This is the parent `<div>` that contains the menu and the content area.
   left: 0;
   padding-left: 0;
 }
-
 #layout.active #menu {
   left: 180px;
   width: 180px;
 }
-
 #layout.active .menu-link {
   left: 180px;
 }
@@ -58,13 +94,11 @@ This is the parent `<div>` that contains the menu and the content area.
   padding: 2.5em 2em 0;
   border-bottom: 1px solid #eee;
 }
-
 .header h1 {
   margin: 0.2em 0;
   font-size: 3em;
   font-weight: 300;
 }
-
 .header h2 {
   font-weight: 300;
   color: #ccc;
@@ -76,39 +110,6 @@ This is the parent `<div>` that contains the menu and the content area.
   margin: 50px 0 20px 0;
   font-weight: 300;
   color: #888;
-}
-
-.pure-menu a {
-  color: #999;
-  border: none;
-  padding: 0.6em 0.6em 0.6em 0.6em;
-}
-
-.pure-menu,
-.pure-menu ul {
-  border: none;
-  background: #191818;
-}
-
-.pure-menu ul,
-.pure-menu .menu-item-divided {
-  border-top: 1px solid #333;
-}
-
-.pure-menu li a:hover {
-  background: #332B38;
-  color: #fff;
-}
-
-.pure-menu li a:focus,
-.pure-menu-selected {
-  text-transform: none;
-  background: #7c3c7b;
-}
-
-.pure-menu a.pure-menu-selected,
-.pure-menu-selected .pure-menu-link:visited {
-  color: #fff;
 }
 
 #menu {
@@ -130,7 +131,7 @@ This is the parent `<div>` that contains the menu and the content area.
 
 #sorting-trigger.pure-menu-item,
 #sorting-trigger.pure-menu-item:focus {
-  background: #332B38;
+  background: #7c3c7b;
 }
 
 /* -- Dynamic Button For Responsive Menu -------------------------------------*/
@@ -149,8 +150,7 @@ small screens.
   top: 0;
   left: 0;
   /* "#menu width" */
-  background: #000;
-  background: rgba(0, 0, 0, 0.7);
+  background: #191818;
   font-size: 10px;
   /* change this value to increase/decrease button size */
   z-index: 10;
@@ -158,32 +158,24 @@ small screens.
   height: auto;
   padding: 2.1em 1.6em;
 }
-
-.menu-link:hover,
-.menu-link:focus {
-  background: #000;
+.menu-link:hover, .menu-link:focus {
+  background: #332B38;
 }
-
 .menu-link span {
   position: relative;
   display: block;
-}
-
-.menu-link span,
-.menu-link span:before,
-.menu-link span:after {
-  background-color: #fff;
+  background-color: #eee;
   width: 100%;
   height: 0.2em;
 }
-
-.menu-link span:before,
-.menu-link span:after {
+.menu-link span:before, .menu-link span:after {
+  background-color: #eee;
+  width: 100%;
+  height: 0.2em;
   position: absolute;
   margin-top: -0.6em;
   content: " ";
 }
-
 .menu-link span:after {
   margin-top: 0.6em;
 }
@@ -376,42 +368,23 @@ h2 {
   height: 60px;
   width: 112px;
 }
-
 .download-button img {
   height: 50px;
 }
 
-.borderwhite {
-  border-style: solid;
-  border-width: 1px;
-  border-color: white;
-  padding: 10px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.borderwhite p {
-  padding: 0px;
-  margin: 5px;
-}
-
 /** Page d'info **/
-#info .info-item {
-  background-color: #191818;
-  background-color: rgba(25, 24, 24, 0.3);
-  text-align: justify;
+#info p {
+  margin-top: 0px;
 }
-
 #info .title {
   background-color: rgba(124, 60, 123, 0.5);
 }
-
 #info .title h2 {
   margin: 0px;
 }
-
-#info p {
-  margin-top: 0px;
+#info .info-item {
+  background-color: #1918183d;
+  text-align: justify;
 }
 
 /** Footer **/

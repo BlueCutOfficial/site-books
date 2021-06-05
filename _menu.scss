@@ -1,10 +1,47 @@
-body {
-  color: #777;
-}
+@use 'variables';
 
+/* Pure-menu CSS override */
 .pure-img-responsive {
   max-width: 100%;
   height: auto;
+}
+.pure-menu {
+  background: variables.$primary-color;
+  color: variables.$second-text-color;
+  border: none;
+  a {
+    color: variables.$second-text-color;
+    border: none;
+    padding: 0.6em 0.6em 0.6em 0.6em;
+    &.pure-menu-selected {
+      color: variables.$primary-text-color; 
+    }
+  }
+  ul {
+    border: none;
+    background: variables.$primary-color;
+    border-top: 1px solid variables.$separator-color;
+  }
+  .menu-item-divided {
+    border-top: 1px solid variables.$separator-color;
+  }
+  li {
+    a:hover {
+      background: variables.$primary-color-light;
+      color: variables.$primary-text-color;
+    } 
+    a:focus {
+      text-transform: none;
+      background: variables.$second-color;
+    }
+  } 
+  .pure-menu-selected {
+    text-transform: none;
+    background: variables.$second-color;
+    .pure-menu-link:visited {
+      color: variables.$primary-text-color;
+    }
+  }
 }
 
 /*
@@ -27,14 +64,15 @@ This is the parent `<div>` that contains the menu and the content area.
   position: relative;
   left: 0;
   padding-left: 0;
-}
-#layout.active #menu {
-  left: 180px;
-  width: 180px;
-}
-
-#layout.active .menu-link {
-  left: 180px;
+  &.active {
+    #menu {
+      left: 180px;
+      width: 180px;
+    }
+    .menu-link {
+      left: 180px;
+    }
+  }
 }
 
 #main {
@@ -50,63 +88,28 @@ This is the parent `<div>` that contains the menu and the content area.
 }
 
 .header {
- margin: 0;
- color: #333;
- text-align: center;
- padding: 2.5em 2em 0;
- border-bottom: 1px solid #eee;
- }
-
-.header h1 {
-  margin: 0.2em 0;
-  font-size: 3em;
-  font-weight: 300;
-}
-
-.header h2 {
-  font-weight: 300;
-  color: #ccc;
-  padding: 0;
-  margin-top: 0;
+  margin: 0;
+  color: #333;
+  text-align: center;
+  padding: 2.5em 2em 0;
+  border-bottom: 1px solid #eee;
+  h1 {
+    margin: 0.2em 0;
+    font-size: 3em;
+    font-weight: 300;
+  }
+  h2 {
+    font-weight: 300;
+    color: #ccc;
+    padding: 0;
+    margin-top: 0;
+  }
 }
 
 .content-subhead {
   margin: 50px 0 20px 0;
   font-weight: 300;
   color: #888;
-}
-
-.pure-menu a {
-  color: #999;
-  border: none;
-  padding: 0.6em 0.6em 0.6em 0.6em;
-}
-
-.pure-menu,
-.pure-menu ul {
-  border: none;
-  background: #191818;
-}
-
-.pure-menu ul,
-.pure-menu .menu-item-divided {
-  border-top: 1px solid #333;
-}
-
-.pure-menu li a:hover {
-  background: #332B38;
-  color: #fff;
-}
-
-.pure-menu li a:focus,
-.pure-menu-selected {
-  text-transform: none;
-  background: rgb(124, 60, 123);
-}
-
-.pure-menu a.pure-menu-selected,
-.pure-menu-selected .pure-menu-link:visited {
-  color: #fff;
 }
 
 #menu {
@@ -128,7 +131,7 @@ This is the parent `<div>` that contains the menu and the content area.
 
 #sorting-trigger.pure-menu-item,
 #sorting-trigger.pure-menu-item:focus {
-  background: #332B38;
+  background: variables.$second-color;
 }
 
 /* -- Dynamic Button For Responsive Menu -------------------------------------*/
@@ -147,42 +150,33 @@ small screens.
   display: block; /* show this only on small screens */
   top: 0;
   left: 0; /* "#menu width" */
-  background: #000;
-  background: rgba(0,0,0,0.7);
+  background: variables.$primary-color;
   font-size: 10px; /* change this value to increase/decrease button size */
   z-index: 10;
   width: 2em;
   height: auto;
   padding: 2.1em 1.6em;
-}
-
-.menu-link:hover,
-.menu-link:focus {
-  background: #000;
-}
-
-.menu-link span {
-  position: relative;
-  display: block;
-}
-
-.menu-link span,
-.menu-link span:before,
-.menu-link span:after {
-  background-color: #fff;
-  width: 100%;
-  height: 0.2em;
-}
-
-.menu-link span:before,
-.menu-link span:after {
-  position: absolute;
-  margin-top: -0.6em;
-  content: " ";
-}
-
-.menu-link span:after {
-  margin-top: 0.6em;
+  &:hover, &:focus {
+    background: variables.$primary-color-light;
+  } 
+  span {
+    position: relative;
+    display: block;
+    background-color: variables.$primary-text-color;
+    width: 100%;
+    height: 0.2em;
+    &:before, &:after {
+      background-color: variables.$primary-text-color;
+      width: 100%;
+      height: 0.2em;
+      position: absolute;
+      margin-top: -0.6em;
+      content: " ";
+    }
+    &:after {
+      margin-top: 0.6em;
+    }
+  }
 }
 
 /** Rs part **/
@@ -195,7 +189,7 @@ small screens.
 }
 .rs-link:hover,
 a:focus .rs-link {
-  background: #332B38;
+  background: variables.$primary-color-light;
 }
 
 
