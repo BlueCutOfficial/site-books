@@ -1,0 +1,25 @@
+{
+  "name": "site-books",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.28.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlueCutOfficial/site-books.git"
+  },
+  "keywords": [
+    "ebooks",
+    "academie",
+    "renards"
+  ],
+  "author": "Marine Dunstetter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlueCutOfficial/site-books/issues"
+  },
+  "homepage": "https://github.com/BlueCutOfficial/site-books#readme"
+}
