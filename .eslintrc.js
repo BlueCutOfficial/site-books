@@ -11,5 +11,20 @@ module.exports = {
     indent: ['error', 2],
     quotes: ['error', 'single'],
     semi: ['error', 'never']
-  }
+  },
+  overrides: [
+    // node files
+    {
+      files: [
+        '.eslintrc.js',
+      ],
+      parserOptions: {
+        sourceType: 'script',
+      },
+      env: {
+        browser: false,
+        node: true,
+      }
+    }
+  ]
 }

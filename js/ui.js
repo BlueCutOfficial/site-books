@@ -29,6 +29,7 @@ function toggleClass(selectors, toggleClass, isAdd) {
 /**
  * Switch the menu from burger icon to full display
  */
+// eslint-disable-next-line no-unused-vars
 function toggleMenu() {
   let active = 'active'
   select('layout').classList.toggle(active)

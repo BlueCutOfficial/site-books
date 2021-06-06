@@ -69,13 +69,13 @@
     this._menu.setAttribute(ARIA_ROLE, 'menu')
     this._menu.setAttribute('aria-labelledby', this._link.getAttribute('id'))
     this._menu.setAttribute('aria-hidden', 'true')
-    [].forEach.call(
+    ;[].forEach.call(
       this._menu.querySelectorAll('li'),
       function(el){
         el.setAttribute(ARIA_ROLE, 'presentation')
       }
     )
-    [].forEach.call(
+    ;[].forEach.call(
       this._menu.querySelectorAll('a'),
       function(el){
         el.setAttribute(ARIA_ROLE, 'menuitem')
@@ -92,10 +92,10 @@
     // Keyboard navigation
     document.addEventListener('keydown', function (e) {
       let currentLink,
-          previousSibling,
-          nextSibling,
-          previousLink,
-          nextLink
+        previousSibling,
+        nextSibling,
+        previousLink,
+        nextLink
 
       // if the menu isn't active, ignore
       if (ddm._state !== MENU_OPEN) {
@@ -157,7 +157,7 @@
 
     // Dismiss an open menu on outside event
     document.addEventListener(DISMISS_EVENT, function (e) {
-      let target = e.target;
+      let target = e.target
       if (target !== ddm._link && !ddm._menu.contains(target)) {
         ddm.hide()
         ddm._link.blur()
@@ -167,9 +167,9 @@
   }
 
   function initDropdowns() {
-    let dropdownParents = document.querySelectorAll('.pure-menu-has-children');
+    let dropdownParents = document.querySelectorAll('.pure-menu-has-children')
     for (let i = 0; i < dropdownParents.length; i++) {
-      let ddm = new PureDropdown(dropdownParents[i]);
+      let ddm = new PureDropdown(dropdownParents[i])
     }
   }
 
