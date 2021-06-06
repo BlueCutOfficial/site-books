@@ -1,14 +1,14 @@
-var selectors = {}
+let selectors = {}
 
 /**
  * Get element by id
  * Elements that were already requested are registered in "selectors" array for performance
  */
 function select(id) {
-  var selector = selectors[id]
+  let selector = selectors[id]
   if (!selector) {
     selector = document.getElementById(id)
-    selectors.id = selector
+    selectors[id] = selector
   }
   return selector
 }
@@ -24,25 +24,25 @@ function toggleClass(selectors, toggleClass, isAdd) {
       select(id).classList.remove(toggleClass)
     }
   })
-};
+}
 
 /**
  * Switch the menu from burger icon to full display
  */
+// eslint-disable-next-line no-unused-vars
 function toggleMenu() {
-  var active = 'active';
-  select('layout').classList.toggle(active);
-  select('menu').classList.toggle(active);
-  select('menuLink').classList.toggle(active);
-};
+  let active = 'active'
+  select('layout').classList.toggle(active)
+  select('menu').classList.toggle(active)
+  select('menuLink').classList.toggle(active)
+}
 
 /**
  * Hide the whole menu to show only the burger icon
  */
 function deactivateMenu() {
-  var active = 'active';
   toggleClass(['layout', 'menu', 'menuLink'], 'active', false)
-};
+}
 
 function showMenuInfo() {
   select('booksLink').classList.remove('pure-menu-selected')
@@ -52,7 +52,7 @@ function showMenuInfo() {
   toggleClass(['books', 'sorting-menu'], 'hidden', true)
   toggleClass(['info'], 'hidden', false)
   deactivateMenu()
-};
+}
 
 function showMenuBooks() {
   select('infoLink').classList.remove('pure-menu-selected')
@@ -62,7 +62,7 @@ function showMenuBooks() {
   toggleClass(['books', 'sorting-menu'], 'hidden', false)
   toggleClass(['info'], 'hidden', true)
   deactivateMenu()
-};
+}
 
 /**
  * Functions related to books sorting
@@ -72,7 +72,7 @@ function sortBy(attribute) {
   [...select('books').children]
     .sort((a,b) => a.getAttribute(attribute) > b.getAttribute(attribute) ? 1 : -1)
     .forEach(node => select('books').appendChild(node))
-};
+}
 
 function sortByChrono() {
   sortBy('data-chrono')
@@ -80,7 +80,7 @@ function sortByChrono() {
   select('sorting').setAttribute('href', '#livres?sorting=chrono')
   toggleClass(['sorting-date', 'sorting-latest'], 'pure-menu-selected', false)
   toggleClass(['sorting-chrono'], 'pure-menu-selected', true)
-};
+}
 
 function sortByDate() {
   sortBy('data-date')
@@ -88,7 +88,7 @@ function sortByDate() {
   select('sorting').setAttribute('href', '#livres?sorting=date')
   toggleClass(['sorting-chrono', 'sorting-latest'], 'pure-menu-selected', false)
   toggleClass(['sorting-date'], 'pure-menu-selected', true)
-};
+}
 
 function sortByLatest() {
   sortBy('data-latest')
@@ -96,12 +96,12 @@ function sortByLatest() {
   select('sorting').setAttribute('href', '#livres?sorting=latest')
   toggleClass(['sorting-chrono', 'sorting-date'], 'pure-menu-selected', false)
   toggleClass(['sorting-latest'], 'pure-menu-selected', true)
-};
+}
 
 /**
  * Auto-executed at init, bind events related to page setup
  */
-(function (window, document) {
+(function (window) {
 
   /**
    * Set up the page depending on the current URL
@@ -113,30 +113,30 @@ function sortByLatest() {
     } else if (hash.includes('#livres')) {
       showMenuBooks()
       if (hash.includes('?')) {
-        var params = hash.split('?').reverse()[0]
+        let params = hash.split('?').reverse()[0]
         switch (params) {
-          default:
-            break
-          case 'sorting=date':
-            sortByDate()
-            break
-          case 'sorting=chrono':
-            sortByChrono()
-            break
-          case 'sorting=latest':
-            sortByLatest()
-            break
+        default:
+          break
+        case 'sorting=date':
+          sortByDate()
+          break
+        case 'sorting=chrono':
+          sortByChrono()
+          break
+        case 'sorting=latest':
+          sortByLatest()
+          break
         }
       }
     }
-  };
+  }
 
   /**
    * Detection of a URL change reset the page
    */
   window.onhashchange = function() {
     setUpPage()
-  };
+  }
 
   /**
    * setUpPage called when DOM is loaded
@@ -146,5 +146,5 @@ function sortByLatest() {
   }
   
 
-}(this, this.document));
+}(this, this.document))
 
