@@ -1,3 +1,5 @@
+import styleUrl from "url:../styles/style.css";
+
 class AdrExtractButton extends HTMLElement {
   constructor() {
     super()
@@ -14,7 +16,7 @@ class AdrExtractButton extends HTMLElement {
     var shadow = this.attachShadow({mode: 'closed'})
     shadow.innerHTML = `
       <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-      <link rel="stylesheet" type="text/css" href="styles/style.css">
+      <link rel="stylesheet" type="text/css" href="${styleUrl}">
     `
     shadow.appendChild(wrapper)
   }

@@ -1,3 +1,6 @@
+import styleUrl from "url:../styles/style.css";
+import imageUrl from "url:../assets/vente.png";
+
 class AdrGumroadButton extends HTMLElement {
   constructor() {
     super()
@@ -10,14 +13,14 @@ class AdrGumroadButton extends HTMLElement {
     wrapper.appendChild(gumroadLink)
 
     var gumroadImg = document.createElement('img')
-    gumroadImg.setAttribute('src', 'assets/vente.png')
+    gumroadImg.setAttribute('src', imageUrl)
     gumroadImg.setAttribute('alt', `Télécharger ${this.getAttribute('title')}`)
     gumroadLink.appendChild(gumroadImg)
 
     var shadow = this.attachShadow({mode: 'closed'})
     shadow.innerHTML = `
       <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-      <link rel="stylesheet" type="text/css" href="styles/style.css">
+      <link rel="stylesheet" type="text/css" href="${styleUrl}">
     `
     shadow.appendChild(wrapper)
   }
