@@ -75,17 +75,29 @@
           <a id="sorting" href="#livres?sorting=latest" class="pure-menu-link">Plus récent</a>
           <ul class="pure-menu-children">
             <li class="pure-menu-item">
-              <a id="sorting-latest" href="#livres?sorting=latest" class="pure-menu-link" onclick="sortByLatest()">
+              <a id="sorting-latest" 
+                href="#livres?sorting=latest" 
+                class="pure-menu-link" 
+                onclick="setSorting('latest')"
+              >
                 Plus récent
               </a>
             </li>
             <li class="pure-menu-item">
-              <a id="sorting-date" href="#livres?sorting=date" class="pure-menu-link" onclick="sortByDate()">
+              <a id="sorting-date" 
+                href="#livres?sorting=date" 
+                class="pure-menu-link" 
+                onclick="setSorting('date')"
+              >
                 Date de publication
               </a>
             </li>
             <li class="pure-menu-item">
-              <a id="sorting-chrono" href="#livres?sorting=chrono" class="pure-menu-link" onclick="sortByChrono()">
+              <a id="sorting-chrono" 
+                href="#livres?sorting=chrono" 
+                class="pure-menu-link" 
+                onclick="setSorting('chrono')"
+              >
                 Ordre chronologique
               </a>
             </li>
