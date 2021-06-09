@@ -18,6 +18,19 @@ export function toggleMenu() {
 }
 
 /**
+ * Show the home page
+ */
+export function showMenuHome() {
+  select('booksLink').classList.remove('pure-menu-selected')
+  select('booksLink').children[0].removeAttribute('aria-current')
+  select('infoLink').classList.add('pure-menu-selected')
+  select('infoLink').children[0].setAttribute('aria-current', 'page')
+  toggleClass(['home'], 'hidden', false)
+  toggleClass(['books', 'sorting-menu', 'info'], 'hidden', true)
+  deactivateMenu()
+}
+
+/**
  * Show the info page
  */
 export function showMenuInfo() {
@@ -25,7 +38,7 @@ export function showMenuInfo() {
   select('booksLink').children[0].removeAttribute('aria-current')
   select('infoLink').classList.add('pure-menu-selected')
   select('infoLink').children[0].setAttribute('aria-current', 'page')
-  toggleClass(['books', 'sorting-menu'], 'hidden', true)
+  toggleClass(['books', 'sorting-menu', 'home'], 'hidden', true)
   toggleClass(['info'], 'hidden', false)
   deactivateMenu()
 }
@@ -39,6 +52,6 @@ export function showMenuBooks() {
   select('booksLink').classList.add('pure-menu-selected')
   select('booksLink').children[0].setAttribute('aria-current', 'page')
   toggleClass(['books', 'sorting-menu'], 'hidden', false)
-  toggleClass(['info'], 'hidden', true)
+  toggleClass(['info', 'home'], 'hidden', true)
   deactivateMenu()
 }

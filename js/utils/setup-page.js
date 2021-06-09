@@ -1,5 +1,5 @@
 import { select, getURL } from './generics'
-import { showMenuInfo, showMenuBooks } from './sidebar'
+import { showMenuInfo, showMenuBooks, showMenuHome } from './sidebar'
 import { sortByDate, sortByChrono, sortByLatest } from './header'
 
 /**
@@ -40,5 +40,7 @@ export function setUpPage() {
         }
       })
     }
+  } else {
+    showMenuHome()
   }
 }

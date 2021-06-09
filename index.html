@@ -42,13 +42,15 @@
     <nav class="pure-menu centered" aria-label="Menu principal">
       <div>
         <div class="image-header-side">
-          <img src="assets/LogoAdR_white.png" width="70%" alt="Logo Académie des Renards" />
+          <a href="#">
+            <img src="assets/LogoAdR_white.png" width="70%" alt="Logo Académie des Renards" />
+          </a>
         </div>
         <ul class="pure-menu-list">
-          <li id="booksLink" class="pure-menu-item pure-menu-selected" onclick="showMenuBooks()">
+          <li id="booksLink" class="pure-menu-item pure-menu-selected">
             <a href="#livres" class="pure-menu-link">Livres</a>
           </li>
-          <li id="infoLink" class="pure-menu-item" onclick="showMenuInfo()">
+          <li id="infoLink" class="pure-menu-item">
             <a href="#info" class="pure-menu-link">À propos</a>
           </li>
         </ul>
@@ -69,7 +71,12 @@
 
   <main id="main" class="container" onclick="deactivateMenu()">
 
-    <nav id="sorting-menu" class="pure-menu pure-menu-horizontal" aria-label="Menu de tri des romans">
+    <!-- Page "Home" -->
+    <div id="home" class="background--classic">
+      Plouf
+    </div>
+
+    <nav id="sorting-menu" class="hidden pure-menu pure-menu-horizontal" aria-label="Menu de tri des romans">
       <ul class="pure-menu-list">
         <li id="sorting-trigger" class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
           <a id="sorting" href="#livres?sorting=latest" class="pure-menu-link">Plus récent</a>
@@ -107,7 +114,7 @@
     </nav>
 
     <!-- Page "Livre" -->
-    <div id="books" class="pure-g">
+    <div id="books" class="hidden pure-g">
 
       <!-- Présentation Le Voeu de Yoko -->
       <div id="le-voeu-de-yoko" data-latest="3" data-date="2021" data-chrono="682" class="book-background background--classic">
