@@ -40,6 +40,8 @@ export function setUpPage() {
         }
       })
     }
+  } else if (hash.includes('#series')) {
+
   } else {
     showMenuHome()
   }

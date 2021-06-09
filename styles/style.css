@@ -346,6 +346,20 @@ h2 {
   background-repeat: no-repeat;
 }
 
+.background--renard {
+  background-image: url("../assets/artwork-statue-chateau-s4.png");
+  background-size: cover;
+  background-position: center left;
+  background-repeat: no-repeat;
+}
+
+.background--lecture {
+  background-image: url("../assets/artwork-lecture-s4.png");
+  background-size: cover;
+  background-position: center left;
+  background-repeat: no-repeat;
+}
+
 .book {
   background-color: rgba(43, 9, 42, 0.5);
 }

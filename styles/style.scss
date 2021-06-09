@@ -88,6 +88,12 @@ h2 {
 .background--ede {
   @include theme($cover: url("../assets/artwork-ede.png"), $position: center left);
 }
+.background--renard {
+  @include theme($cover: url("../assets/artwork-statue-chateau-s4.png"), $position: center left);
+}
+.background--lecture {
+  @include theme($cover: url("../assets/artwork-lecture-s4.png"), $position: center left);
+}
 
 .book {
   background-color: rgba(43, 9, 42, 0.5);
