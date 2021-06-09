@@ -1,11 +1,20 @@
 {
   "name": "site-books",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "start": "parcel serve ./index.html",
+    "build": "parcel build ./index.html"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^7.28.0"
+    "@parcel/packager-raw-url": "2.0.0-nightly.2332",
+    "@parcel/transformer-image": "2.0.0-nightly.2332",
+    "@parcel/transformer-webmanifest": "2.0.0-nightly.2332",
+    "eslint": "^7.28.0",
+    "parcel": "^2.0.0-beta.3.1"
   },
   "repository": {
     "type": "git",

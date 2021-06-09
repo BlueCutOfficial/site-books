@@ -1,3 +1,7 @@
+import styleUrl from "url:../styles/style.css";
+import booksSuzuha from "url:../assets/books/suzuha-extrait.pdf";
+import booksEde from "url:../assets/books/enfant-des-esprits-extrait.pdf";
+
 class AdrExtractButton extends HTMLElement {
   constructor() {
     super()
@@ -7,16 +11,26 @@ class AdrExtractButton extends HTMLElement {
     extractLink.setAttribute('class', 'pure-button pure-button--black')
     extractLink.setAttribute('target', '_blank')
     extractLink.setAttribute('download', this.getAttribute('file'))
-    extractLink.setAttribute('href', `assets/books/${this.getAttribute('file')}`)
+    let bookUrl = this.getBookUrl(this.getAttribute('file'))
+    extractLink.setAttribute('href', bookUrl)
     extractLink.textContent = 'Lire un extrait'
     wrapper.appendChild(extractLink)
 
     var shadow = this.attachShadow({mode: 'closed'})
     shadow.innerHTML = `
       <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-      <link rel="stylesheet" type="text/css" href="styles/style.css">
+      <link rel="stylesheet" type="text/css" href="${styleUrl}">
     `
     shadow.appendChild(wrapper)
+  }
+
+  getBookUrl(fileName) {
+    switch(fileName) {
+    case 'suzuha-extrait.pdf':
+      return booksSuzuha
+    case 'enfant-des-esprits-extrait.pdf':
+      return booksEde
+    }
   }
 }
 

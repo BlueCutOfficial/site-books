@@ -99,52 +99,54 @@ function sortByLatest() {
 }
 
 /**
- * Auto-executed at init, bind events related to page setup
+ * Set up the page depending on the current URL
  */
-(function (window) {
-
-  /**
-   * Set up the page depending on the current URL
-   */
-  function setUpPage() {
-    let hash = window.location.hash
-    if (hash.includes('#info')) {
-      showMenuInfo()
-    } else if (hash.includes('#livres')) {
-      showMenuBooks()
-      if (hash.includes('?')) {
-        let params = hash.split('?').reverse()[0]
-        switch (params) {
-        default:
-          break
-        case 'sorting=date':
-          sortByDate()
-          break
-        case 'sorting=chrono':
-          sortByChrono()
-          break
-        case 'sorting=latest':
-          sortByLatest()
-          break
-        }
+function setUpPage() {
+  let hash = window.location.hash
+  if (hash.includes('#info')) {
+    showMenuInfo()
+  } else if (hash.includes('#livres')) {
+    showMenuBooks()
+    if (hash.includes('?')) {
+      let params = hash.split('?').reverse()[0]
+      switch (params) {
+      default:
+        break
+      case 'sorting=date':
+        sortByDate()
+        break
+      case 'sorting=chrono':
+        sortByChrono()
+        break
+      case 'sorting=latest':
+        sortByLatest()
+        break
       }
     }
   }
+}
 
-  /**
-   * Detection of a URL change reset the page
-   */
-  window.onhashchange = function() {
-    setUpPage()
-  }
+/**
+ * Detection of a URL change reset the page
+ */
+window.onhashchange = function() {
+  setUpPage()
+}
 
-  /**
-   * setUpPage called when DOM is loaded
-   */
-  window.onload = function() {
-    setUpPage()
-  }
-  
+/*
+ * setUpPage called when DOM is loaded
+ */
+window.onload = function() {
+  setUpPage()
+}
 
-}(this, this.document))
-
+/*
+ * Functions defined globaly as they are called in the HTML on click
+ */
+window.toggleMenu = toggleMenu
+window.deactivateMenu = deactivateMenu
+window.sortByChrono = sortByChrono
+window.sortByDate = sortByDate
+window.sortByLatest = sortByLatest
+window.showMenuInfo = showMenuInfo
+window.showMenuBooks = showMenuBooks
