@@ -37,6 +37,7 @@ let deactivateSidebarItem = function(itemId) {
  * Show the home page
  */
 export function showMenuHome() {
+  window.baseURL = 'home'
   deactivateSidebarItem('booksLink')
   deactivateSidebarItem('infoLink')
   deactivateSidebarItem('seriesLink')
@@ -49,6 +50,7 @@ export function showMenuHome() {
  * Show the author page
  */
 export function showMenuInfo() {
+  window.baseURL = 'info'
   deactivateSidebarItem('booksLink')
   deactivateSidebarItem('seriesLink')
   activateSidebarItem('infoLink')
@@ -61,6 +63,7 @@ export function showMenuInfo() {
  * Show the book page
  */
 export function showMenuBooks() {
+  window.baseURL = 'livres'
   deactivateSidebarItem('infoLink')
   deactivateSidebarItem('seriesLink')
   activateSidebarItem('booksLink')
@@ -73,6 +76,7 @@ export function showMenuBooks() {
  * Show the series page
  */
 export function showMenuSeries() {
+  window.baseURL = 'series'
   deactivateSidebarItem('infoLink')
   deactivateSidebarItem('booksLink')
   activateSidebarItem('seriesLink')
