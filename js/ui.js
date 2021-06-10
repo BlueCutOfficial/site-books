@@ -1,5 +1,7 @@
 import { setSorting, setUpPage } from './utils/setup-page'
-import { deactivateMenu, toggleMenu } from './utils/sidebar'
+import { deactivateMenu, toggleMenu, showMenu } from './utils/sidebar'
+
+window.selectors = {}
 
 /**
  * Detection of a URL change reset the page
@@ -19,5 +21,6 @@ window.onload = function() {
  * Methods bound to DOM elements need to be assigned globally 
  */
 window.setSorting = setSorting
+window.showMenu = showMenu
 window.deactivateMenu = deactivateMenu
 window.toggleMenu = toggleMenu

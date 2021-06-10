@@ -42,14 +42,19 @@
     <nav class="pure-menu centered" aria-label="Menu principal">
       <div>
         <div class="image-header-side">
-          <img src="assets/LogoAdR_white.png" width="70%" alt="Logo Académie des Renards" />
+          <a href="#">
+            <img src="assets/LogoAdR_white.png" width="70%" alt="Logo Académie des Renards" />
+          </a>
         </div>
         <ul class="pure-menu-list">
-          <li id="booksLink" class="pure-menu-item pure-menu-selected" onclick="showMenuBooks()">
-            <a href="#livres" class="pure-menu-link">Livres</a>
+          <li id="booksLink" class="pure-menu-item">
+            <a href="#livres" class="pure-menu-link">Les livres</a>
           </li>
-          <li id="infoLink" class="pure-menu-item" onclick="showMenuInfo()">
-            <a href="#info" class="pure-menu-link">À propos</a>
+          <li id="infoLink" class="pure-menu-item">
+            <a href="#info" class="pure-menu-link">L'auteure</a>
+          </li>
+          <li id="seriesLink" class="pure-menu-item">
+            <a href="#series" class="pure-menu-link">La série</a>
           </li>
         </ul>
       </div>
@@ -69,7 +74,29 @@
 
   <main id="main" class="container" onclick="deactivateMenu()">
 
-    <nav id="sorting-menu" class="pure-menu pure-menu-horizontal" aria-label="Menu de tri des romans">
+    <!-- Page "Home" -->
+    <div id="home" class="pure-g">
+      <div class="book-background background--renard">
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
+          <div class="book padding--large">
+            <h1>Une fantasy pour toutes et tous</h1>
+            <br />
+            <h2>* Pour tous les budgets</h2>
+            <p>Pour que le plaisir de lire n'ait pas de prix, les livres numériques de l'Académie des Renards sont disponibles gratuitement sous license CC BY-NC-ND. Chaque lecteur peut choisir de soutenir financièrement le projet.</p>
+            <h2>* Pour tous les goûts</h2>
+            <p>Chaque histoire possède sa propre ambiance et son propre style narratif. Le monde de l'Académie des Renards se découvre en plusieurs lieux et plusieurs époques.</p>
+            <h2>* Et pour les oreilles ?</h2>
+            <p>Les livres numériques de l'Académie des Renards ne sont pas encore disponibles en livres audio. Ce projet constitue le prochain cap pour l'académie en parallèle de la publication des romans.</p>
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-6-24">
+        </div>
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-11-24 pure-u-lg-8-24">
+        </div>
+      </div>
+    </div>
+
+    <nav id="sorting-menu" class="hidden pure-menu pure-menu-horizontal" aria-label="Menu de tri des romans">
       <ul class="pure-menu-list">
         <li id="sorting-trigger" class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
           <a id="sorting" href="#livres?sorting=latest" class="pure-menu-link">Plus récent</a>
@@ -77,8 +104,7 @@
             <li class="pure-menu-item">
               <a id="sorting-latest" 
                 href="#livres?sorting=latest" 
-                class="pure-menu-link" 
-                onclick="setSorting('latest')"
+                class="pure-menu-link"
               >
                 Plus récent
               </a>
@@ -86,8 +112,7 @@
             <li class="pure-menu-item">
               <a id="sorting-date" 
                 href="#livres?sorting=date" 
-                class="pure-menu-link" 
-                onclick="setSorting('date')"
+                class="pure-menu-link"
               >
                 Date de publication
               </a>
@@ -95,8 +120,7 @@
             <li class="pure-menu-item">
               <a id="sorting-chrono" 
                 href="#livres?sorting=chrono" 
-                class="pure-menu-link" 
-                onclick="setSorting('chrono')"
+                class="pure-menu-link"
               >
                 Ordre chronologique
               </a>
@@ -107,7 +131,7 @@
     </nav>
 
     <!-- Page "Livre" -->
-    <div id="books" class="pure-g">
+    <div id="books" class="hidden pure-g">
 
       <!-- Présentation Le Voeu de Yoko -->
       <div id="le-voeu-de-yoko" data-latest="3" data-date="2021" data-chrono="682" class="book-background background--classic">
@@ -187,54 +211,48 @@
 
     </div>
 
-    <!-- Page "Info" -->
-    <div id="info" class="hidden background--classic">
 
-      <div class="info-item">
-        <div class="title padding--small">
-          <h2>Les romans</h2>
+    <!-- Page "Auteure" -->
+    <div id="info" class="hidden pure-g">
+      <div class="book-background background--lecture">
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
+          <div class="book padding--large">
+            <p>Je m'appelle Marine Dunstetter. Je suis une personne à l'équilibre, un peu rêveuse mais pragmatique tout de même, un peu artiste mais scientifique tout de même. Développeuse de métier, graphiste à mes heures perdues, la lecture et l'écriture sont pour moi des moments de détente.</p> 
+            <p>Après une enfance plongée dans les romans fantasy, c'est sans doute le réalisateur Hayao Miyazaki qui m'a donné le goût des histoires grises et simples, belles par leur fil épuré et leurs personnages attachants, occupés à bien autre chose qu'appartenir à un camp.</p>
+            <p>Aussi loin que je me souvienne, j'ai toujours tenu un crayon, pour écrire ou pour dessiner. C'est en 2016, en voyant le quart de siècle approcher, que je me suis apperçue n'avoir pas encore réalisé mon rêve de publier un roman. Je me suis jetée dans l'écriture de Suzuha, et depuis, je ne peux plus m'arrêter. Pour mes publications, j'ai choisi l'auto-édition.</p>
+            <h1>L'auto-édition c'est...</h1>
+            <h2>* La liberté de sortir des sentiers battus</h2>
+            <p>L'auto-édition, c'est raconter l'histoire qu'on a envie de raconter, c'est partager ce qu'on a besoin de partager, c'est pouvoir se libérer des formats et des attentes, c'est expérimenter de nouveaux modèles sans pression, là où une maison d'édition doit vendre pour assurer sa survie.</p>
+            <h2>* La fierté de mener son projet jusqu'au bout</h2>
+            <p>L'auto-édition permet de mettre en oeuvre toutes les compétences que l'on possède et d'en acquérir de nouvelles, de l'écriture jusqu'à la distribution, en passant par la couverture, la génération des fichers numériques et la promotion.</p>
+            <h2>* Un choix</h2>
+            <p>J'ai choisi l'auto-édition, car elle est en adéquation avec mes buts. Je ne recherche pas d'éditeur. Comme moi, de nombreux auteurs se sont détournés de l'édition classique pour se lancer dans l'aventure. Nous fournissons un travail de qualité, mais peu mis en avant dans le monde littéraire d'aujourd'hui. Pour nous découvrir, il vous faut nous chercher, sur les réseaux sociaux et dans les salons.</p>
+          </div>
         </div>
-        <div class="padding--large"> 
-
-          <p><em>Les Renards</em></p>
-          <p>L'Académie des Renards est une série de romans fantasy auto-éditée disponible uniquement au format numérique. La série compte à ce jour deux romans publiés et un troisième en cours d'écriture.</p>
-          
-          <p><em>Les Renards n'ont qu'un terrier</em></p>
-          <p>Les différentes histoires se déroulent dans un univers unique. Elles peuvent se lire dans n'importe quel ordre, et il arrive d'y croiser des visages familiers de l'une à l'autre. À travers leurs pages, vous partagerez les aventures de nombreuses âmes ayant fréquenté la mystérieuse académie de Tobias Fènnel, et découvrirez le monde qui s'étend au-delà de ses murs.</p>
-
-          <p><em>Les Renards aiment expérimenter</em></p>
-          <p>Les histoires de l'académie ne se distinguent pas seulement par le lieu et le temps en lesquels elles prennent place, elles possèdent aussi leur propre style. Contrairement aux sagas fantasy classiques, chaque narration possède son propre temps, son propre rythme, sa propre ambiance. Ainsi, selon vos goûts et votre âge, certaines histoires pourraient vous parler davantage que d'autres.</p>
-
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-6-24">
         </div>
-      </div>
-
-      <div class="info-item">
-        <div class="title padding--small">
-          <h2>L'auteure</h2>
-        </div>
-        <div class="padding--large">
-          <p>Je m'appelle Marine Dunstetter. Je suis une personne à l'équilibre, un peu rêveuse mais pragmatique tout de même, un peu artiste mais scientifique tout de même. Développeuse de métier, graphiste à mes heures perdues, la lecture et l'écriture sont pour moi des passe-temps sans prétention et des moments de détente.</p> 
-          <p>Après une enfance plongée dans les romans fantasy, c'est sans doute le réalisateur Hayao Miyazaki qui m'a donné le goût des histoires grises et simples, belles par leur fil épuré et leurs personnages attachants, occupés à bien autre chose qu'appartenir à un camp.</p>
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-11-24 pure-u-lg-8-24">
         </div>
       </div>
+    </div>
 
-      <div class="info-item">
-        <div class="title padding--small">
-          <h2>L'auto-édition</h2>
+    <!-- Page "Série" -->
+    <div id="series" class="hidden pure-g">
+      <div class="book-background background--classic">
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
+          <div class="book padding--large">
+            <p>L'Académie des Renards est une série de romans fantasy auto-éditée disponible uniquement au format numérique. La série compte à ce jour deux romans publiés et un troisième en cours d'écriture.</p>
+            <h2>* Les Renards n'ont qu'un terrier</h2>
+            <p>Les différentes histoires se déroulent dans un univers unique. Elles peuvent se lire dans n'importe quel ordre, et il arrive d'y croiser des visages familiers de l'une à l'autre. À travers leurs pages, vous partagerez les aventures de nombreuses âmes ayant fréquenté la mystérieuse académie de Tobias Fènnel, et découvrirez le monde qui s'étend au-delà de ses murs.</p>
+            <h2>* Les Renards vivent avec leur temps</h2>
+            <p>La vraie magie de la fantasy, c'est qu'elle permet de concevoir un univers au service du propos. La flexibilité du genre permet de porter les thèmes actuels et de décrire le monde d'aujourd'hui à travers les plus belles métaphores qui soient.</p>
+            <h2>* Les Renards aiment expérimenter</h2>
+            <p>Les histoires de l'académie ne se distinguent pas seulement par le lieu et l'époque en lesquels elles prennent place, elles possèdent aussi leur propre style. Contrairement aux sagas fantasy classiques, chaque narration possède son propre temps, son propre rythme, sa propre ambiance. Ainsi, selon vos goûts et votre âge, certaines histoires pourraient vous parler davantage que d'autres.</p>
+          </div>
         </div>
-        <div class="padding--large"> 
-
-          <p>L'auto-édition c'est...</p>
-
-          <p><em>La liberté d'écrire pour soi</em></p>
-          <p>L'auto-édition, c'est raconter l'histoire qu'on a envie de raconter, faire partager au lecteur ce qu'on a besoin de partager ; c'est la possibilité de se libérer des formats et des attentes.</p>
-          
-          <p><em>La fierté de mener son projet jusqu'au bout</em></p>
-          <p>L'auto-édition permet de mettre en oeuvre toutes les compétences que l'on possède et d'en acquérir de nouvelles, de l'écriture jusqu'à la distribution, en passant par la couverture, la génération des fichers numériques et la promotion.</p>
-
-          <p><em>Un choix</em></p>
-          <p>J'ai choisi l'auto-édition. L'Enfant des Esprits n'a jamais été envoyé à un éditeur. Comme moi, de nombreux auteurs se sont détournés de l'édition classique pour se lancer dans l'aventure. Nous fournissons un travail de qualité, mais peu mis en avant dans le monde littéraire d'aujourd'hui. Pour nous découvrir, il vous faut nous chercher, sur les réseaux sociaux et dans les salons.</p>
-
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-6-24">
+        </div>
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-11-24 pure-u-lg-8-24">
         </div>
       </div>
 

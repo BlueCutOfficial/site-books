@@ -25,6 +25,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   letter-spacing: 0;
+  line-height: 1.4rem;
 }
 a {
   color: variables.$primary-text-color;
@@ -87,6 +88,12 @@ h2 {
 }
 .background--ede {
   @include theme($cover: url("../assets/artwork-ede.png"), $position: center left);
+}
+.background--renard {
+  @include theme($cover: url("../assets/artwork-statue-chateau-s4.png"), $position: center left);
+}
+.background--lecture {
+  @include theme($cover: url("../assets/artwork-lecture-s4.png"), $position: center left);
 }
 
 .book {

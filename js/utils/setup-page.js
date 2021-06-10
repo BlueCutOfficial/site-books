@@ -1,5 +1,5 @@
 import { select, getURL } from './generics'
-import { showMenuInfo, showMenuBooks } from './sidebar'
+import { showMenuInfo, showMenuBooks, showMenuHome, showMenuSeries } from './sidebar'
 import { sortByDate, sortByChrono, sortByLatest } from './header'
 
 /**
@@ -29,16 +29,23 @@ export function setUpPage() {
         default:
           break
         case 'sorting=date':
+          setSorting('date')
           sortByDate()
           break
         case 'sorting=chrono':
+          setSorting('chrono')
           sortByChrono()
           break
         case 'sorting=latest':
+          setSorting('latest')
           sortByLatest()
           break
         }
       })
     }
+  } else if (hash.includes('#series')) {
+    showMenuSeries()
+  } else {
+    showMenuHome()
   }
 }
