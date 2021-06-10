@@ -18,27 +18,41 @@ export function toggleMenu() {
 }
 
 /**
+ * Show the item in parameter active in the sidebar
+ */
+let activateSidebarItem = function(itemId) {
+  select(itemId).classList.add('pure-menu-selected')
+  select(itemId).children[0].setAttribute('aria-current', 'page')
+}
+
+/**
+ * Show the item in parameter inactive in the sidebar
+ */
+let deactivateSidebarItem = function(itemId) {
+  select(itemId).classList.remove('pure-menu-selected')
+  select(itemId).children[0].removeAttribute('aria-current')
+}
+
+/**
  * Show the home page
  */
 export function showMenuHome() {
-  select('booksLink').classList.remove('pure-menu-selected')
-  select('booksLink').children[0].removeAttribute('aria-current')
-  select('infoLink').classList.add('pure-menu-selected')
-  select('infoLink').children[0].setAttribute('aria-current', 'page')
+  deactivateSidebarItem('booksLink')
+  deactivateSidebarItem('infoLink')
+  deactivateSidebarItem('seriesLink')
   toggleClass(['home'], 'hidden', false)
-  toggleClass(['books', 'sorting-menu', 'info'], 'hidden', true)
+  toggleClass(['books', 'sorting-menu', 'info', 'series'], 'hidden', true)
   deactivateMenu()
 }
 
 /**
- * Show the info page
+ * Show the author page
  */
 export function showMenuInfo() {
-  select('booksLink').classList.remove('pure-menu-selected')
-  select('booksLink').children[0].removeAttribute('aria-current')
-  select('infoLink').classList.add('pure-menu-selected')
-  select('infoLink').children[0].setAttribute('aria-current', 'page')
-  toggleClass(['books', 'sorting-menu', 'home'], 'hidden', true)
+  deactivateSidebarItem('booksLink')
+  deactivateSidebarItem('seriesLink')
+  activateSidebarItem('infoLink')
+  toggleClass(['books', 'sorting-menu', 'home', 'series'], 'hidden', true)
   toggleClass(['info'], 'hidden', false)
   deactivateMenu()
 }
@@ -47,11 +61,22 @@ export function showMenuInfo() {
  * Show the book page
  */
 export function showMenuBooks() {
-  select('infoLink').classList.remove('pure-menu-selected')
-  select('infoLink').children[0].removeAttribute('aria-current')
-  select('booksLink').classList.add('pure-menu-selected')
-  select('booksLink').children[0].setAttribute('aria-current', 'page')
+  deactivateSidebarItem('infoLink')
+  deactivateSidebarItem('seriesLink')
+  activateSidebarItem('booksLink')
   toggleClass(['books', 'sorting-menu'], 'hidden', false)
-  toggleClass(['info', 'home'], 'hidden', true)
+  toggleClass(['info', 'home', 'series'], 'hidden', true)
+  deactivateMenu()
+}
+
+/**
+ * Show the series page
+ */
+export function showMenuSeries() {
+  deactivateSidebarItem('infoLink')
+  deactivateSidebarItem('booksLink')
+  activateSidebarItem('seriesLink')
+  toggleClass(['series'], 'hidden', false)
+  toggleClass(['home', 'books', 'sorting-menu', 'info'], 'hidden', true)
   deactivateMenu()
 }
