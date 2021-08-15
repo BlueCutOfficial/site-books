@@ -17,6 +17,10 @@ export function setSorting(param) {
  */
 export function setUpPage() {
   let hash = window.location.hash
+  if (hash.includes('#menu')) {
+    // Do nothing if the burger icon is clicked
+    return
+  }
   if (hash.includes('#info')) {
     showMenuInfo()
   } else if (hash.includes('#livres')) {
