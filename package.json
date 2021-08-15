@@ -2,8 +2,9 @@
   "name": "site-books",
   "scripts": {
     "lint": "eslint .",
-    "start": "rm -rf .parcel-cache &; parcel serve ./index.html",
-    "build": "rm -rf dist &; parcel build ./index.html"
+    "start": "rm -rf .parcel-cache && parcel serve ./index.html",
+    "build-css": "sass styles/style.scss styles/style.css",
+    "build": "rm -rf dist && yarn build-css && parcel build ./index.html"
   },
   "browserslist": [
     "defaults"
