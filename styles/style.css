@@ -351,6 +351,13 @@ h2 {
   background-repeat: no-repeat;
 }
 
+.background--vdy {
+  background-image: url("../assets/cover-renaissance-s4-1024.png");
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+
 .background--renard {
   background-image: url("../assets/artwork-statue-chateau-s4.png");
   background-size: cover;
