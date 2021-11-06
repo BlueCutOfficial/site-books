@@ -152,3 +152,9 @@ h2 {
 .hidden {
   display: none;
 }
+
+/** PA button **/
+.pure-button.pa {
+  background-color: #d14b52;
+  color: variables.$primary-text-color;
+}

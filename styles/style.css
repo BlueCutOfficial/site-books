@@ -424,4 +424,10 @@ h2 {
   display: none;
 }
 
+/** PA button **/
+.pure-button.pa {
+  background-color: #d14b52;
+  color: #eee;
+}
+
 /*# sourceMappingURL=style.css.map */
