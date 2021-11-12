@@ -36,11 +36,11 @@
 }
 .pure-menu li a:focus {
   text-transform: none;
-  background: #7c3c7b;
+  background: #6f5aa1;
 }
 .pure-menu .pure-menu-selected {
   text-transform: none;
-  background: #7c3c7b;
+  background: #6f5aa1;
 }
 .pure-menu .pure-menu-selected .pure-menu-link:visited {
   color: #eee;
@@ -373,7 +373,7 @@ h2 {
 }
 
 .book {
-  background-color: rgba(43, 9, 42, 0.5);
+  background-color: #4538647a;
 }
 
 .quote {
@@ -403,7 +403,7 @@ h2 {
   margin-top: 0px;
 }
 #info .title {
-  background-color: rgba(124, 60, 123, 0.5);
+  background-color: #4538647a;
 }
 #info .title h2 {
   margin: 0px;
