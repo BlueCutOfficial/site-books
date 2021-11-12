@@ -68,6 +68,12 @@ h2 {
 .padding--large {
   padding: 40px;
 }
+.inline {
+  display: inline-block;
+}
+.vertical-center {
+  vertical-align: super;
+}
 
 /** Page livre **/
 .book-background {
@@ -151,6 +157,15 @@ h2 {
 /* Cache des pages */
 .hidden {
   display: none;
+}
+
+/** Primary button **/
+.primary-button {
+  background-color: variables.$second-color-faded;
+  font-weight: bold;
+  &:hover, &:focus {
+    background-color: variables.$second-color; 
+  }
 }
 
 /** PA button **/

@@ -325,6 +325,14 @@ h2 {
   padding: 40px;
 }
 
+.inline {
+  display: inline-block;
+}
+
+.vertical-center {
+  vertical-align: super;
+}
+
 /** Page livre **/
 .book-background {
   width: 100%;
@@ -422,6 +430,15 @@ h2 {
 /* Cache des pages */
 .hidden {
   display: none;
+}
+
+/** Primary button **/
+.primary-button {
+  background-color: #4538647a;
+  font-weight: bold;
+}
+.primary-button:hover, .primary-button:focus {
+  background-color: #6f5aa1;
 }
 
 /** PA button **/
