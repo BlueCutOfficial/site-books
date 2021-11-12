@@ -5,18 +5,16 @@ class AdrShopButton extends HTMLElement {
   constructor() {
     super()
     var wrapper = document.createElement('div')
-
-    var gumroadLink = document.createElement('a')
-    gumroadLink.setAttribute('class', 'pure-button pure-button--black download-button')
-    gumroadLink.setAttribute('target', '_blank')
-    gumroadLink.setAttribute('href', this.getAttribute('link'))
-    wrapper.appendChild(gumroadLink)
-
-    var gumroadImg = document.createElement('img')
-    gumroadImg.setAttribute('src', imageUrl)
-    gumroadImg.setAttribute('alt', `Télécharger ${this.getAttribute('title')}`)
-    gumroadLink.appendChild(gumroadImg)
-
+    wrapper.innerHTML = `
+      <a class="pure-button pure-button--black download-button"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="${this.getAttribute('link')}">
+        <img src="${imageUrl}"
+          alt="Télécharger ${this.getAttribute('title')}"
+        />
+      </a>
+    `
     var shadow = this.attachShadow({mode: 'closed'})
     shadow.innerHTML = `
       <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
