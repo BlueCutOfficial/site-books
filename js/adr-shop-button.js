@@ -1,7 +1,7 @@
 import styleUrl from "url:../styles/style.css";
 import imageUrl from "url:../assets/vente.png";
 
-class AdrGumroadButton extends HTMLElement {
+class AdrShopButton extends HTMLElement {
   constructor() {
     super()
     var wrapper = document.createElement('div')
@@ -26,4 +26,4 @@ class AdrGumroadButton extends HTMLElement {
   }
 }
 
-customElements.define('adr-gumroad-button', AdrGumroadButton)
+customElements.define('adr-shop-button', AdrShopButton)
