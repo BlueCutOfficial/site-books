@@ -89,6 +89,9 @@ h2 {
 .background--ede {
   @include theme($cover: url("../assets/artwork-ede.png"), $position: center left);
 }
+.background--vdy {
+  @include theme($cover: url("../assets/cover-renaissance-s4-1024.png"), $position: top right);
+}
 .background--renard {
   @include theme($cover: url("../assets/artwork-statue-chateau-s4.png"), $position: center left);
 }
@@ -148,4 +151,10 @@ h2 {
 /* Cache des pages */
 .hidden {
   display: none;
+}
+
+/** PA button **/
+.pure-button.pa {
+  background-color: #d14b52;
+  color: variables.$primary-text-color;
 }
