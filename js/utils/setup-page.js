@@ -1,5 +1,5 @@
 import { select, getURL } from './generics'
-import { showMenuInfo, showMenuBooks, showMenuHome, showMenuSeries } from './sidebar'
+import { showMenu } from './sidebar'
 import { sortByDate, sortByChrono, sortByLatest } from './header'
 
 /**
@@ -22,9 +22,9 @@ export function setUpPage() {
     return
   }
   if (hash.includes('#info')) {
-    showMenuInfo()
+    showMenu('info')
   } else if (hash.includes('#livres')) {
-    showMenuBooks()
+    showMenu('livres')
     if (hash.includes('?')) {
       let strParams = hash.split('?').reverse()[0]
       let params = strParams.split('&') || strParams
@@ -48,8 +48,10 @@ export function setUpPage() {
       })
     }
   } else if (hash.includes('#series')) {
-    showMenuSeries()
+    showMenu('series')
+  } else if (hash.includes('#que-choisir')) {
+    showMenu('whattoread')
   } else {
-    showMenuHome()
+    showMenu('home')
   }
 }
