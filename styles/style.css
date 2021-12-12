@@ -190,7 +190,7 @@ small screens.
   display: inline-block;
 }
 .rs-link.thin {
-  padding-top: 0px;
+  padding-top: 8px;
   padding-bottom: 0px;
 }
 
