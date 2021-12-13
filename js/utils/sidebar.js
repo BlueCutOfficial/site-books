@@ -38,27 +38,27 @@ const menusConfig = {
     itemsToActivate: [],
     itemsToDeactivate: ['booksLink', 'infoLink', 'seriesLink'],
     selectorsToShow: ['home'],
-    selectorsToHide: ['books', 'sorting-menu', 'info', 'series']
+    selectorsToHide: ['books', 'sorting-menu', 'info', 'series', 'whattoread']
   }, 
   info: {
     itemsToActivate: ['infoLink'],
     itemsToDeactivate: ['booksLink', 'seriesLink'],
     selectorsToShow: ['info'],
-    selectorsToHide: ['books', 'sorting-menu', 'home', 'series']
+    selectorsToHide: ['books', 'sorting-menu', 'home', 'series', 'whattoread']
   },
   livres: {
     itemsToActivate: ['booksLink'],
     itemsToDeactivate: ['infoLink', 'seriesLink'],
     selectorsToShow: ['books', 'sorting-menu'],
-    selectorsToHide: ['info', 'home', 'series']
+    selectorsToHide: ['info', 'home', 'series', 'whattoread']
   }, 
   series: {
     itemsToActivate: ['seriesLink'],
     itemsToDeactivate: ['infoLink', 'booksLink'],
     selectorsToShow: ['series'],
-    selectorsToHide: ['home', 'books', 'sorting-menu', 'info']
+    selectorsToHide: ['home', 'books', 'sorting-menu', 'info', 'whattoread']
   },
-  whattoread: {
+  'que-choisir': {
     itemsToActivate: [],
     itemsToDeactivate: ['infoLink', 'booksLink', 'seriesLink'],
     selectorsToShow: ['whattoread'],

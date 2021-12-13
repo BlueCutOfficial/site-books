@@ -50,7 +50,7 @@ export function setUpPage() {
   } else if (hash.includes('#series')) {
     showMenu('series')
   } else if (hash.includes('#que-choisir')) {
-    showMenu('whattoread')
+    showMenu('que-choisir')
   } else {
     showMenu('home')
   }
