@@ -26,6 +26,10 @@ class AdrQuestion extends HTMLElement {
     }
   }
 
+  disconnectedCallback() {
+    this.removeQuestionListeners()
+  }
+
   constructor() {
     super()
     this.wrapper = document.createElement('div')

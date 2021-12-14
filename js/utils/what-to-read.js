@@ -29,19 +29,11 @@ const questions = [{
 export function setupQuestions() {
   // Set up the list of questions in a random order
   window.questions = questions.sort(() => Math.random() - 0.5);
-  // Initialize the selected answer and the temporary score 
-  window.selectedAnswer = _getQuestion().choices[0].id
-  _computeTmpScore()
-  // Pass the question and anwser to the question component
-  showQuestion()
-}
-
-export function nextQuestion() {
-  let currentQuestion = _getQuestion()
-  if (currentQuestion) {
-    window.questionIndex++
-  }
-  return _getQuestion()
+  // Initialize the current question
+  _showQuestion()
+  // Bind the next question function to the next question button's click
+  let nextQuestionButton = select('wtr-button-next')
+  nextQuestionButton.addEventListener('click', _nextQuestion)
 }
 
 export function updateAnswer(value) {
@@ -75,10 +67,33 @@ function _computeTmpScore() {
 /*
  * Update the question component attributes to display the current question.
  */
-function showQuestion() {
+function _showQuestion() {
+  // Initialize the selected answer and the temporary score 
+  window.selectedAnswer = _getQuestion().choices[0].id
+  _computeTmpScore()
   // Select the question component in the DOM
   let adrQuestionElement = select('wtr-question')
   // It needs the question structure and the selected answer
   adrQuestionElement.setAttribute('question', JSON.stringify(_getQuestion()))
   adrQuestionElement.setAttribute('answer', window.selectedAnswer)
+}
+
+function _nextQuestion() {
+  // Finalize current score
+  Object.assign(window.score, { ...window.tmpScore })
+  // Show next question
+  window.questionIndex++
+  if (_getQuestion()) {
+    _showQuestion()
+  }
+  // If the last question is reached, change the button text, then hide all
+  if (window.questionIndex === window.questions.length-1) {
+    let nextQuestionButton = select('wtr-button-next')
+    nextQuestionButton.innerHTML = 'Valider'
+  } else if (window.questionIndex === window.questions.length) {
+    let nextQuestionButton = select('wtr-button-next')
+    nextQuestionButton.setAttribute('hidden', true)
+    let adrQuestionElement = select('wtr-question')
+    adrQuestionElement.setAttribute('hidden', true)
+  }
 }
