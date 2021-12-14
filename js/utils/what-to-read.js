@@ -14,7 +14,7 @@ const questions = [{
   }]
 }, {
   id: 'pace',
-  label: 'Quel rythme de lecture ? Êtes-vous dans l\'action ou dans la contemplation ?',
+  label: 'Quel rythme de lecture recherchez-vous ? Êtes-vous dans l\'action ou dans la contemplation ?',
   choices: [{
     id: 'fast',
     label: 'J\'aime quand les événements s\'enchainent rapidement.',
@@ -23,6 +23,50 @@ const questions = [{
     id: 'slow',
     label: 'Je veux m\'imprégner de l\'ambiance avec de belles descriptions',
     score: { suzuha: 1, ede: 1, vdy: 3 }
+  }]
+}, {
+  id: 'time',
+  label: 'Quel temps de narration préférez-vous ?',
+  choices: [{
+    id: 'present',
+    label: 'Présent',
+    score: { suzuha: 3, ede: 3, vdy: 0 }
+  }, {
+    id: 'past',
+    label: 'Passé',
+    score: { suzuha: 0, ede: 0, vdy: 3 }
+  }]
+}, {
+  id: 'affinity',
+  label: 'Y a-t-il une magie du cercle élémentaire de la magie qui vous inspire particulièrement ?',
+  choices: [{
+    id: 'water',
+    label: 'Eau',
+    score: { suzuha: 4, ede: 2, vdy: 0 }
+  }, {
+    id: 'light',
+    label: 'Lumière',
+    score: { suzuha: 0, ede: 4, vdy: 4 }
+  }, {
+    id: 'darkness',
+    label: 'Ombre',
+    score: { suzuha: 0, ede: 4, vdy: 0 }
+  }]
+}, {
+  id: 'theme',
+  label: 'Parmi les thématiques suivantes, laquelle vous parle le plus ?',
+  choices: [{
+    id: 'feminism',
+    label: 'Féminisme',
+    score: { suzuha: 4, ede: 1, vdy: 1 }
+  }, {
+    id: 'journey',
+    label: 'Voyage',
+    score: { suzuha: 2, ede: 4, vdy: 2 }
+  }, {
+    id: 'culture-shock',
+    label: 'Choc des cultures',
+    score: { suzuha: 2, ede: 2, vdy: 4 }
   }]
 }]
 
