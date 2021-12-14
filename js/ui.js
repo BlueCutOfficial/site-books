@@ -16,7 +16,7 @@ window.onhashchange = function() {
  */
 window.onload = function() {
   setUpPage()
-  window.questions = setupQuestions()
+  setupQuestions()
 }
 
 /**
@@ -27,5 +27,7 @@ window.deactivateMenu = deactivateMenu
 window.toggleMenu = toggleMenu
 
 window.score = { suzuha: 0, ede: 0, vdy: 0 }
+window.tmpScore = { suzuha: 0, ede: 0, vdy: 0 }
+window.selectedAnswer = undefined
 window.questions = []
 window.questionIndex = 0

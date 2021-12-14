@@ -1,3 +1,5 @@
+import { select } from './generics'
+
 const questions = [{
   id: 'size',
   label: 'Plutôt roman court ou roman plus long ?',
@@ -25,13 +27,44 @@ const questions = [{
 }]
 
 export function setupQuestions() {
-  return questions.sort(() => Math.random() - 0.5);
+  // Set up the list of questions in a random order
+  window.questions = questions.sort(() => Math.random() - 0.5);
+  // Initialize the selected answer and the temporary score 
+  window.selectedAnswer = getQuestion().choices[0].id
+  computeTmpScore()
+  // Pass the question and anwser to the question component
+  showQuestion()
 }
 
-export function getQuestion() {
+function getQuestion() {
   return window.questionIndex < window.questions.length 
     ? window.questions[window.questionIndex]
     : undefined
+}
+
+/*
+ * Update the temporay score "window.tmpScore".
+ * It is the sum of the actual score and the current question score.
+ * It should be updated each time the selected answer changes.
+ */
+function computeTmpScore() {
+  let questionScore = getQuestion().choices.find(({ id }) => {
+    return id === window.selectedAnswer
+  }).score
+  for (let [key] of Object.entries(window.tmpScore)) {
+    window.tmpScore[key] = window.score[key] + questionScore[key]
+  }
+}
+
+/*
+ * Update the question component attributes to display the current question.
+ */
+function showQuestion() {
+  // Select the question component in the DOM
+  let adrQuestionElement = select('wtr-question')
+  // It needs the question structure and the selected answer
+  adrQuestionElement.setAttribute('question', JSON.stringify(getQuestion()))
+  adrQuestionElement.setAttribute('answer', window.selectedAnswer)
 }
 
 export function nextQuestion() {
