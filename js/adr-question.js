@@ -4,26 +4,20 @@ import { updateAnswer } from './utils/what-to-read';
 class AdrQuestion extends HTMLElement {
 
   static get observedAttributes() {
-    return ['question', 'answer'];
+    return ['question']
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
-    switch (name) {
-      case 'question':
-        // Remove the listeners of the old question
-        if (oldValue !== null) {
-          this.removeQuestionListeners()
-        }
-        // Get the new question structure from the stringified attribute
-        let question = JSON.parse(newValue)
-        // Show the new question in the DOM
-        this.showQuestion(question)
-        // Add the listeners of the new question
-        this.addQuestionListeners()
-        break;
-      case 'answer':
-        break;
+  attributeChangedCallback(_, oldValue, newValue) {
+    // Remove the listeners of the old question
+    if (oldValue !== null) {
+      this.removeQuestionListeners()
     }
+    // Get the new question structure from the stringified attribute
+    let question = JSON.parse(newValue)
+    // Show the new question in the DOM
+    this.showQuestion(question)
+    // Add the listeners of the new question
+    this.addQuestionListeners()
   }
 
   disconnectedCallback() {

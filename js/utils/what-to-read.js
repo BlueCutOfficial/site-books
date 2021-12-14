@@ -56,12 +56,16 @@ function _getQuestion() {
  * It should be updated each time the selected answer changes.
  */
 function _computeTmpScore() {
+  // Compute the temporary score from actual score and current question
   let questionScore = _getQuestion().choices.find(({ id }) => {
     return id === window.selectedAnswer
   }).score
   for (let [key] of Object.entries(window.tmpScore)) {
     window.tmpScore[key] = window.score[key] + questionScore[key]
   }
+  // Update the result list order
+  let resultListElement = select('wtr-result')
+  resultListElement.setAttribute('score', JSON.stringify(window.tmpScore))
 }
 
 /*
@@ -73,9 +77,8 @@ function _showQuestion() {
   _computeTmpScore()
   // Select the question component in the DOM
   let adrQuestionElement = select('wtr-question')
-  // It needs the question structure and the selected answer
+  // It needs the question structure
   adrQuestionElement.setAttribute('question', JSON.stringify(_getQuestion()))
-  adrQuestionElement.setAttribute('answer', window.selectedAnswer)
 }
 
 function _nextQuestion() {
