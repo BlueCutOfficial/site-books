@@ -30,13 +30,29 @@ export function setupQuestions() {
   // Set up the list of questions in a random order
   window.questions = questions.sort(() => Math.random() - 0.5);
   // Initialize the selected answer and the temporary score 
-  window.selectedAnswer = getQuestion().choices[0].id
-  computeTmpScore()
+  window.selectedAnswer = _getQuestion().choices[0].id
+  _computeTmpScore()
   // Pass the question and anwser to the question component
   showQuestion()
 }
 
-function getQuestion() {
+export function nextQuestion() {
+  let currentQuestion = _getQuestion()
+  if (currentQuestion) {
+    window.questionIndex++
+  }
+  return _getQuestion()
+}
+
+export function updateAnswer(value) {
+  window.selectedAnswer = value 
+  _computeTmpScore()
+}
+
+/*
+ * Return the structure of the current question, based on "window.questionIndex"
+ */
+function _getQuestion() {
   return window.questionIndex < window.questions.length 
     ? window.questions[window.questionIndex]
     : undefined
@@ -47,8 +63,8 @@ function getQuestion() {
  * It is the sum of the actual score and the current question score.
  * It should be updated each time the selected answer changes.
  */
-function computeTmpScore() {
-  let questionScore = getQuestion().choices.find(({ id }) => {
+function _computeTmpScore() {
+  let questionScore = _getQuestion().choices.find(({ id }) => {
     return id === window.selectedAnswer
   }).score
   for (let [key] of Object.entries(window.tmpScore)) {
@@ -63,14 +79,6 @@ function showQuestion() {
   // Select the question component in the DOM
   let adrQuestionElement = select('wtr-question')
   // It needs the question structure and the selected answer
-  adrQuestionElement.setAttribute('question', JSON.stringify(getQuestion()))
+  adrQuestionElement.setAttribute('question', JSON.stringify(_getQuestion()))
   adrQuestionElement.setAttribute('answer', window.selectedAnswer)
-}
-
-export function nextQuestion() {
-  let currentQuestion = getQuestion()
-  if (currentQuestion) {
-    window.questionIndex++
-  }
-  return getQuestion()
 }

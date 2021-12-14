@@ -1,4 +1,5 @@
 import styleUrl from "url:../styles/style.css";
+import { updateAnswer } from './utils/what-to-read';
 
 class AdrQuestion extends HTMLElement {
 
@@ -9,8 +10,16 @@ class AdrQuestion extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     switch (name) {
       case 'question':
+        // Remove the listeners of the old question
+        if (oldValue !== null) {
+          this.removeQuestionListeners()
+        }
+        // Get the new question structure from the stringified attribute
         let question = JSON.parse(newValue)
+        // Show the new question in the DOM
         this.showQuestion(question)
+        // Add the listeners of the new question
+        this.addQuestionListeners()
         break;
       case 'answer':
         break;
@@ -26,6 +35,24 @@ class AdrQuestion extends HTMLElement {
       <link rel="stylesheet" type="text/css" href="${styleUrl}">
     `
     shadow.appendChild(this.wrapper)
+  }
+
+  addQuestionListeners() {
+    let answersElements = this.wrapper.querySelectorAll('[name]')
+    answersElements.forEach((element) => {
+      element.addEventListener('change', this.selectAnswer)
+    })
+  }
+
+  removeQuestionListeners() {
+    let answersElements = this.wrapper.querySelectorAll('[name]')
+    answersElements.forEach((element) => {
+      element.removeEventListener('change', this.selectAnswer)
+    })
+  }
+
+  selectAnswer(event) {
+    updateAnswer(event.target.value)
   }
 
   showQuestion(question) {
