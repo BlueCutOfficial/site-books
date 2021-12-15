@@ -38,7 +38,7 @@ const questions = [{
   }]
 }, {
   id: 'affinity',
-  label: 'Y a-t-il une magie du cercle élémentaire de la magie qui vous inspire particulièrement ?',
+  label: 'Y a-t-il un élément du cercle élémentaire de la magie qui vous inspire particulièrement ?',
   choices: [{
     id: 'water',
     label: 'Eau',
