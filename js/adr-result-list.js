@@ -25,9 +25,9 @@ class AdrResultList extends HTMLElement {
 
     // Then for each book, apply margin-top depending on its index in results
     this.bookListing.forEach((bookItem) => {
-      let position = this.bookPosition(results, bookItem.id)
+      let ranking = this.bookPosition(results, bookItem.id)
       let marginValue = position1 
-      switch(position) {
+      switch(ranking.position) {
         case 2:
           marginValue = position2
           break;
@@ -36,16 +36,23 @@ class AdrResultList extends HTMLElement {
           break
       }
       bookItem.element.style['margin-top'] = marginValue
-      bookItem.element.innerHTML = `${position}. ${bookItem.initialHTML}`
+      bookItem.element.innerHTML = `${ranking.rank}. ${bookItem.initialHTML}`
     })
     
   }
 
   bookPosition(results, bookId) {
-    // Find the element corresponding to the bookId in the results array
+    // Find the first (and only) element corresponding to the bookId in the results array
     let resultItem = results.find(({ id }) => id === bookId)
+    // Find the first element with the same score as the found book
+    let firstScoreItem = results.find(({ value }) => resultItem.value === value)
     // Then return the index of this element + 1 to get its position
-    return results.indexOf(resultItem) + 1
+    return {
+      // The rank is the actual rank related to the score
+      rank: results.indexOf(firstScoreItem) + 1,
+      // The position id for the display order of the boxes
+      position: results.indexOf(resultItem) + 1
+    }
   }
 
   constructor() {

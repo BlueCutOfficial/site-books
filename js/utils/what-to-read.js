@@ -100,7 +100,7 @@ const questions = [{
   id: 'pet',
   label: 'Le compagnon idéal du rôdeur qui est en vous ?',
   choices: [{
-    id: 'squirel',
+    id: 'squirrel',
     label: 'Un écureuil',
     score: { suzuha: 0, ede: 3, vdy: 0 }
   }, {
