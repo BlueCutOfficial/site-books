@@ -36,6 +36,7 @@ class AdrResultList extends HTMLElement {
           break
       }
       bookItem.element.style['margin-top'] = marginValue
+      bookItem.element.innerHTML = `${position}. ${bookItem.initialHTML}`
     })
     
   }
@@ -55,15 +56,18 @@ class AdrResultList extends HTMLElement {
     this.bookListing = [
       { 
         id: 'suzuha', 
+        initialHTML: 'Suzuha',
         element: this.createBookItem('1. Suzuha')
       },
       { 
         id: 'ede', 
-        element:this.createBookItem('2. L\'Enfant des Esprits') 
+        initialHTML: 'L\'Enfant des Esprits',
+        element: this.createBookItem('2. L\'Enfant des Esprits') 
       },
       { 
-        id: 'vdy', 
-        element:this.createBookItem('3. Le Voeu de Yoko')
+        id: 'vdy',
+        initialHTML: 'Le Voeu de Yoko',
+        element: this.createBookItem('3. Le Voeu de Yoko')
       }
     ]
 
