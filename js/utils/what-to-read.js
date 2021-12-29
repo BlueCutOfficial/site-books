@@ -5,12 +5,16 @@ const questions = [{
   label: 'Plutôt roman court ou roman plus long ?',
   choices: [{
     id: 'short',
-    label: 'Plutôt court',
+    label: 'Plutôt court.',
     score: { suzuha: 3, ede: 1, vdy: 1 }
   }, {
     id: 'long',
-    label: 'Histoire qui dure',
+    label: 'Histoire qui dure.',
     score: { suzuha: 1, ede: 3, vdy: 3 }
+  }, {
+    id: 'no-size-preference',
+    label: 'C\'est pas la taille qui compte.',
+    score: { suzuha: 0, ede: 0, vdy: 0 }
   }]
 }, {
   id: 'pace',
@@ -21,8 +25,12 @@ const questions = [{
     score: { suzuha: 3, ede: 3, vdy: 1 }
   }, {
     id: 'slow',
-    label: 'Je veux m\'imprégner de l\'ambiance avec de belles descriptions',
-    score: { suzuha: 1, ede: 1, vdy: 3 }
+    label: 'Je veux m\'imprégner de l\'ambiance avec de belles descriptions.',
+    score: { suzuha: 1, ede: 2, vdy: 3 }
+  }, {
+    id: 'middle',
+    label: 'Tout est dans l\'équilibre.',
+    score: { suzuha: 1, ede: 3, vdy: 2 }
   }]
 }, {
   id: 'time',
@@ -35,10 +43,14 @@ const questions = [{
     id: 'past',
     label: 'Passé',
     score: { suzuha: 0, ede: 0, vdy: 3 }
+  }, {
+    id: 'no-time-preference',
+    label: 'Aucune importance, tant que le style m\'emporte.',
+    score: { suzuha: 0, ede: 0, vdy: 0 }
   }]
 }, {
   id: 'affinity',
-  label: 'Y a-t-il un élément du cercle élémentaire de la magie qui vous inspire particulièrement ?',
+  label: 'Y a-t-il un élément du cercle de la magie qui vous inspire particulièrement ?',
   choices: [{
     id: 'water',
     label: 'Eau',
@@ -46,7 +58,7 @@ const questions = [{
   }, {
     id: 'light',
     label: 'Lumière',
-    score: { suzuha: 0, ede: 4, vdy: 4 }
+    score: { suzuha: 0, ede: 3, vdy: 3 }
   }, {
     id: 'darkness',
     label: 'Ombre',
@@ -67,6 +79,22 @@ const questions = [{
     id: 'culture-shock',
     label: 'Choc des cultures',
     score: { suzuha: 2, ede: 2, vdy: 4 }
+  }]
+}, {
+  id: 'character',
+  label: 'Quel genre de personnage avez-vous envie de suivre ?',
+  choices: [{
+    id: 'heros',
+    label: 'Une héroïne dans la pure tradition, gentille, courageuse et travailleuse.',
+    score: { suzuha: 4, ede: 0, vdy: 0 }
+  }, {
+    id: 'dark-man',
+    label: 'Un jeune homme qui a ses défauts et un lourd passé.',
+    score: { suzuha: 0, ede: 1, vdy: 4 }
+  }, {
+    id: 'duo',
+    label: 'Et pourquoi pas deux personnages dont les chemins vont se croiser ?',
+    score: { suzuha: 0, ede: 4, vdy: 0 }
   }]
 }]
 
