@@ -6,11 +6,11 @@ const questions = [{
   choices: [{
     id: 'short',
     label: 'Plutôt court.',
-    score: { suzuha: 3, ede: 1, vdy: 1 }
+    score: { suzuha: 3, ede: 0, vdy: 0 }
   }, {
     id: 'long',
     label: 'Histoire qui dure.',
-    score: { suzuha: 1, ede: 3, vdy: 3 }
+    score: { suzuha: 0, ede: 2, vdy: 2 }
   }, {
     id: 'no-size-preference',
     label: 'C\'est pas la taille qui compte.',
@@ -54,7 +54,7 @@ const questions = [{
   choices: [{
     id: 'water',
     label: 'Eau',
-    score: { suzuha: 4, ede: 2, vdy: 0 }
+    score: { suzuha: 3, ede: 2, vdy: 0 }
   }, {
     id: 'light',
     label: 'Lumière',
@@ -62,7 +62,7 @@ const questions = [{
   }, {
     id: 'darkness',
     label: 'Ombre',
-    score: { suzuha: 0, ede: 4, vdy: 0 }
+    score: { suzuha: 0, ede: 3, vdy: 0 }
   }]
 }, {
   id: 'theme',
@@ -70,15 +70,15 @@ const questions = [{
   choices: [{
     id: 'feminism',
     label: 'Féminisme',
-    score: { suzuha: 4, ede: 1, vdy: 1 }
+    score: { suzuha: 3, ede: 1, vdy: 1 }
   }, {
     id: 'journey',
     label: 'Voyage',
-    score: { suzuha: 2, ede: 4, vdy: 2 }
+    score: { suzuha: 1, ede: 3, vdy: 1 }
   }, {
     id: 'culture-shock',
     label: 'Choc des cultures',
-    score: { suzuha: 2, ede: 2, vdy: 4 }
+    score: { suzuha: 1, ede: 2, vdy: 3 }
   }]
 }, {
   id: 'character',
@@ -86,15 +86,31 @@ const questions = [{
   choices: [{
     id: 'heros',
     label: 'Une héroïne dans la pure tradition, gentille, courageuse et travailleuse.',
-    score: { suzuha: 4, ede: 0, vdy: 0 }
+    score: { suzuha: 3, ede: 0, vdy: 0 }
   }, {
     id: 'dark-man',
     label: 'Un jeune homme qui a ses défauts et un lourd passé.',
-    score: { suzuha: 0, ede: 1, vdy: 4 }
+    score: { suzuha: 0, ede: 1, vdy: 3 }
   }, {
     id: 'duo',
     label: 'Et pourquoi pas deux personnages dont les chemins vont se croiser ?',
-    score: { suzuha: 0, ede: 4, vdy: 0 }
+    score: { suzuha: 0, ede: 3, vdy: 0 }
+  }]
+}, {
+  id: 'pet',
+  label: 'Le compagnon idéal du rôdeur qui est en vous ?',
+  choices: [{
+    id: 'squirel',
+    label: 'Un écureuil',
+    score: { suzuha: 0, ede: 3, vdy: 0 }
+  }, {
+    id: 'dragon-tiger',
+    label: 'Un GROS félin',
+    score: { suzuha: 3, ede: 0, vdy: 0 }
+  }, {
+    id: 'no-animal',
+    label: 'Je préfère les arbres aux animaux.',
+    score: { suzuha: 0, ede: 0, vdy: 3 }
   }]
 }]
 
