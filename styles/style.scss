@@ -175,6 +175,14 @@ h2 {
 }
 
 /** What to read quiz **/
+.question-number {
+  font-size: smaller;
+  text-align: right;
+  p {
+    margin: 0px;
+  }
+}
+
 .result-list {
   display: block;
   min-height: 150px;

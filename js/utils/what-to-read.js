@@ -101,6 +101,8 @@ const questions = [{
 export function setupQuestions() {
   // Set up the list of questions in a random order
   window.questions = questions.sort(() => Math.random() - 0.5);
+  let adrQuestionNumberElement = select('wtr-question-number')
+  adrQuestionNumberElement.setAttribute('questions-length', window.questions.length)
   // Initialize the current question
   _showQuestion()
   // Bind the next question function to the next question button's click
@@ -151,6 +153,9 @@ function _showQuestion() {
   let adrQuestionElement = select('wtr-question')
   // It needs the question structure
   adrQuestionElement.setAttribute('question', JSON.stringify(_getQuestion()))
+  // Display the question number
+  let adrQuestionNumberElement = select('wtr-question-number')
+  adrQuestionNumberElement.setAttribute('question-index', window.questionIndex+1)
 }
 
 function _nextQuestion() {
@@ -170,5 +175,7 @@ function _nextQuestion() {
     nextQuestionButton.setAttribute('hidden', true)
     let adrQuestionElement = select('wtr-question')
     adrQuestionElement.setAttribute('hidden', true)
+    let adrQuestionNumberElement = select('wtr-question-number')
+    adrQuestionNumberElement.setAttribute('hidden', true)
   }
 }
