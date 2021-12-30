@@ -96,6 +96,9 @@
             <p>Chaque histoire possède sa propre ambiance et son propre style narratif. Le monde de l'Académie des Renards se découvre en plusieurs lieux et plusieurs époques.</p>
             <h2>* Et pour les oreilles ?</h2>
             <p>Les livres numériques de l'Académie des Renards ne sont pas encore disponibles en livres audio. Ce projet constitue le prochain cap pour l'académie en parallèle de la publication des romans.</p>
+            <a class="pure-button pure-button--black" href="#que-choisir">
+              Quelle lecture choisir ?
+            </a>
           </div>
         </div>
         <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-6-24">
@@ -137,13 +140,16 @@
           </ul>
         </li>
       </ul>
+      <a class="pure-button pure-button--black wtr-horizontal-menu" href="#que-choisir">
+        Quelle lecture choisir ?
+      </a>
     </nav>
 
     <!-- Page "Livre" -->
     <div id="books" class="hidden pure-g">
 
       <!-- Présentation Le Voeu de Yoko -->
-      <div id="le-voeu-de-yoko" data-latest="3" data-date="2021" data-chrono="682" class="book-background background--vdy">
+      <div id="le-voeu-de-yoko" data-latest="1" data-date="2021" data-chrono="682" class="book-background background--vdy">
         <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
           <div class="book padding--large">
             <h1>Le Voeu de Yoko</h1>
@@ -168,7 +174,7 @@
       </div>
 
       <!-- Présentation Enfant des Esprits -->
-      <div id="ede" data-latest="1" data-date="2020" data-chrono="782" class="book-background background--ede">
+      <div id="ede" data-latest="2" data-date="2020" data-chrono="782" class="book-background background--ede">
         <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
           <div class="book padding--large">
             <h1>L'Enfant des Esprits</h1>
@@ -200,7 +206,7 @@
       </div> 
 
       <!-- Présentation Suzuha -->
-      <div id="suzuha" data-latest="2" data-date="2017" data-chrono="784" class="book-background background--suzuha">
+      <div id="suzuha" data-latest="3" data-date="2017" data-chrono="784" class="book-background background--suzuha">
         <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
           <div class="book padding--large">
             <h1>Suzuha</h1>
@@ -276,7 +282,39 @@
         <div class="pure-u-1 pure-u-sm-1 pure-u-md-11-24 pure-u-lg-8-24">
         </div>
       </div>
+    </div>
 
+    <!-- Page "Quelle lecture choisir ?" -->
+    <div id="whattoread" class="hidden pure-g">
+      <div class="book-background background--classic">
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
+          <div class="book padding--large">
+            <h2>Quelle lecture choisir ?</h2>
+            <p>Contrairement à une saga classique, les romans de l'Académie des Renards ne visent pas tous le même public&nbsp;; chacun possède son propre style narratif et développe des thèmes différents. Pour découvrir le livre qui vous correspond le mieux, répondez aux différentes questions de madame Mayanoko 😉</p>
+            <hr />
+            <adr-question
+              id="wtr-question"
+            ></adr-question>
+            <adr-question-number
+              id="wtr-question-number"
+            ></adr-question-number>
+            <br />
+            <button 
+              id="wtr-button-next"
+              class="pure-button pure-button--black"
+            >
+              Question suivante
+            </button>
+            <adr-result-list
+              id="wtr-result"
+            ></adr-result-list>
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-6-24">
+        </div>
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-11-24 pure-u-lg-8-24">
+        </div>
+      </div>
     </div>
 
   <!-- End main container -->
@@ -300,5 +338,8 @@
 <script src="js/adr-button-icon.js"></script>
 <script src="js/adr-shop-button.js"></script>
 <script src="js/adr-extract-button.js"></script>
+<script src="js/adr-question.js"></script>
+<script src="js/adr-question-number.js"></script>
+<script src="js/adr-result-list.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 import { setSorting, setUpPage } from './utils/setup-page'
 import { deactivateMenu, toggleMenu } from './utils/sidebar'
+import { setupQuestions } from './utils/what-to-read'
 
 window.selectors = {}
 
@@ -15,6 +16,7 @@ window.onhashchange = function() {
  */
 window.onload = function() {
   setUpPage()
+  setupQuestions()
 }
 
 /**
@@ -23,3 +25,9 @@ window.onload = function() {
 window.setSorting = setSorting
 window.deactivateMenu = deactivateMenu
 window.toggleMenu = toggleMenu
+
+window.score = { suzuha: 0, ede: 0, vdy: 0 }
+window.tmpScore = { suzuha: 0, ede: 0, vdy: 0 }
+window.selectedAnswer = undefined
+window.questions = []
+window.questionIndex = 0

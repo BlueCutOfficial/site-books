@@ -33,54 +33,57 @@ let deactivateSidebarItem = function(itemId) {
   select(itemId).children[0].removeAttribute('aria-current')
 }
 
-/**
- * Show the home page
- */
-export function showMenuHome() {
-  window.baseURL = 'home'
-  deactivateSidebarItem('booksLink')
-  deactivateSidebarItem('infoLink')
-  deactivateSidebarItem('seriesLink')
-  toggleClass(['home'], 'hidden', false)
-  toggleClass(['books', 'sorting-menu', 'info', 'series'], 'hidden', true)
-  deactivateMenu()
+const menusConfig = {
+  home: {
+    itemsToActivate: [],
+    itemsToDeactivate: ['booksLink', 'infoLink', 'seriesLink'],
+    selectorsToShow: ['home'],
+    selectorsToHide: ['books', 'sorting-menu', 'info', 'series', 'whattoread']
+  }, 
+  info: {
+    itemsToActivate: ['infoLink'],
+    itemsToDeactivate: ['booksLink', 'seriesLink'],
+    selectorsToShow: ['info'],
+    selectorsToHide: ['books', 'sorting-menu', 'home', 'series', 'whattoread']
+  },
+  livres: {
+    itemsToActivate: ['booksLink'],
+    itemsToDeactivate: ['infoLink', 'seriesLink'],
+    selectorsToShow: ['books', 'sorting-menu'],
+    selectorsToHide: ['info', 'home', 'series', 'whattoread']
+  }, 
+  series: {
+    itemsToActivate: ['seriesLink'],
+    itemsToDeactivate: ['infoLink', 'booksLink'],
+    selectorsToShow: ['series'],
+    selectorsToHide: ['home', 'books', 'sorting-menu', 'info', 'whattoread']
+  },
+  'que-choisir': {
+    itemsToActivate: [],
+    itemsToDeactivate: ['infoLink', 'booksLink', 'seriesLink'],
+    selectorsToShow: ['whattoread'],
+    selectorsToHide: ['home', 'books', 'sorting-menu', 'info', 'series']
+  }
 }
 
 /**
- * Show the author page
+ * Show the menu that fit the given id
  */
-export function showMenuInfo() {
-  window.baseURL = 'info'
-  deactivateSidebarItem('booksLink')
-  deactivateSidebarItem('seriesLink')
-  activateSidebarItem('infoLink')
-  toggleClass(['books', 'sorting-menu', 'home', 'series'], 'hidden', true)
-  toggleClass(['info'], 'hidden', false)
-  deactivateMenu()
-}
-
-/**
- * Show the book page
- */
-export function showMenuBooks() {
-  window.baseURL = 'livres'
-  deactivateSidebarItem('infoLink')
-  deactivateSidebarItem('seriesLink')
-  activateSidebarItem('booksLink')
-  toggleClass(['books', 'sorting-menu'], 'hidden', false)
-  toggleClass(['info', 'home', 'series'], 'hidden', true)
-  deactivateMenu()
-}
-
-/**
- * Show the series page
- */
-export function showMenuSeries() {
-  window.baseURL = 'series'
-  deactivateSidebarItem('infoLink')
-  deactivateSidebarItem('booksLink')
-  activateSidebarItem('seriesLink')
-  toggleClass(['series'], 'hidden', false)
-  toggleClass(['home', 'books', 'sorting-menu', 'info'], 'hidden', true)
+export function showMenu(menuId) {
+  window.baseURL = menuId
+  let { 
+    itemsToActivate, 
+    itemsToDeactivate, 
+    selectorsToShow, 
+    selectorsToHide 
+  } = menusConfig[menuId]
+  itemsToActivate.forEach((itemToActivate) => {
+    activateSidebarItem(itemToActivate)
+  })
+  itemsToDeactivate.forEach((itemToDeactivate) => {
+    deactivateSidebarItem(itemToDeactivate)
+  })
+  toggleClass(selectorsToShow, 'hidden', false)
+  toggleClass(selectorsToHide, 'hidden', true)
   deactivateMenu()
 }

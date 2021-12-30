@@ -3,6 +3,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "rm -rf .parcel-cache && parcel serve ./index.html",
+    "start-css": "sass --watch styles/style.scss styles/style.css",
     "build-css": "sass styles/style.scss styles/style.css",
     "build": "rm -rf dist && yarn build-css && parcel build ./index.html"
   },

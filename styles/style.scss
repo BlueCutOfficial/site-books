@@ -5,7 +5,7 @@
 .pure-button {
   font-family: variables.$body-font;
   box-shadow: 2px 2px 2px variables.$primary-color;
-  margin-bottom: 10px;
+  margin-bottom: variables.$space-small;
 }
 .pure-button--black {
   color: variables.$primary-text-color;
@@ -33,8 +33,8 @@ a {
 @mixin typo() {
   font-family: variables.$title-font;
   font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: variables.$space-medium;
+  margin-bottom: variables.$space-small;
 }
 h1 {
   @include typo;
@@ -60,13 +60,13 @@ h2 {
   text-align: center;
 }
 .padding--small {
-  padding: 10px;
+  padding: variables.$space-small;
 }
 .padding--medium {
-  padding: 20px;
+  padding: variables.$space-medium;
 }
 .padding--large {
-  padding: 40px;
+  padding: variables.$space-large;
 }
 .inline {
   display: inline-block;
@@ -111,12 +111,12 @@ h2 {
 
 .quote{
   text-align: center;
-  padding: 5px;
+  padding: variables.$space-tiny;
 }
 
 .image-header-side {
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: variables.$space-tiny;
+  padding-bottom: variables.$space-tiny;
 }
 
 /* Specific gumroad buttons */
@@ -172,4 +172,47 @@ h2 {
 .pure-button.pa {
   background-color: #d14b52;
   color: variables.$primary-text-color;
+}
+
+/** What to read quiz **/
+.wtr-horizontal-menu {
+ margin: 0px;
+}
+
+.question-number {
+  font-size: smaller;
+  text-align: right;
+  p {
+    margin: 0px;
+  }
+}
+
+.result-list {
+  display: block;
+  min-height: 150px;
+}
+
+.result-item {
+  background-color: variables.$second-color;
+  border-radius: 2px;
+  margin-top: variables.$space-tiny;
+  margin-bottom: variables.$space-tiny;
+  padding: variables.$space-small;
+  position: absolute;
+  position: absolute;
+  min-width: 200px;
+  transition-property: margin-top;
+  transition-duration: 0.8s;
+}
+
+.result-item--1 {
+  margin-top: 0px;
+}
+
+.result-item--2 {
+  margin-top: 50px;
+}
+
+.result-item--3 {
+  margin-top: 100px;
 }
