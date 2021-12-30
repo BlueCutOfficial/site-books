@@ -1,17 +1,19 @@
 import styleUrl from "url:../styles/style.css";
 
-class AdrShopButton extends HTMLElement {
+class AdrBookLinks extends HTMLElement {
   constructor() {
     super()
     var wrapper = document.createElement('div')
+    wrapper.classList.add('book-links')
     wrapper.innerHTML = `
-      <a class="pure-button pure-button--black"
-        target="_blank"
-        rel="noopener noreferrer"
-        href=${this.getAttribute('link')}>
-        Télécharger l'e-book
-      </a>
+      <adr-shop-button
+        link=${this.getAttribute('link')}
+      ></adr-shop-button>
+      <adr-extract-button
+        file=${this.getAttribute('file')}
+      ></adr-extract-button>
     `
+
     var shadow = this.attachShadow({mode: 'closed'})
     shadow.innerHTML = `
       <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
@@ -21,4 +23,4 @@ class AdrShopButton extends HTMLElement {
   }
 }
 
-customElements.define('adr-shop-button', AdrShopButton)
+customElements.define('adr-book-links', AdrBookLinks)

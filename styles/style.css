@@ -448,6 +448,13 @@ h2 {
   color: #eee;
 }
 
+/** Book links **/
+.book-links {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
 /** What to read quiz **/
 .wtr-horizontal-menu {
   margin: 0px;

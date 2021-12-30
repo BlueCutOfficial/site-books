@@ -193,5 +193,7 @@ function _nextQuestion() {
     adrQuestionElement.setAttribute('hidden', true)
     let adrQuestionNumberElement = select('wtr-question-number')
     adrQuestionNumberElement.setAttribute('hidden', true)
+    let adrLinkToBooksElement = select('wtr-see-books')
+    adrLinkToBooksElement.removeAttribute('hidden')
   }
 }
