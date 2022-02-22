@@ -2,21 +2,23 @@
   "name": "site-books",
   "scripts": {
     "lint": "eslint .",
-    "start": "rm -rf .parcel-cache && parcel serve ./index.html",
+    "prestart": "rm -rf .parcel-cache",
+    "start": "parcel serve ./index.html",
     "start-css": "sass --watch styles/style.scss styles/style.css",
     "build-css": "sass styles/style.scss styles/style.css",
-    "build": "rm -rf dist && rm -rf .parcel-cache && yarn build-css && parcel build ./index.html"
+    "prebuild": "rm -rf dist .parcel-cache",
+    "build": "yarn build-css && parcel build ./index.html"
   },
   "browserslist": [
     "defaults"
   ],
   "dependencies": {},
   "devDependencies": {
-    "@parcel/packager-raw-url": "2.0.0-nightly.2332",
-    "@parcel/transformer-image": "2.0.0-nightly.2332",
-    "@parcel/transformer-webmanifest": "2.0.0-nightly.2332",
+    "@parcel/packager-raw-url": "^2.3.2",
+    "@parcel/transformer-image": "^2.3.2",
+    "@parcel/transformer-webmanifest": "^2.3.2",
     "eslint": "^7.28.0",
-    "parcel": "^2.0.0-beta.3.1",
+    "parcel": "^2.3.2",
     "sass": "^1.49.8"
   },
   "repository": {
