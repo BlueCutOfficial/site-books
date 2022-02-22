@@ -5,7 +5,9 @@
     "start": "rm -rf .parcel-cache && parcel serve ./index.html",
     "start-css": "sass --watch styles/style.scss styles/style.css",
     "build-css": "sass styles/style.scss styles/style.css",
-    "build": "rm -rf dist && rm -rf .parcel-cache && yarn build-css && parcel build ./index.html"
+    "prebuild": "rm -rf dist .parcel-cache",
+    "build": "yarn build-css && parcel build ./index.html",
+    "postbuild": "echo 'academie-des-renards.dunstetter.fr' > dist/CNAME"
   },
   "browserslist": [
     "defaults"
