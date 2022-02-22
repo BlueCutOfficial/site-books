@@ -9,7 +9,7 @@ class AdrShopButton extends HTMLElement {
         target="_blank"
         rel="noopener noreferrer"
         href=${this.getAttribute('link')}>
-        Télécharger l'e-book
+        ${this.getAttribute('title')}
       </a>
     `
     var shadow = this.attachShadow({mode: 'closed'})

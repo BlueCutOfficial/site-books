@@ -5,14 +5,30 @@ class AdrBookLinks extends HTMLElement {
     super()
     var wrapper = document.createElement('div')
     wrapper.classList.add('book-links')
-    wrapper.innerHTML = `
-      <adr-shop-button
-        link=${this.getAttribute('link')}
-      ></adr-shop-button>
+    wrapper.innerHTML = ''
+    if (this.getAttribute('book-link')) {
+      wrapper.innerHTML += `
+        <adr-shop-button
+          link=${this.getAttribute('book-link')}
+          title="Commander le livre"
+        ></adr-shop-button>
+      `
+    }
+    if (this.getAttribute('ebook-link')) {
+      wrapper.innerHTML += `
+        <adr-shop-button
+          link=${this.getAttribute('ebook-link')}
+          title="Télécharger l'e-book"
+        ></adr-shop-button>
+      `
+    }
+    if (this.getAttribute('file')) {
+      wrapper.innerHTML += `
       <adr-extract-button
         file=${this.getAttribute('file')}
       ></adr-extract-button>
-    `
+      `
+    }
 
     var shadow = this.attachShadow({mode: 'closed'})
     shadow.innerHTML = `
