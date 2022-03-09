@@ -334,6 +334,20 @@ h2 {
   vertical-align: super;
 }
 
+.author-header {
+  display: flex;
+  padding-bottom: 20px;
+}
+.author-header .author-header--img-container {
+  min-width: 100px;
+}
+.author-header .author-header--img-container img {
+  border-radius: 50%;
+}
+.author-header p {
+  padding-left: 20px;
+}
+
 /** Page livre **/
 .book-background {
   width: 100%;

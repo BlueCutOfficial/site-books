@@ -75,6 +75,20 @@ h2 {
   vertical-align: super;
 }
 
+.author-header {
+  display: flex;
+  padding-bottom: variables.$space-medium;
+  .author-header--img-container {
+    min-width: 100px;
+    img {
+      border-radius: 50%;
+    }
+  }
+  p {
+    padding-left: variables.$space-medium;
+  }
+}
+
 /** Page livre **/
 .book-background {
   width: 100%;
