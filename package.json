@@ -12,12 +12,16 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@parcel/packager-raw-url": "2.0.0-nightly.2332",
-    "@parcel/transformer-image": "2.0.0-nightly.2332",
-    "@parcel/transformer-webmanifest": "2.0.0-nightly.2332",
+    "@parcel/packager-raw-url": "2.3.2",
+    "@parcel/transformer-image": "2.3.2",
+    "@parcel/transformer-webmanifest": "2.3.2",
+    "@swc/helpers": "^0.3.6",
     "eslint": "^7.28.0",
-    "parcel": "^2.0.0-beta.3.1",
+    "parcel": "2.3.2",
     "sass": "^1.49.8"
+  },
+  "resolutions": {
+    "@swc/helpers": "^0.3.6"
   },
   "repository": {
     "type": "git",
