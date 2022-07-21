@@ -395,13 +395,14 @@ h2 {
   background-repeat: no-repeat;
 }
 
-.book {
+.book, .quotes {
   background-color: #4538647a;
 }
 
 .quote {
   text-align: center;
   padding: 4px;
+  margin-bottom: 10px;
 }
 
 .image-header-side {

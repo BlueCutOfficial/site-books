@@ -1,4 +1,4 @@
-import styleUrl from "url:../styles/style.css";
+import styleUrl from "url:../styles/style.css"
 
 class AdrBookLinks extends HTMLElement {
   constructor() {
