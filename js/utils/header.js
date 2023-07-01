@@ -4,9 +4,9 @@ import { select, toggleClass, getURL } from './generics'
  * Rearrange the list of books
  */
 export function sortBy(attribute) {
-  [...select('books').children]
+  [...select('books-list').children]
     .sort((a,b) => a.getAttribute(attribute) > b.getAttribute(attribute) ? 1 : -1)
-    .forEach(node => select('books').appendChild(node))
+    .forEach(node => select('books-list').appendChild(node))
 }
 
 /**
