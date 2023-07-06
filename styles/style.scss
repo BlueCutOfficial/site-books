@@ -1,6 +1,11 @@
 @use 'variables';
 @use 'menu';
 
+/* Pure override */
+.pure-g [class*="pure-u"] {
+  font-family: variables.$body-font;
+}
+
 /* Pure-button CSS override */
 .pure-button {
   font-family: variables.$body-font;

@@ -243,9 +243,14 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     margin-left: 50px;
   }
 }
+/* Pure override */
+.pure-g [class*=pure-u] {
+  font-family: Roboto, "Segoe UI", -apple-system, BlinkMacSystemFont, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
 /* Pure-button CSS override */
 .pure-button {
-  font-family: Roboto;
+  font-family: Roboto, "Segoe UI", -apple-system, BlinkMacSystemFont, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   box-shadow: 2px 2px 2px #191818;
   margin-bottom: 10px;
 }
@@ -262,7 +267,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 
 /** Basic classes and typography **/
 body {
-  font-family: Roboto;
+  font-family: Roboto, "Segoe UI", -apple-system, BlinkMacSystemFont, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: #eee;
   background-color: #191818;
   background-size: cover;
@@ -277,7 +282,7 @@ a {
 }
 
 h1 {
-  font-family: Amethysta;
+  font-family: Tahoma, Verdana, Roboto, "Segoe UI", -apple-system, BlinkMacSystemFont, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -285,7 +290,7 @@ h1 {
 }
 
 h2 {
-  font-family: Amethysta;
+  font-family: Tahoma, Verdana, Roboto, "Segoe UI", -apple-system, BlinkMacSystemFont, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -396,7 +401,7 @@ h2 {
 }
 
 .book, .quotes {
-  background-color: #4538647a;
+  background-color: #453864a3;
 }
 
 .quote {
@@ -427,7 +432,7 @@ h2 {
   margin-top: 0px;
 }
 #info .title {
-  background-color: #4538647a;
+  background-color: #453864a3;
 }
 #info .title h2 {
   margin: 0px;
@@ -450,7 +455,7 @@ h2 {
 
 /** Primary button **/
 .primary-button {
-  background-color: #4538647a;
+  background-color: #453864a3;
   font-weight: bold;
 }
 .primary-button:hover, .primary-button:focus {
