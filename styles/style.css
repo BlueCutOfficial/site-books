@@ -400,8 +400,12 @@ h2 {
   background-repeat: no-repeat;
 }
 
-.book, .quotes {
+.book {
   background-color: #453864a3;
+}
+
+.quotes {
+  background-color: #453864b9;
 }
 
 .quote {

@@ -127,8 +127,12 @@ h2 {
   @include theme($cover: url("../assets/artwork-lecture-s4.png"), $position: center left);
 }
 
-.book, .quotes {
+.book {
   background-color: variables.$second-color-faded;
+}
+
+.quotes {
+  background-color: variables.$second-color-half-faded;
 }
 
 .quote{
