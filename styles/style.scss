@@ -115,7 +115,7 @@ h2 {
   @include theme;
 }
 .background--suzuha {
-  @include theme($cover: url("../assets/artwork-suzuha.jpg"), $position: top right);
+  @include theme($cover: url("../assets/artwork-suzuha.png"), $position: top center);
 }
 .background--ede {
   @include theme($cover: url("../assets/artwork-ede.png"), $position: center left);
@@ -135,7 +135,7 @@ h2 {
 }
 
 .book-info {
-  background-color: variables.$second-color-half-faded;
+  background-color: variables.$second-color-faded;
 }
 
 .quote{
