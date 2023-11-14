@@ -2,8 +2,6 @@ import { setSorting, setUpPage } from './utils/setup-page'
 import { deactivateMenu, toggleMenu } from './utils/sidebar'
 import { setupQuestions } from './utils/what-to-read'
 
-window.selectors = {}
-
 /**
  * Detection of a URL change reset the page
  */
