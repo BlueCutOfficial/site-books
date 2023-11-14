@@ -170,17 +170,19 @@
           </div>
           <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-14-24">
             <div class="padding--large">
-              <div class="quotes padding--medium">
-                <h2>🦊📖 Les retours de lecture</h2>
-                <adr-quote
-                  content="Je l'ai lu d'une traite. J'ai trouvé plutôt énergisant la &ldquo;renaissance&rdquo; du protagoniste, et la subtilité de l'écriture où, à travers le roman, il comprend que c'est moins sa reconstruction physique qui est en jeu, qui est un thème de moins en moins présent au fur et à mesure des pages, et de plus en plus la réinvention de sa personnalité."
-                  author="Ewjoachim"
-                ></adr-quote>
-                <adr-quote
-                  content="C'est une très belle histoire que celle de Tobias et Yoko. J'ai été transportée dans l'ambiance du pays rouge et apaisée par sa sérénité. En même temps, j'aime beaucoup la réflexion autour de l'isolement dans les traditions : oui c'est exotique et apaisant, mais c'est aussi un enfermement. C'est une histoire douce et intelligente. J'ai hâte de découvrir comment cette histoire va évoluer. Je pense que le développement de Tobias et Yoko sera aussi intéressant que celui de l'univers."
-                  author="Mlle Ellute"
-                ></adr-quote>
-              </div>
+              <adr-book-info id="book-info-vdy">
+                <div slot="feedback" class="margin-bottom--medium">
+                  <h2>🦊📖 Les retours de lecture</h2>
+                  <adr-quote
+                    content="Je l'ai lu d'une traite. J'ai trouvé plutôt énergisant la &ldquo;renaissance&rdquo; du protagoniste, et la subtilité de l'écriture où, à travers le roman, il comprend que c'est moins sa reconstruction physique qui est en jeu, qui est un thème de moins en moins présent au fur et à mesure des pages, et de plus en plus la réinvention de sa personnalité."
+                    author="Ewjoachim"
+                  ></adr-quote>
+                  <adr-quote
+                    content="C'est une très belle histoire que celle de Tobias et Yoko. J'ai été transportée dans l'ambiance du pays rouge et apaisée par sa sérénité. En même temps, j'aime beaucoup la réflexion autour de l'isolement dans les traditions : oui c'est exotique et apaisant, mais c'est aussi un enfermement. C'est une histoire douce et intelligente. J'ai hâte de découvrir comment cette histoire va évoluer. Je pense que le développement de Tobias et Yoko sera aussi intéressant que celui de l'univers."
+                    author="Mlle Ellute"
+                  ></adr-quote>
+                </div>
+              </adr-book-info>
             </div> 
           </div>
         </div>
@@ -202,17 +204,19 @@
           </div>
           <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-14-24">
             <div class="padding--large">
-              <div class="quotes padding--medium">
-                <h2>🦊📖 Les retours de lecture</h2>
-                <adr-quote
-                  content="Les personnages ont tous une personnalité unique et voyagent dans des lieux tous très différents qu'on prend plaisir à découvrir. Il y a une bonne immersion dans l'univers et l'histoire garde le tout très rythmé. J'ai particulièrement apprécié les chapitres dans le désert."
-                  author="Guillaume"
-                ></adr-quote>
-                <adr-quote
-                  content="J'ai beaucoup aimé par contre je me demandais s'il y a une suite, histoire de savoir ce que deviennent Ben et Sun..."
-                  author="Ana"
-                ></adr-quote>
-              </div>
+              <adr-book-info id="book-info-ede">
+                <div slot="feedback" class="margin-bottom--medium">
+                  <h2>🦊📖 Les retours de lecture</h2>
+                  <adr-quote
+                    content="Les personnages ont tous une personnalité unique et voyagent dans des lieux tous très différents qu'on prend plaisir à découvrir. Il y a une bonne immersion dans l'univers et l'histoire garde le tout très rythmé. J'ai particulièrement apprécié les chapitres dans le désert."
+                    author="Guillaume"
+                  ></adr-quote>
+                  <adr-quote
+                    content="J'ai beaucoup aimé par contre je me demandais s'il y a une suite, histoire de savoir ce que deviennent Ben et Sun..."
+                    author="Ana"
+                  ></adr-quote>
+                </div>
+              </adr-book-info>
             </div>
           </div>
         </div> 
@@ -235,8 +239,8 @@
           </div>
           <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-14-24">
             <div class="padding--large">
-              <div class="quotes padding--medium">
-                <div id="suzuha-feedback">
+              <adr-book-info id="book-info-suzuha" shownav="true">
+                <div slot="feedback" class="margin-bottom--medium">
                   <h2>🦊📖 Les retours de lecture</h2>
                   <adr-quote
                     content="Dès les premières lignes, on est embarqué dans ce voyage extraordinaire mêlant magie et combat et on ne veut plus quitter l'héroïne jusqu'à la fin. Bien écrit et facile à lire, c'est un livre super pour les jeunes."
@@ -247,11 +251,7 @@
                     author="Dadone"
                   ></adr-quote>
                 </div>
-                <div class="centered">
-                  <button class="pure-button pure-button--black" type="button"><</button>
-                  <button class="pure-button pure-button--black" type="button">></button>
-                </div>
-              </div>
+              </adr-book-info>
             </div>   
           </div>
         </div>
@@ -378,6 +378,7 @@
 <!-- End layout -->
 </div>
 <script type="module" src="js/pure-dropdown.js"></script>
+<script type="module" src="js/adr-book-info.js"></script>
 <script type="module" src="js/adr-book-links.js"></script>
 <script type="module" src="js/adr-shop-button.js"></script>
 <script type="module" src="js/adr-extract-button.js"></script>
