@@ -39,7 +39,6 @@ a {
   font-family: variables.$title-font;
   font-weight: bold;
   margin-top: variables.$space-medium;
-  margin-bottom: variables.$space-small;
 }
 h1 {
   @include typo;
@@ -81,6 +80,10 @@ h2 {
 }
 .vertical-center {
   vertical-align: super;
+}
+
+.video-container {
+  overflow: hidden;
 }
 
 .author-header {

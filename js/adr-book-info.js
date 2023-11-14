@@ -6,11 +6,16 @@ class AdrBookInfo extends HTMLElement {
     var wrapper = document.createElement('div')
     wrapper.classList.add('book-info')
     wrapper.classList.add('padding--medium')
-    wrapper.innerHTML = `
-      <slot name="feedback"></slot>
-    `
+    wrapper.innerHTML = ''
+    let slotsCount = Number(this.getAttribute('slots'))
 
-    if (this.getAttribute('shownav')) {
+    for(let i = 1; i <= slotsCount; i++) {
+      wrapper.innerHTML += `
+        <slot name="slot-${i}"></slot>
+      `
+    }
+
+    if (slotsCount > 1) {
       wrapper.innerHTML += `
         <div class="centered">
           <button class="pure-button pure-button--black" type="button"><</button>
