@@ -69,11 +69,11 @@ This is the parent `<div>` that contains the menu and the content area.
   padding-left: 0;
 }
 #layout.active #menu {
-  left: 180px;
-  width: 180px;
+  left: 260px;
+  width: 260px;
 }
 #layout.active .menu-link {
-  left: 180px;
+  left: 260px;
 }
 
 #main {
@@ -114,8 +114,8 @@ This is the parent `<div>` that contains the menu and the content area.
 }
 
 #menu {
-  margin-left: -180px;
-  width: 180px;
+  margin-left: -260px;
+  width: 260px;
   position: fixed;
   top: 0;
   left: 0;
@@ -182,13 +182,24 @@ small screens.
 }
 
 /** Rs part **/
+.rs-links {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  /* Prevent buttons to be larger than Ko-Fi button */
+  padding-left: 25px;
+  padding-right: 25px;
+}
 .rs-links a {
   padding: 0px;
+  color: #eee;
+  /** BlueSky only **/
+  text-decoration: none;
+  /** BlueSky only **/
 }
 
 .rs-link {
   padding: 15px;
-  display: inline-block;
 }
 
 .rs-link:hover,
@@ -208,23 +219,23 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   }
 
   #layout {
-    padding-left: 180px;
+    padding-left: 260px;
     /* left col width "#menu" */
     left: 0;
   }
 
   #menu {
-    left: 180px;
+    left: 260px;
   }
 
   .menu-link {
     position: fixed;
-    left: 180px;
+    left: 260px;
     display: none;
   }
 
   #layout.active .menu-link {
-    left: 180px;
+    left: 260px;
   }
 }
 @media (max-width: 48em) {
@@ -236,7 +247,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
    */
   #layout.active {
     position: relative;
-    left: 180px;
+    left: 260px;
   }
 
   #menuList {
@@ -414,11 +425,6 @@ h2 {
   text-align: center;
   padding: 4px;
   margin-bottom: 10px;
-}
-
-.image-header-side {
-  padding-top: 4px;
-  padding-bottom: 4px;
 }
 
 /* Specific gumroad buttons */

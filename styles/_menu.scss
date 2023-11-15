@@ -66,11 +66,11 @@ This is the parent `<div>` that contains the menu and the content area.
   padding-left: 0;
   &.active {
     #menu {
-      left: 180px;
-      width: 180px;
+      left: variables.$menu-width;
+      width: variables.$menu-width;
     }
     .menu-link {
-      left: 180px;
+      left: variables.$menu-width;
     }
   }
 }
@@ -113,8 +113,8 @@ This is the parent `<div>` that contains the menu and the content area.
 }
 
 #menu {
-  margin-left: -180px;
-  width: 180px;
+  margin-left: -(variables.$menu-width);
+  width: variables.$menu-width;
   position: fixed;
   top: 0;
   left: 0;
@@ -180,12 +180,23 @@ small screens.
 }
 
 /** Rs part **/
-.rs-links a {
-  padding: 0px;
+.rs-links {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+
+  /* Prevent buttons to be larger than Ko-Fi button */
+  padding-left: 25px;
+  padding-right: 25px;
+
+  a {
+    padding: 0px;
+    color: variables.$primary-text-color; /** BlueSky only **/
+    text-decoration: none;  /** BlueSky only **/
+  }
 }
 .rs-link {
   padding: 15px;
-  display: inline-block;
 }
 .rs-link:hover,
 a:focus .rs-link {
@@ -206,21 +217,21 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   }
 
   #layout {
-    padding-left: 180px; /* left col width "#menu" */
+    padding-left: variables.$menu-width; /* left col width "#menu" */
     left: 0;
   }
   #menu {
-    left: 180px;
+    left: variables.$menu-width;
   }
 
   .menu-link {
     position: fixed;
-    left: 180px;
+    left: variables.$menu-width;
     display: none;
   }
 
   #layout.active .menu-link {
-    left: 180px;
+    left: variables.$menu-width;
   }
 }
 
@@ -233,7 +244,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
    */
   #layout.active {
     position: relative;
-    left: 180px;
+    left: variables.$menu-width;
   }
 
   #menuList {
