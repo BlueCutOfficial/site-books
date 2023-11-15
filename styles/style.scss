@@ -1,5 +1,6 @@
 @use 'variables';
 @use 'menu';
+@use 'what-to-read';
 
 /* Pure override */
 .pure-g [class*="pure-u"] {
@@ -136,6 +137,7 @@ h2 {
 
 .book-info {
   background-color: variables.$second-color-faded;
+  overflow: hidden;
 }
 
 .quote{
@@ -212,45 +214,32 @@ h2 {
   justify-content: space-between;
 }
 
-/** What to read quiz **/
-.wtr-horizontal-menu {
- margin: 0px;
+.show-from-left {
+  animation: from-left 0.6s;
 }
 
-.question-number {
-  font-size: smaller;
-  text-align: right;
-  p {
-    margin: 0px;
+@keyframes from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
 
-.result-list {
-  display: block;
-  min-height: 150px;
+.show-from-right {
+  animation: from-right 0.6s;
 }
 
-.result-item {
-  background-color: variables.$second-color;
-  border-radius: 2px;
-  margin-top: variables.$space-tiny;
-  margin-bottom: variables.$space-tiny;
-  padding: variables.$space-small;
-  position: absolute;
-  position: absolute;
-  min-width: 200px;
-  transition-property: margin-top;
-  transition-duration: 0.8s;
-}
-
-.result-item--1 {
-  margin-top: 0px;
-}
-
-.result-item--2 {
-  margin-top: 50px;
-}
-
-.result-item--3 {
-  margin-top: 100px;
+@keyframes from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }

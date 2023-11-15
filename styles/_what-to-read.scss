@@ -1,0 +1,43 @@
+@use 'variables';
+
+.wtr-horizontal-menu {
+  margin: 0px;
+ }
+ 
+ .question-number {
+   font-size: smaller;
+   text-align: right;
+   p {
+     margin: 0px;
+   }
+ }
+ 
+ .result-list {
+   display: block;
+   min-height: 150px;
+ }
+ 
+ .result-item {
+   background-color: variables.$second-color;
+   border-radius: 2px;
+   margin-top: variables.$space-tiny;
+   margin-bottom: variables.$space-tiny;
+   padding: variables.$space-small;
+   position: absolute;
+   position: absolute;
+   min-width: 200px;
+   transition-property: margin-top;
+   transition-duration: 0.8s;
+ }
+ 
+ .result-item--1 {
+   margin-top: 0px;
+ }
+ 
+ .result-item--2 {
+   margin-top: 50px;
+ }
+ 
+ .result-item--3 {
+   margin-top: 100px;
+ }

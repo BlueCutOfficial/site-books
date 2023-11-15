@@ -76,10 +76,13 @@ class AdrBookInfo extends HTMLElement {
     let slotsCount = Number(wrapper.getAttribute('slots'))
     let currentSlot = Number(wrapper.getAttribute('current'))
     // Hide the current slot
+    select(`${wrapperId}-${currentSlot}`).classList.remove('show-from-left')
+    select(`${wrapperId}-${currentSlot}`).classList.remove('show-from-right')
     select(`${wrapperId}-${currentSlot}`).classList.add('hidden')
     // Compute the new current slot and do the changes
     currentSlot = (currentSlot <= 0) ? slotsCount - 1 : currentSlot - 1
     select(`${wrapperId}-${currentSlot}`).classList.remove('hidden')
+    select(`${wrapperId}-${currentSlot}`).classList.add('show-from-left')
     wrapper.setAttribute('current', currentSlot)
   }
 
@@ -91,11 +94,14 @@ class AdrBookInfo extends HTMLElement {
     let slotsCount = Number(wrapper.getAttribute('slots'))
     let currentSlot = Number(wrapper.getAttribute('current'))
     // Hide the current slot
+    select(`${wrapperId}-${currentSlot}`).classList.remove('show-from-left')
+    select(`${wrapperId}-${currentSlot}`).classList.remove('show-from-right')
     select(`${wrapperId}-${currentSlot}`).classList.add('hidden')
     // Compute the new current slot and do the changes
     let plusOne = currentSlot + 1
     currentSlot = (plusOne >= slotsCount) ? 0 : plusOne
     select(`${wrapperId}-${currentSlot}`).classList.remove('hidden')
+    select(`${wrapperId}-${currentSlot}`).classList.add('show-from-right')
     wrapper.setAttribute('current', currentSlot)
   }
 }
