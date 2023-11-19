@@ -1,5 +1,7 @@
 @use 'variables';
+@use 'adr-article-button';
 @use 'menu';
+@use 'what-to-read';
 
 /* Pure override */
 .pure-g [class*="pure-u"] {
@@ -39,7 +41,6 @@ a {
   font-family: variables.$title-font;
   font-weight: bold;
   margin-top: variables.$space-medium;
-  margin-bottom: variables.$space-small;
 }
 h1 {
   @include typo;
@@ -54,7 +55,7 @@ h2 {
   color: variables.$second-text-color;
 }
 
-/** Règles générales **/
+/** General rules **/
 .container {
   min-height: calc(100vh - 70px - 100px);
 }
@@ -63,6 +64,9 @@ h2 {
 }
 .centered {
   text-align: center;
+}
+.right {
+  text-align: right;
 }
 .margin-bottom--medium {
   margin-bottom: variables.$space-medium;
@@ -81,6 +85,19 @@ h2 {
 }
 .vertical-center {
   vertical-align: super;
+}
+
+/* Reusable elements */
+.infobox {
+  background-color: variables.$second-color-faded;
+  border-radius: variables.$radius;
+  padding: variables.$space-medium;
+  overflow: hidden;
+  text-align: center;
+}
+
+.video-container {
+  overflow: hidden;
 }
 
 .author-header {
@@ -112,7 +129,7 @@ h2 {
   @include theme;
 }
 .background--suzuha {
-  @include theme($cover: url("../assets/artwork-suzuha.jpg"), $position: top right);
+  @include theme($cover: url("../assets/artwork-suzuha.png"), $position: top center);
 }
 .background--ede {
   @include theme($cover: url("../assets/artwork-ede.png"), $position: center left);
@@ -127,7 +144,7 @@ h2 {
   @include theme($cover: url("../assets/artwork-lecture-s4.png"), $position: center left);
 }
 
-.book, .quotes {
+.book {
   background-color: variables.$second-color-faded;
 }
 
@@ -135,11 +152,6 @@ h2 {
   text-align: center;
   padding: variables.$space-tiny;
   margin-bottom: variables.$space-small;
-}
-
-.image-header-side {
-  padding-top: variables.$space-tiny;
-  padding-bottom: variables.$space-tiny;
 }
 
 /* Specific gumroad buttons */
@@ -210,45 +222,32 @@ h2 {
   justify-content: space-between;
 }
 
-/** What to read quiz **/
-.wtr-horizontal-menu {
- margin: 0px;
+.show-from-left {
+  animation: from-left 0.6s;
 }
 
-.question-number {
-  font-size: smaller;
-  text-align: right;
-  p {
-    margin: 0px;
+@keyframes from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
 
-.result-list {
-  display: block;
-  min-height: 150px;
+.show-from-right {
+  animation: from-right 0.6s;
 }
 
-.result-item {
-  background-color: variables.$second-color;
-  border-radius: 2px;
-  margin-top: variables.$space-tiny;
-  margin-bottom: variables.$space-tiny;
-  padding: variables.$space-small;
-  position: absolute;
-  position: absolute;
-  min-width: 200px;
-  transition-property: margin-top;
-  transition-duration: 0.8s;
-}
-
-.result-item--1 {
-  margin-top: 0px;
-}
-
-.result-item--2 {
-  margin-top: 50px;
-}
-
-.result-item--3 {
-  margin-top: 100px;
+@keyframes from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }

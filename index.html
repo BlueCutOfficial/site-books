@@ -39,7 +39,7 @@
   <div id="menu">
     <nav class="pure-menu centered" aria-label="Menu principal">
       <div class="margin-bottom--medium">
-        <div class="image-header-side">
+        <div class="padding--small">
           <a href="#">
             <img src="assets/logo-adr-white.svg" width="80%" alt="Logo Académie des Renards" />
           </a>
@@ -49,7 +49,7 @@
             <a href="#livres" class="pure-menu-link">Les livres</a>
           </li>
           <li id="infoLink" class="pure-menu-item">
-            <a href="#info" class="pure-menu-link">L'auteure</a>
+            <a href="#info" class="pure-menu-link">L'autrice</a>
           </li>
           <li id="seriesLink" class="pure-menu-item">
             <a href="#series" class="pure-menu-link">La série</a>
@@ -60,23 +60,25 @@
         <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
         <script type='text/javascript'>kofiwidget2.init('Soutenir', '#29abe0', 'C1C5K27RA');kofiwidget2.draw();</script> 
       </div>
-      <div class="rs-links">
-        <div>
-          <a href="https://www.facebook.com/academiedesrenards/" rel="noopener noreferrer" target="_blank"><div class="rs-link">
-            <img src="assets/facebook.svg" width="25px" height="25px" alt="Facebook" />
-          </div></a>
-          <a href="https://twitter.com/academierenards" rel="noopener noreferrer" target="_blank"><div class="rs-link">
-            <img src="assets/twitter.svg" width="25px" height="25px" alt="Twitter" />
-          </div></a>
-        </div>
-        <div>
-          <a href="https://www.instagram.com/academiedesrenards/" rel="noopener noreferrer" target="_blank"><div class="rs-link">
-            <img src="assets/instagram.svg" width="25px" height="25px" alt="Instagram" />
-          </div></a>
-          <a href="https://panodyssey.com/fr/creative/room/user/3319" rel="noopener noreferrer" target="_blank"><div class="rs-link">
-            <img src="assets/panodyssey.svg" width="25px" height="25px" alt="Panodyssey" />
-          </div></a>
-        </div>
+      <div class="rs-links"> 
+        <a href="https://panodyssey.com/fr/creative/room/user/3319" rel="noopener noreferrer" target="_blank"><div class="rs-link">
+          <img src="assets/panodyssey.svg" width="25px" height="25px" alt="Panodyssey" />
+        </div></a>
+        <a href="https://www.instagram.com/academiedesrenards/" rel="noopener noreferrer" target="_blank"><div class="rs-link">
+          <img src="assets/instagram.svg" width="25px" height="25px" alt="Instagram" />
+        </div></a>
+        <a href="https://www.facebook.com/academiedesrenards/" rel="noopener noreferrer" target="_blank"><div class="rs-link">
+          <img src="assets/facebook.svg" width="25px" height="25px" alt="Facebook" />
+        </div></a>
+        <a href="https://twitter.com/academierenards" rel="noopener noreferrer" target="_blank"><div class="rs-link">
+          <img src="assets/twitter.svg" width="25px" height="25px" alt="Twitter" />
+        </div></a>
+        <a href="https://bsky.app/profile/academiedesrenards.bsky.social" rel="noopener noreferrer" target="_blank"><div class="rs-link">
+          <strong>BS</strong>
+        </div></a>
+        <a href="https://mastodon.social/@BlueCut" rel="noopener noreferrer" target="_blank"><div class="rs-link">
+          <img src="assets/mastodon.webp" width="25px" height="25px" alt="Mastodon" />
+        </div></a>
       </div>
     </nav>
   </div>
@@ -168,18 +170,21 @@
               </a>
             </div>
           </div>
-          <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-4-24">
-          </div>
-          <div class="pure-u-1 pure-u-sm-1 pure-u-md-11-24 pure-u-lg-10-24">
-            <div class="quotes padding--large">
-              <adr-quote
-                content="Je l'ai lu d'une traite. J'ai trouvé plutôt énergisant la &ldquo;renaissance&rdquo; du protagoniste, et la subtilité de l'écriture où, à travers le roman, il comprend que c'est moins sa reconstruction physique qui est en jeu, qui est un thème de moins en moins présent au fur et à mesure des pages, et de plus en plus la réinvention de sa personnalité."
-                author="Ewjoachim"
-              ></adr-quote>
-              <adr-quote
-                content="C'est une très belle histoire que celle de Tobias et Yoko. J'ai été transportée dans l'ambiance du pays rouge et apaisée par sa sérénité. En même temps, j'aime beaucoup la réflexion autour de l'isolement dans les traditions : oui c'est exotique et apaisant, mais c'est aussi un enfermement. C'est une histoire douce et intelligente. J'ai hâte de découvrir comment cette histoire va évoluer. Je pense que le développement de Tobias et Yoko sera aussi intéressant que celui de l'univers."
-                author="Mlle Ellute"
-              ></adr-quote>
+          <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-14-24">
+            <div class="padding--large">
+              <adr-book-info id="book-info-vdy" slots="1" current="0">
+                <div slot="slot-0" class="margin-bottom--medium">
+                  <h2>🦊📖 Les retours de lecture</h2>
+                  <adr-quote
+                    content="Je l'ai lu d'une traite. J'ai trouvé plutôt énergisant la &ldquo;renaissance&rdquo; du protagoniste, et la subtilité de l'écriture où, à travers le roman, il comprend que c'est moins sa reconstruction physique qui est en jeu, qui est un thème de moins en moins présent au fur et à mesure des pages, et de plus en plus la réinvention de sa personnalité."
+                    author="Ewjoachim"
+                  ></adr-quote>
+                  <adr-quote
+                    content="C'est une très belle histoire que celle de Tobias et Yoko. J'ai été transportée dans l'ambiance du pays rouge et apaisée par sa sérénité. En même temps, j'aime beaucoup la réflexion autour de l'isolement dans les traditions : oui c'est exotique et apaisant, mais c'est aussi un enfermement. C'est une histoire douce et intelligente. J'ai hâte de découvrir comment cette histoire va évoluer. Je pense que le développement de Tobias et Yoko sera aussi intéressant que celui de l'univers."
+                    author="Mlle Ellute"
+                  ></adr-quote>
+                </div>
+              </adr-book-info>
             </div> 
           </div>
         </div>
@@ -192,25 +197,30 @@
               <p>Les esprits existent-ils vraiment&nbsp;?</p>
               <p>Certains le pensent, et leurs croyances influencent les pas des enfants de ce monde&nbsp;; ceux de cette jeune Rêveuse, cloîtrée dans son temple sous-marin, ou ceux de ce garçon maudit, résigné à un avenir fade.</p>
               <p>Entre relique du Rêve qui ne fonctionne plus et manifestation de pouvoirs étranges, c'est ensemble qu'ils quittent leur foyer en quête de réponses. Mais le destin les sépare déjà et les entraine en un même lieu&nbsp;: la mystérieuse Académie des Renards.<p>On raconte qu'on peut tout y apprendre... y apprendront-ils l'évidence qui se cache en eux&nbsp;?</p>
-              <adr-book-links
+              <!-- <adr-book-links
                 file="enfant-des-esprits-extrait.pdf"
                 ebook-link="https://ko-fi.com/s/3a9743c5de"
               ></adr-book-links>
-              <p>L'Enfant des Esprits est aussi disponible sur <a href="https://www.kobo.com/fr/fr/ebook/l-enfant-des-esprits" target="_blank" rel="noopener">Kobo</a>.</p>
+              <p>L'Enfant des Esprits est aussi disponible sur <a href="https://www.kobo.com/fr/fr/ebook/l-enfant-des-esprits" target="_blank" rel="noopener">Kobo</a>.</p> -->
+              <br />
+              <p>L'Enfant des Esprits est en cours de ré-écriture, en vue d'améliorer le texte avant l'impression d'un livre broché.</p>
             </div>      
           </div>
-          <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-4-24">
-          </div>
-          <div class="pure-u-1 pure-u-sm-1 pure-u-md-11-24 pure-u-lg-10-24">
-            <div class="quotes padding--large">
-              <adr-quote
-                content="Les personnages ont tous une personnalité unique et voyagent dans des lieux tous très différents qu'on prend plaisir à découvrir. Il y a une bonne immersion dans l'univers et l'histoire garde le tout très rythmé. J'ai particulièrement apprécié les chapitres dans le désert."
-                author="Guillaume"
-              ></adr-quote>
-              <adr-quote
-                content="J'ai beaucoup aimé par contre je me demandais s'il y a une suite, histoire de savoir ce que deviennent Ben et Sun..."
-                author="Ana"
-              ></adr-quote>
+          <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-14-24">
+            <div class="padding--large">
+              <adr-book-info id="book-info-ede" slots="1" current="0">
+                <div slot="slot-0" class="margin-bottom--medium">
+                  <h2>🦊📖 Les retours de lecture</h2>
+                  <adr-quote
+                    content="Les personnages ont tous une personnalité unique et voyagent dans des lieux tous très différents qu'on prend plaisir à découvrir. Il y a une bonne immersion dans l'univers et l'histoire garde le tout très rythmé. J'ai particulièrement apprécié les chapitres dans le désert."
+                    author="Guillaume"
+                  ></adr-quote>
+                  <adr-quote
+                    content="J'ai beaucoup aimé par contre je me demandais s'il y a une suite, histoire de savoir ce que deviennent Ben et Sun..."
+                    author="Ana"
+                  ></adr-quote>
+                </div>
+              </adr-book-info>
             </div>
           </div>
         </div> 
@@ -220,28 +230,61 @@
           <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
             <div class="book padding--large">
               <h1>Suzuha</h1>
-              <p>Les enfants de l'île aux voix naissent sans voix ni reflet.</p>
-              <p>C'est aussi le cas de Melle qui, à seulement huit ans, décide de fuir son île natale afin de découvrir le continent qui se cache derrière l'océan.</p>
-              <p>Elle y trouvera un nouveau nom et poussera les portes de la mystérieuse Académie des Renards, où de riches rencontres l'attendent.</p>
+              <p>Les enfants de l'île aux voix naissent sans voix ni reflet. Melle est l'une de ces enfants. Comme toutes les filles, elle restera muette toute sa vie.</p>
+              <p>Mais quand des étrangers débarquent sur l'île, son monde vacille. Une femme lui parle pour la première fois&nbsp;!</p>
+              <p>Sur un coup de tête, l'aventure commence. Melle embarque vers une terre où les femmes ont une voix, où les femmes peuvent apprendre l'art du combat.</p>
+              <p>Cette terre... Melle y trouvera-t-elle sa voix&nbsp;?</p>
               <adr-book-links
-                file="suzuha-extrait.pdf"
                 book-link="https://ko-fi.com/academiedesrenards/shop"
                 ebook-link="https://ko-fi.com/s/a9d904a96b"
+                price="12,90"
               ></adr-book-links>
               <p>Suzuha est aussi disponible sur la <a href="https://librairiejeunespousses.fr/produit/suzuha-de-marine-dunstetter/" target="_blank" rel="noopener">librairie Jeunes Pousses</a> et sur <a href="https://www.kobo.com/fr/fr/ebook/suzuha" target="_blank" rel="noopener">Kobo</a>.</p>
             </div>
           </div>
-          <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-6-24"></div>
-          <div class="pure-u-1 pure-u-sm-1 pure-u-md-11-24 pure-u-lg-8-24">
-            <div class="quotes padding--large">
-              <adr-quote
-                content="Dès les premières lignes, on est embarqué dans ce voyage extraordinaire mêlant magie et combat et on ne veut plus quitter l'héroïne jusqu'à la fin. Bien écrit et facile à lire, c'est un livre super pour les jeunes."
-                author="Sissicat"
-              ></adr-quote>
-              <adr-quote
-                content="J'ai adoré ce livre car je trouve Suzuha magnifique et je trouve qu'elle avait raison sur le point que les femmes ont le droit d'avoir une voix."
-                author="Dadone"
-              ></adr-quote>
+          <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-14-24">
+            <div class="padding--large">
+              <adr-book-info id="book-info-suzuha" slots="3" current="0">
+                <div id="book-info-suzuha-1" slot="slot-1" class="hidden">
+                  <h2>🦊📖 Les retours de lecture</h2>
+                  <adr-quote
+                    content="Dès les premières lignes, on est embarqué dans ce voyage extraordinaire mêlant magie et combat et on ne veut plus quitter l'héroïne jusqu'à la fin. Bien écrit et facile à lire, c'est un livre super pour les jeunes."
+                    author="Sissicat"
+                  ></adr-quote>
+                  <adr-quote
+                    content="J'ai adoré ce livre car je trouve Suzuha magnifique et je trouve qu'elle avait raison sur le point que les femmes ont le droit d'avoir une voix."
+                    author="Dadone"
+                  ></adr-quote>
+                </div>
+                <div id="book-info-suzuha-0" slot="slot-0">
+                  <h2>🦊✨ Le <em>booktrailer</em></h2>
+                  <div class="video-container centered">
+                    <iframe
+                      width="430"
+                      height="242"
+                      src="https://www.youtube.com/embed/9o6yO7G0q9Y?si=0YYtz2_WtpwFL2CU" 
+                      title="Lecteur de vidéo YouTube, Booktrailer de Suzuha"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                      lazy="true" 
+                    />
+                  </div>
+                </div>
+                <div id="book-info-suzuha-2" slot="slot-2" class="hidden">
+                  <h2>🦊📚 Articles et ressources</em></h2>
+                  <adr-article-button
+                    title="7 raisons de lire (ou pas) Suzuha"
+                    link="https://panodyssey.com/fr/article/culture/7-raisons-de-lire-ou-pas-suzuha-j7n8cjh4f5js"
+                    platform="Panodyssey"
+                  ></adr-article-button>
+                  <adr-article-button
+                    title="Page Babelio du livre"
+                    link="https://www.babelio.com/livres/Dunstetter-LAcademie-des-renards-Suzuha/1212187"
+                    platform="Babelio (⚠️ Contient des extraits obsolètes, le texte a été amélioré)"
+                  ></adr-article-button>
+                </div>
+              </adr-book-info>
             </div>   
           </div>
         </div>
@@ -258,7 +301,7 @@
     <!-- Page "Auteure" -->
     <div id="info" class="hidden pure-g">
       <div class="book-background background--lecture">
-        <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-10-24">
           <div class="book padding--large">
             <div class="author-header">
               <div class="author-header--img-container pure-u-md-6-24 pure-u-lg-6-24">
@@ -281,9 +324,32 @@
             <p>J'ai choisi l'auto-édition, car elle est en adéquation avec mes buts. Je ne recherche pas d'éditeur. Comme moi, de nombreux auteurs se sont détournés de l'édition classique pour se lancer dans l'aventure. Nous fournissons un travail de qualité, mais peu mis en avant dans le monde littéraire d'aujourd'hui. Pour nous découvrir, il vous faut nous chercher, sur les réseaux sociaux et dans les salons.</p>
           </div>
         </div>
-        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-6-24">
-        </div>
-        <div class="pure-u-1 pure-u-sm-1 pure-u-md-11-24 pure-u-lg-8-24">
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-14-24">
+          <div class="padding--large">
+            <div class="infobox">
+              <h2>🦊🖋️ Mes articles</h2>
+              <adr-article-button
+                title="Comment je corrige mes romans"
+                link="https://panodyssey.com/fr/article/culture/comment-je-corrige-mes-romans-dqpg568vhrhw"
+                platform="Panodyssey"
+              ></adr-article-button>
+              <adr-article-button
+                title="Pourquoi j'ai choisi la licence CC"
+                link="https://panodyssey.com/fr/article/culture/pourquoi-j-ai-choisi-la-licence-cc-vwjdd6e7craj"
+                platform="Panodyssey"
+              ></adr-article-button>
+              <adr-article-button
+                title="30 questions liées à mon écriture"
+                link="https://panodyssey.com/fr/article/culture/cdl-november-challenge-jw2dbuf35ekh"
+                platform="Panodyssey"
+              ></adr-article-button>
+              <adr-article-button
+                title="Le format EPUB pour les nuls"
+                link="https://github.com/BlueCutOfficial/BlueCutOfficial/blob/main/articles/epub-format-fr/le-format-epub-pour-les-nuls.md"
+                platform="Github"
+              ></adr-article-button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -368,6 +434,8 @@
 <!-- End layout -->
 </div>
 <script type="module" src="js/pure-dropdown.js"></script>
+<script type="module" src="js/adr-article-button.js"></script>
+<script type="module" src="js/adr-book-info.js"></script>
 <script type="module" src="js/adr-book-links.js"></script>
 <script type="module" src="js/adr-shop-button.js"></script>
 <script type="module" src="js/adr-extract-button.js"></script>
