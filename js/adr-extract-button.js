@@ -1,5 +1,4 @@
 import styleUrl from "url:../styles/style.css";
-import booksSuzuha from "url:../assets/books/suzuha-extrait.pdf";
 import booksEde from "url:../assets/books/enfant-des-esprits-extrait.pdf";
 
 class AdrExtractButton extends HTMLElement {
@@ -26,8 +25,6 @@ class AdrExtractButton extends HTMLElement {
 
   getBookUrl(fileName) {
     switch(fileName) {
-    case 'suzuha-extrait.pdf':
-      return booksSuzuha
     case 'enfant-des-esprits-extrait.pdf':
       return booksEde
     }

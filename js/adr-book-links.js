@@ -10,7 +10,7 @@ class AdrBookLinks extends HTMLElement {
       wrapper.innerHTML += `
         <adr-shop-button
           link=${this.getAttribute('book-link')}
-          title="Commander le livre"
+          title="Commander le livre (${this.getAttribute('price')}€)"
         ></adr-shop-button>
       `
     }
@@ -18,7 +18,7 @@ class AdrBookLinks extends HTMLElement {
       wrapper.innerHTML += `
         <adr-shop-button
           link=${this.getAttribute('ebook-link')}
-          title="Télécharger l'e-book"
+          title="Télécharger l'e-book (0€)"
         ></adr-shop-button>
       `
     }
