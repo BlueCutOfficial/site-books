@@ -242,8 +242,8 @@
           </div>
           <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-14-24">
             <div class="padding--large">
-              <adr-book-info id="book-info-suzuha" slots="2" current="0">
-                <div id="book-info-suzuha-1" slot="slot-1" class="margin-bottom--medium hidden">
+              <adr-book-info id="book-info-suzuha" slots="3" current="0">
+                <div id="book-info-suzuha-1" slot="slot-1" class="hidden">
                   <h2>🦊📖 Les retours de lecture</h2>
                   <adr-quote
                     content="Dès les premières lignes, on est embarqué dans ce voyage extraordinaire mêlant magie et combat et on ne veut plus quitter l'héroïne jusqu'à la fin. Bien écrit et facile à lire, c'est un livre super pour les jeunes."
@@ -254,7 +254,7 @@
                     author="Dadone"
                   ></adr-quote>
                 </div>
-                <div id="book-info-suzuha-0" slot="slot-0" class="margin-bottom--medium">
+                <div id="book-info-suzuha-0" slot="slot-0">
                   <h2>🦊✨ Le <em>booktrailer</em></h2>
                   <div class="video-container centered">
                     <iframe
@@ -268,6 +268,19 @@
                       lazy="true" 
                     />
                   </div>
+                </div>
+                <div id="book-info-suzuha-2" slot="slot-2" class="hidden">
+                  <h2>🦊📚 Articles et ressources</em></h2>
+                  <adr-article-button
+                    title="7 raisons de lire (ou pas) Suzuha"
+                    link="https://panodyssey.com/fr/article/culture/7-raisons-de-lire-ou-pas-suzuha-j7n8cjh4f5js"
+                    platform="Panodyssey"
+                  ></adr-article-button>
+                  <adr-article-button
+                    title="Page Babelio du livre"
+                    link="https://www.babelio.com/livres/Dunstetter-LAcademie-des-renards-Suzuha/1212187"
+                    platform="Babelio (⚠️ Contient des extraits obsolètes, le texte a été amélioré)"
+                  ></adr-article-button>
                 </div>
               </adr-book-info>
             </div>   
@@ -286,7 +299,7 @@
     <!-- Page "Auteure" -->
     <div id="info" class="hidden pure-g">
       <div class="book-background background--lecture">
-        <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-10-24">
           <div class="book padding--large">
             <div class="author-header">
               <div class="author-header--img-container pure-u-md-6-24 pure-u-lg-6-24">
@@ -309,9 +322,32 @@
             <p>J'ai choisi l'auto-édition, car elle est en adéquation avec mes buts. Je ne recherche pas d'éditeur. Comme moi, de nombreux auteurs se sont détournés de l'édition classique pour se lancer dans l'aventure. Nous fournissons un travail de qualité, mais peu mis en avant dans le monde littéraire d'aujourd'hui. Pour nous découvrir, il vous faut nous chercher, sur les réseaux sociaux et dans les salons.</p>
           </div>
         </div>
-        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-6-24">
-        </div>
-        <div class="pure-u-1 pure-u-sm-1 pure-u-md-11-24 pure-u-lg-8-24">
+        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-14-24">
+          <div class="padding--large">
+            <div class="infobox">
+              <h2>🦊🖋️ Mes articles</h2>
+              <adr-article-button
+                title="Comment je corrige mes romans"
+                link="https://panodyssey.com/fr/article/culture/comment-je-corrige-mes-romans-dqpg568vhrhw"
+                platform="Panodyssey"
+              ></adr-article-button>
+              <adr-article-button
+                title="Pourquoi j'ai choisi la licence CC"
+                link="https://panodyssey.com/fr/article/culture/pourquoi-j-ai-choisi-la-licence-cc-vwjdd6e7craj"
+                platform="Panodyssey"
+              ></adr-article-button>
+              <adr-article-button
+                title="30 questions liées à mon écriture"
+                link="https://panodyssey.com/fr/article/culture/cdl-november-challenge-jw2dbuf35ekh"
+                platform="Panodyssey"
+              ></adr-article-button>
+              <adr-article-button
+                title="Le format EPUB pour les nuls"
+                link="https://github.com/BlueCutOfficial/BlueCutOfficial/blob/main/articles/epub-format-fr/le-format-epub-pour-les-nuls.md"
+                platform="Github"
+              ></adr-article-button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -396,6 +432,7 @@
 <!-- End layout -->
 </div>
 <script type="module" src="js/pure-dropdown.js"></script>
+<script type="module" src="js/adr-article-button.js"></script>
 <script type="module" src="js/adr-book-info.js"></script>
 <script type="module" src="js/adr-book-links.js"></script>
 <script type="module" src="js/adr-shop-button.js"></script>

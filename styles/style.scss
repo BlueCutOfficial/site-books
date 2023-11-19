@@ -1,4 +1,5 @@
 @use 'variables';
+@use 'adr-article-button';
 @use 'menu';
 @use 'what-to-read';
 
@@ -64,6 +65,9 @@ h2 {
 .centered {
   text-align: center;
 }
+.right {
+  text-align: right;
+}
 .margin-bottom--medium {
   margin-bottom: variables.$space-medium;
 }
@@ -87,7 +91,9 @@ h2 {
 .infobox {
   background-color: variables.$second-color-faded;
   border-radius: variables.$radius;
+  padding: variables.$space-medium;
   overflow: hidden;
+  text-align: center;
 }
 
 .video-container {

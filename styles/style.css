@@ -3,6 +3,30 @@
 /* Texts colors */
 /* Other colors */
 /* Sizes */
+.article-button {
+  /* override pure-button to have more space to read */
+  padding: 0.8em 1.2em;
+  /* Set a width to have all buttons at the same size */
+  width: 100%;
+  /* Text is not wrapped by default on <a> elements */
+  white-space: inherit;
+}
+.article-button .article-button-icon {
+  text-align: left;
+}
+
+@media (min-width: 72em) {
+  .article-button {
+    /* Set a width to have all buttons at the same size (bigger screen) */
+    width: 80%;
+  }
+}
+@media (min-width: 86em) {
+  .article-button {
+    /* Set a width to have all buttons at the same size (bigger screen) */
+    width: 70%;
+  }
+}
 /* Pure-menu CSS override */
 .pure-img-responsive {
   max-width: 100%;
@@ -365,6 +389,10 @@ h2 {
   text-align: center;
 }
 
+.right {
+  text-align: right;
+}
+
 .margin-bottom--medium {
   margin-bottom: 20px;
 }
@@ -393,7 +421,9 @@ h2 {
 .infobox {
   background-color: #453864a3;
   border-radius: 2px;
+  padding: 20px;
   overflow: hidden;
+  text-align: center;
 }
 
 .video-container {
