@@ -31,7 +31,7 @@ class AdrBookInfo extends HTMLElement {
 
     // Setup the wrapper
     this.wrapper = document.createElement('div')
-    this.wrapper.classList.add('book-info')
+    this.wrapper.classList.add('infobox')
     this.wrapper.classList.add('padding--medium')
     this.wrapper.innerHTML = ''
 

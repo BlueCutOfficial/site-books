@@ -54,7 +54,7 @@ h2 {
   color: variables.$second-text-color;
 }
 
-/** Règles générales **/
+/** General rules **/
 .container {
   min-height: calc(100vh - 70px - 100px);
 }
@@ -81,6 +81,13 @@ h2 {
 }
 .vertical-center {
   vertical-align: super;
+}
+
+/* Reusable elements */
+.infobox {
+  background-color: variables.$second-color-faded;
+  border-radius: variables.$radius;
+  overflow: hidden;
 }
 
 .video-container {
@@ -133,11 +140,6 @@ h2 {
 
 .book {
   background-color: variables.$second-color-faded;
-}
-
-.book-info {
-  background-color: variables.$second-color-faded;
-  overflow: hidden;
 }
 
 .quote{
