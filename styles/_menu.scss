@@ -179,6 +179,12 @@ small screens.
   }
 }
 
+a.support-button {
+  background-color: variables.$second-color;
+  color: variables.$primary-text-color;
+  font-weight: bold;
+}
+
 /** Rs part **/
 .rs-links {
   display: flex;

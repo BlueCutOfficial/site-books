@@ -204,6 +204,12 @@ small screens.
   margin-top: 0.6em;
 }
 
+a.support-button {
+  background-color: #6f5aa1;
+  color: #eee;
+  font-weight: bold;
+}
+
 /** Rs part **/
 .rs-links {
   display: flex;
