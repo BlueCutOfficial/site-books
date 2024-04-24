@@ -1,0 +1,33 @@
+{{page-title "Les livres - L'Académie des Renards"}}
+
+<nav id="sorting-menu" class="pure-menu pure-menu-horizontal" aria-label="Menu de tri des romans">
+  <ul id="menuList" class="pure-menu-list pure-menu-list-horizontal" {{did-insert this.initSortingDropdown}}>
+    <li id="sorting-trigger" class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+      <LinkTo id="sorting" class="pure-menu-link" @query={{hash sorting="latest"}}>{{get this.sortingTexts this.sorting}}</LinkTo>
+      <ul class="pure-menu-children">
+        <li class="pure-menu-item">
+          <LinkTo class="pure-menu-link" @query={{hash sorting="latest"}}>{{this.sortingTexts.latest}}</LinkTo>
+        </li>
+        <li class="pure-menu-item">
+          <LinkTo class="pure-menu-link" @query={{hash sorting="date"}}>{{this.sortingTexts.date}}</LinkTo>
+        </li>
+        <li class="pure-menu-item">
+          <LinkTo class="pure-menu-link" @query={{hash sorting="chrono"}}>{{this.sortingTexts.chrono}}</LinkTo>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <LinkTo class="pure-button pure-button--black" @route="que-choisir">Quelle lecture choisir ?</LinkTo>
+</nav>
+
+<div id="books" class="pure-g">
+  <div id="books-list">
+    {{#each (sort-by this.sorting this.books) as |book|}}
+      {{component (ensure-safe-component book.component)}}
+    {{/each}}
+  </div>
+
+  <p class="pure-u-1 padding--small">
+    ⚠️ <strong>Information TW:</strong> Parce qu'ils sont adaptés à la jeunesse et parce que chaque lecteur(ice) est unique, les romans de l'Académie des Renards ne contiennent pas de <a href="https://fr.wikipedia.org/wiki/Trigger_warning_(psychologie)" rel="noopener noreferrer" target="_blank">trigger warnings</a>. Si votre sensibilité à certains thèmes vous retient de lire les romans sans TW, vous pouvez envoyer un mail à <a href="mailto:academiedesrenards@gmail.com">academiedesrenards@gmail.com</a> afin de recevoir une réponse personnalisée sur le contenu.
+  </p>
+</div>

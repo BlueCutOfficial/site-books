@@ -1,0 +1,19 @@
+<div id={{@book}} class="infobox">
+  <div class="centered">
+    {{#if (gt @slots 1)}}
+      <button
+        class="pure-button pure-button--black"
+        type="button"
+        {{on "click" this.previous}}>
+        &lt;
+      </button>
+      <button
+        class="pure-button pure-button--black"
+        type="button"
+        {{on "click" this.next}}>
+        &gt;
+      </button>
+    {{/if}}
+    {{yield}}
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="result-list">
+  {{#each this.bookListing as |book index|}}
+    <p 
+      id="result-{{book.id}}" 
+      class="result-item" 
+      {{on-score-change this.results book}}
+    >
+      {{add index 1}}. {{book.title}}
+    </p>
+  {{/each}}
+</div>

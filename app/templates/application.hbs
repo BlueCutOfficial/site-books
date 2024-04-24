@@ -1,7 +1,77 @@
-{{page-title "SiteBooksEmber"}}
+{{page-title "L'Académie des Renards"}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<div id="layout" class={{if this.isActive "active"}}>
+  {{!-- Menu toggle --}}
+  <a href="#menu" id="menuLink" class="{{if this.isActive "active "}}menu-link" {{on "click" this.toggleMenu}}>
+    {{!-- Hamburger icon --}}
+    <span></span>
+  </a>
 
-{{outlet}}
+  <div id="menu" class={{if this.isActive "active"}}>
+    <nav class="pure-menu centered" aria-label="Menu principal">
+      <div class="margin-bottom--medium">
+        <div class="padding--small">
+          <LinkTo @route="index">
+            <img src="assets/logo-adr-white.svg" width="80%" alt="L'Académie des Renards" />
+          </LinkTo>
+        </div>
+        <ul class="pure-menu-list">
+          <li id="booksLink" class="pure-menu-item">
+            <LinkTo class="pure-menu-link" @route="livres">Les livres</LinkTo>
+          </li>
+          <li id="infoLink" class="pure-menu-item">
+            <LinkTo class="pure-menu-link" @route="info">L'autrice</LinkTo>
+          </li>
+          <li id="seriesLink" class="pure-menu-item">
+            <LinkTo class="pure-menu-link" @route="series">La série</LinkTo>
+          </li>
+        </ul>
+      </div>
+      <div class="margin-bottom--medium">
+        <a class="pure-button support-button"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://ko-fi.com/academiedesrenards">
+          Soutenir sur Ko-Fi
+        </a>
+      </div>
+      <div class="rs-links"> 
+        <a href="https://panodyssey.com/fr/creative/room/user/3319" rel="noopener noreferrer" target="_blank"><div class="rs-link">
+          <img src="assets/panodyssey.svg" width="25px" height="25px" alt="Panodyssey" />
+        </div></a>
+        <a href="https://www.instagram.com/academiedesrenards/" rel="noopener noreferrer" target="_blank"><div class="rs-link">
+          <img src="assets/instagram.svg" width="25px" height="25px" alt="Instagram" />
+        </div></a>
+        <a href="https://www.facebook.com/academiedesrenards/" rel="noopener noreferrer" target="_blank"><div class="rs-link">
+          <img src="assets/facebook.svg" width="25px" height="25px" alt="Facebook" />
+        </div></a>
+        <a href="https://twitter.com/academierenards" rel="noopener noreferrer" target="_blank"><div class="rs-link">
+          <img src="assets/twitter.svg" width="25px" height="25px" alt="Twitter" />
+        </div></a>
+        <a href="https://bsky.app/profile/academiedesrenards.bsky.social" rel="noopener noreferrer" target="_blank"><div class="rs-link">
+          <strong>BS</strong>
+        </div></a>
+        <a href="https://mastodon.social/@BlueCut" rel="noopener noreferrer" target="_blank"><div class="rs-link">
+          <img src="assets/mastodon.webp" width="25px" height="25px" alt="Mastodon" />
+        </div></a>
+      </div>
+    </nav>
+  </div>
+
+  {{! template-lint-disable no-invalid-interactive }}
+  <main id="main" class="container" {{on "click" this.deactivateMenu}}>
+    {{outlet}}
+  </main>
+
+  <footer class="footer padding--small">
+    <p>
+      Pour échanger avec l'auteure : 
+      <a href="mailto:academiedesrenards@gmail.com">academiedesrenards@gmail.com</a>
+    </p>
+    <div>
+      <p class="mentions">
+        Hébergé par GitHub Inc - 88 Colin P Kelly Jr Street San Francisco, CA 94107 United States - 1-415-448-6673
+      </p>
+    </div>
+  </footer>
+</div>

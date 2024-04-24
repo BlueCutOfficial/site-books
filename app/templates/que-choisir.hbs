@@ -1,0 +1,56 @@
+{{page-title "Quelle lecture choisir ? - L'Académie des Renards"}}
+
+<div id="whattoread" class="pure-g">
+  <div class="book-background background--classic">
+    <div class="pure-u-1 pure-u-sm-1 pure-u-md-12-24 pure-u-lg-10-24">
+      <div class="book padding--large">
+        <h2>Quelle lecture choisir ?</h2>
+        <p>Contrairement à une saga classique, les romans de l'Académie des Renards ne visent pas tous le même public&nbsp;; chacun possède son propre style narratif et développe des thèmes différents. Pour découvrir le livre qui vous correspond le mieux, répondez aux différentes questions de madame Mayanoko 😉</p>
+        <hr />
+        {{#if this.currentQuestion}}
+          <Form::AdrQuestion
+            id="wtr-question" 
+            @question={{this.currentQuestion}}
+            @onSelectAnswer={{this.updateScore}}>
+          </Form::AdrQuestion>
+          <Form::AdrQuestionNumber 
+            id="wtr-question-number" 
+            @questionIndex={{this.currentQuestionNumber}} 
+            @questionLength={{this.questions.length}}>
+          </Form::AdrQuestionNumber>
+          <br />
+          {{#if this.isLastQuestion}}
+            <button
+              id="wtr-button-next"
+              type="button"
+              class="pure-button pure-button--black"
+              {{on "click" this.showNext}}
+            >
+              Valider les résultats
+            </button>
+          {{else}}
+              <button
+              id="wtr-button-next"
+              type="button"
+              class="pure-button pure-button--black"
+              {{on "click" this.showNext}}
+            >
+              Question suivante
+            </button>
+          {{/if}}
+        {{/if}}
+        <Form::AdrResultList
+          id="wtr-result"
+          @score={{this.currentScore}}
+        ></Form::AdrResultList>
+        {{#unless this.currentQuestion}}
+          <LinkTo @route="livres">Voir les livres</LinkTo>
+        {{/unless}}
+      </div>
+    </div>
+    <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-24 pure-u-lg-6-24">
+    </div>
+    <div class="pure-u-1 pure-u-sm-1 pure-u-md-11-24 pure-u-lg-8-24">
+    </div>
+  </div>
+</div>

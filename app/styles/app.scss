@@ -1,0 +1,264 @@
+@use 'variables';
+@use 'adr-article-button';
+@use 'menu';
+@use 'what-to-read';
+
+/* Pure override */
+.pure-g [class*="pure-u"] {
+  font-family: variables.$body-font;
+}
+
+/* Pure-button CSS override */
+.pure-button {
+  font-family: variables.$body-font;
+  box-shadow: 2px 2px 2px variables.$primary-color;
+  margin-bottom: variables.$space-small;
+}
+.pure-button--black {
+  color: variables.$primary-text-color;
+  background-color: variables.$primary-color;
+}
+.pure-button--black:hover,
+.pure-button--black:focus {
+  background-color: variables.$primary-color-light;
+}
+
+/** Basic classes and typography **/
+body {
+  font-family: variables.$body-font;
+  color: variables.$primary-text-color;
+  background-color: variables.$primary-color;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  letter-spacing: 0;
+  line-height: 1.4rem;
+}
+a {
+  color: variables.$primary-text-color;
+}
+@mixin typo() {
+  font-family: variables.$title-font;
+  font-weight: bold;
+  margin-top: variables.$space-medium;
+}
+h1 {
+  @include typo;
+  font-size: 1.5rem;
+}
+h2 {
+  @include typo;
+  font-size: 1.3rem;
+}
+.mentions {
+  font-size: 0.8rem;
+  color: variables.$second-text-color;
+}
+
+/** General rules **/
+.container {
+  min-height: calc(100vh - 70px - 100px);
+}
+.content {
+  padding-top: 50px;
+}
+.centered {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.margin-bottom--medium {
+  margin-bottom: variables.$space-medium;
+}
+.padding--small {
+  padding: variables.$space-small;
+}
+.padding--medium {
+  padding: variables.$space-medium;
+}
+.padding--large {
+  padding: variables.$space-large;
+}
+.inline {
+  display: inline-block;
+}
+.vertical-center {
+  vertical-align: super;
+}
+
+/* Reusable elements */
+.infobox {
+  background-color: variables.$second-color-faded;
+  border-radius: variables.$radius;
+  padding: variables.$space-medium;
+  overflow: hidden;
+  text-align: center;
+}
+
+.video-container {
+  overflow: hidden;
+}
+
+.author-header {
+  display: flex;
+  padding-bottom: variables.$space-medium;
+  .author-header--img-container {
+    min-width: 100px;
+    img {
+      border-radius: 50%;
+    }
+  }
+  p {
+    padding-left: variables.$space-medium;
+  }
+}
+
+/** Page livre **/
+.book-background {
+  width: 100%;
+}
+
+@mixin theme($cover: url("../assets/background.jpg"), $position: center right) {
+  background-image: $cover;
+  background-size: cover;
+  background-position: $position;
+  background-repeat: no-repeat;
+}
+.background--classic {
+  @include theme;
+}
+.background--suzuha {
+  @include theme($cover: url("../assets/artwork-suzuha.png"), $position: top center);
+}
+.background--ede {
+  @include theme($cover: url("../assets/artwork-ede.png"), $position: center left);
+}
+.background--vdy {
+  @include theme($cover: url("../assets/cover-renaissance-s4-1024.png"), $position: top right);
+}
+.background--renard {
+  @include theme($cover: url("../assets/artwork-statue-chateau-s4.png"), $position: center left);
+}
+.background--lecture {
+  @include theme($cover: url("../assets/artwork-lecture-s4.png"), $position: center left);
+}
+
+.book {
+  background-color: variables.$second-color-faded;
+}
+
+.quote{
+  text-align: center;
+  padding: variables.$space-tiny;
+  margin-bottom: variables.$space-small;
+}
+
+/* Specific gumroad buttons */
+.download-button {
+  margin-right: 3px;
+  padding: 0px;
+  padding-top: 5px;
+  height: 60px;
+  width: 112px;
+  img {
+    height: 50px;
+  }
+}
+
+// .vertical-center-children {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+/** Page d'info **/
+#info {
+  p {
+    margin-top: 0px;
+  }
+  .title {
+    background-color: variables.$second-color-faded;
+    h2 {
+      margin: 0px;
+    }
+  }
+  .info-item {
+    background-color: variables.$primary-color-faded;
+    text-align: justify;
+  }
+}
+
+/** Footer **/
+.footer {
+  height: 60px;
+  letter-spacing: 0;
+}
+
+/* Cache des pages */
+.hidden {
+  display: none;
+}
+
+/** Primary button **/
+.primary-button {
+  background-color: variables.$second-color-faded;
+  font-weight: bold;
+  &:hover, &:focus {
+    background-color: variables.$second-color; 
+  }
+}
+
+/** PA button **/
+.pure-button.pa {
+  background-color: #d14b52;
+  color: variables.$primary-text-color;
+}
+
+/** Book links **/ 
+.book-links {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.show-from-left {
+  animation: from-left 0.6s;
+}
+
+@keyframes from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.show-from-right {
+  animation: from-right 0.6s;
+}
+
+@keyframes from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@media (max-width: 494px) {
+  .video-container {
+    display: none;
+  }
+}
+@media (min-width: 494px) {
+  .video-link {
+    display: none;
+  }
+}
