@@ -27,6 +27,9 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Postbuild
+        run: echo 'academie-des-renards.dunstetter.fr' > ./dist/CNAME
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
