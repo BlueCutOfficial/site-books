@@ -2,9 +2,18 @@
   "name": "site-books-ember",
   "private": true,
   "description": "L'Académie des Renards, official website made with Ember and love",
+  "homepage": "https://academie-des-renards.dunstetter.fr/",
   "repository": "https://github.com/BlueCutOfficial/site-books",
   "license": "AGPL-3.0",
   "author": "Marine Dunstetter",
+  "bugs": {
+    "url": "https://github.com/BlueCutOfficial/site-books/issues",
+    "email": "academiedesrenards@gmail.com"
+  },
+  "funding": {
+    "type": "ko-fi",
+    "url": "https://ko-fi.com/academiedesrenards"
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
