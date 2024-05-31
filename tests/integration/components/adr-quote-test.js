@@ -7,20 +7,21 @@ module('Integration | Component | adr-quote', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    this.setProperties({
+      content: 'I loved this book!',
+      author: 'Enthusiastic Reader',
+    });
 
-    await render(hbs`<AdrQuote />`);
-
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
     await render(hbs`
-      <AdrQuote>
-        template block text
-      </AdrQuote>
+      <AdrQuote
+        @content={{this.content}}
+        @author={{this.author}}
+      />
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert
+      .dom('[data-test-quote]')
+      .includesText(this.content)
+      .includesText(this.author);
   });
 });

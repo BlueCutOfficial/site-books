@@ -7,20 +7,7 @@ module('Integration | Component | books/adr-vdy', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
     await render(hbs`<Books::AdrVdy />`);
-
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
-    await render(hbs`
-      <Books::AdrVdy>
-        template block text
-      </Books::AdrVdy>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
+    assert.dom('h1').hasText('Le Voeu de Yoko');
   });
 });

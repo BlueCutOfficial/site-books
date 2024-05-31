@@ -176,7 +176,7 @@ export function getQuestions() {
 export function computeTmpScore(currentQuestion, answer) {
   // Compute the temporary score from actual score and current question
   let questionScore = currentQuestion.choices.find(
-    ({ id }) => id === answer
+    ({ id }) => id === answer,
   ).score;
   for (let [key] of Object.entries(window.tmpScore)) {
     window.tmpScore[key] = window.score[key] + questionScore[key];

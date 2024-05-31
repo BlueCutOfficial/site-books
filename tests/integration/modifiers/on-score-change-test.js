@@ -6,10 +6,24 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Modifier | on-score-change', function (hooks) {
   setupRenderingTest(hooks);
 
-  // Replace this with your real tests.
   test('it renders', async function (assert) {
-    await render(hbs`<div {{on-score-change}}></div>`);
+    this.setProperties({
+      results: [
+        { id: 'ede', value: 10 },
+        { id: 'suzuha', value: 7 },
+        { id: 'vdy', value: 4 },
+      ],
+      bookItem: {
+        id: 'suzuha',
+        title: 'Suzuha',
+      },
+    });
 
-    assert.ok(true);
+    await render(hbs`
+      <div data-test-element {{on-score-change this.results this.bookItem}}></div>
+    `);
+
+    assert.dom('[data-test-element]').hasStyle({ 'margin-top': '50px' });
+    assert.dom('[data-test-element]').hasText('2. Suzuha');
   });
 });

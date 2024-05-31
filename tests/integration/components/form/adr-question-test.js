@@ -7,20 +7,25 @@ module('Integration | Component | form/adr-question', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    this.set('question', {
+      label: 'Interesting question',
+      choices: [
+        {
+          id: 'choice-1',
+          label: 'Choice 1',
+        },
+        {
+          id: 'choice-2',
+          label: 'Choice 2',
+        },
+      ],
+    });
 
-    await render(hbs`<Form::AdrQuestion />`);
+    await render(hbs`<Form::AdrQuestion @question={{this.question}} />`);
 
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
-    await render(hbs`
-      <Form::AdrQuestion>
-        template block text
-      </Form::AdrQuestion>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
+    assert.dom('[data-test-label]').hasText('Interesting question');
+    assert.dom('input[type="radio"][name="question"]').exists({ count: 2 });
+    assert.dom('input[value="choice-1"]').exists();
+    assert.dom('label[for="choice-1"]').hasText('Choice 1');
   });
 });

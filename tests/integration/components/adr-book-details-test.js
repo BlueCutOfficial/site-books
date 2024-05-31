@@ -6,21 +6,30 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | adr-book-details', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
-    await render(hbs`<AdrBookDetails />`);
-
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
+  test('it renders one slot', async function (assert) {
     await render(hbs`
-      <AdrBookDetails>
-        template block text
+      <AdrBookDetails @book="my-book" @slots={{1}}>
+        <p>Book details</p>
       </AdrBookDetails>
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert.dom('#my-book').exists();
+    assert.dom('#my-book [data-test-next]').doesNotExist();
+    assert.dom('#my-book [data-test-next]').doesNotExist();
+    assert.dom('#my-book p').hasText('Book details');
   });
+
+  test('it renders several slots', async function (assert) {
+    await render(hbs`
+      <AdrBookDetails @book="my-book" @slots={{2}}>
+        <p>Book details</p>
+      </AdrBookDetails>
+    `);
+
+    assert.dom('#my-book [data-test-previous]').exists();
+    assert.dom('#my-book [data-test-next]').exists();
+    assert.dom('#my-book p').hasText('Book details');
+  });
+
+  // TODO: write an actual test for slots switching
 });
