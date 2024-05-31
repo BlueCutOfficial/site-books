@@ -17,5 +17,6 @@ module.exports = function (defaults) {
     staticModifiers: true,
     staticComponents: true,
     staticEmberSource: true,
+    splitAtRoutes: ['livres', 'que-choisir'],
   });
 };
