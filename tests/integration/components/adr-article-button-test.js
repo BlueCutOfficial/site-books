@@ -7,20 +7,22 @@ module('Integration | Component | adr-article-button', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    this.setProperties({
+      title: 'My great article',
+      link: 'https://example.com',
+      platform: 'GitHub',
+    });
 
-    await render(hbs`<AdrArticleButton />`);
-
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
     await render(hbs`
-      <AdrArticleButton>
-        template block text
-      </AdrArticleButton>
+      <AdrArticleButton 
+        @title={{this.title}}
+        @link={{this.link}}
+        @platform={{this.platform}}
+      />
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert.dom('a').hasAttribute('href', this.link);
+    assert.dom('[data-test-title]').includesText(this.title);
+    assert.dom('[data-test-platform]').includesText(this.platform);
   });
 });

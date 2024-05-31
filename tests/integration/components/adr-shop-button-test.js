@@ -7,20 +7,13 @@ module('Integration | Component | adr-shop-button', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
-    await render(hbs`<AdrShopButton />`);
-
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
     await render(hbs`
-      <AdrShopButton>
-        template block text
+      <AdrShopButton @link="https://example.com">
+        Order it
       </AdrShopButton>
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert.dom('a').hasAttribute('href', 'https://example.com');
+    assert.dom('a').hasText('Order it');
   });
 });

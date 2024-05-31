@@ -110,6 +110,9 @@ devDependencies:
   ember-template-lint:
     specifier: ^5.13.0
     version: 5.13.0
+  ember-test-selectors:
+    specifier: ^6.0.0
+    version: 6.0.0
   ember-truth-helpers:
     specifier: ^4.0.3
     version: 4.0.3(ember-source@5.8.0)
@@ -6217,6 +6220,17 @@ packages:
       slash: 3.0.0
       tmp: 0.2.3
       workerpool: 6.5.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /ember-test-selectors@6.0.0:
+    resolution: {integrity: sha512-PgYcI9PeNvtKaF0QncxfbS68olMYM1idwuI8v/WxsjOGqUx5bmsu6V17vy/d9hX4mwmjgsBhEghrVasGSuaIgw==}
+    engines: {node: 12.* || 14.* || >= 16.*}
+    dependencies:
+      calculate-cache-key-for-tree: 2.0.0
+      ember-cli-babel: 7.26.11
+      ember-cli-version-checker: 5.1.2
     transitivePeerDependencies:
       - supports-color
     dev: true

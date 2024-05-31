@@ -4,13 +4,15 @@
       <button
         class="pure-button pure-button--black"
         type="button"
-        {{on "click" this.previous}}>
+        {{on "click" this.previous}}
+        data-test-previous>
         &lt;
       </button>
       <button
         class="pure-button pure-button--black"
         type="button"
-        {{on "click" this.next}}>
+        {{on "click" this.next}}
+        data-test-next>
         &gt;
       </button>
     {{/if}}

@@ -7,20 +7,24 @@ module('Integration | Component | adr-book-details-feedback', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    this.set('quotes', [
+      {
+        content: 'I loved this book!',
+        author: 'Enthusiastic Reader',
+      },
+      {
+        content: 'This book reminded me of my childhood',
+        author: 'Nostalgic Reader',
+      },
+    ]);
 
-    await render(hbs`<AdrBookDetailsFeedback />`);
-
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
     await render(hbs`
-      <AdrBookDetailsFeedback>
-        template block text
-      </AdrBookDetailsFeedback>
+      <AdrBookDetailsFeedback
+        @quotes={{this.quotes}}
+      />
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert.dom('h2').hasText('🦊📖 Les retours de lecture');
+    assert.dom('[data-test-quote]').exists({ count: 2 });
   });
 });
