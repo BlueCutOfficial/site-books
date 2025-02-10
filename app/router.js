@@ -11,4 +11,5 @@ Router.map(function () {
   this.route('info');
   this.route('series');
   this.route('que-choisir');
+  this.route('ede-gamma-lecture');
 });
