@@ -1,16 +1,18 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-const { Webpack } = require('@embroider/webpack');
+const { compatBuild } = require('@embroider/compat');
 
-module.exports = function (defaults) {
+module.exports = async function (defaults) {
+  const { buildOnce } = await import('@embroider/vite');
+
   const app = new EmberApp(defaults, {
     'ember-math-helpers': {
       only: ['add'],
     },
   });
 
-  return require('@embroider/compat').compatBuild(app, Webpack, {
+  return compatBuild(app, buildOnce, {
     staticAddonTestSupportTrees: true,
     staticAddonTrees: true,
     staticHelpers: true,
