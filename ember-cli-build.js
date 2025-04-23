@@ -13,12 +13,9 @@ module.exports = async function (defaults) {
   });
 
   return compatBuild(app, buildOnce, {
-    staticAddonTestSupportTrees: true,
-    staticAddonTrees: true,
     staticHelpers: true,
     staticModifiers: true,
     staticComponents: true,
-    staticEmberSource: true,
     splitAtRoutes: ['livres', 'que-choisir'],
   });
 };
