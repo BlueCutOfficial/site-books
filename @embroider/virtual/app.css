@@ -468,42 +468,42 @@ h2 {
 }
 
 .background--classic {
-  background-image: url("../assets/background.jpg");
+  background-image: url("/assets/background.jpg");
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
 }
 
 .background--suzuha {
-  background-image: url("../assets/artwork-suzuha.png");
+  background-image: url("/assets/artwork-suzuha.png");
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
 }
 
 .background--ede {
-  background-image: url("../assets/artwork-ede.png");
+  background-image: url("/assets/artwork-ede.png");
   background-size: cover;
   background-position: center left;
   background-repeat: no-repeat;
 }
 
 .background--vdy {
-  background-image: url("../assets/cover-renaissance-s4-1024.png");
+  background-image: url("/assets/cover-renaissance-s4-1024.png");
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
 }
 
 .background--renard {
-  background-image: url("../assets/artwork-statue-chateau-s4.png");
+  background-image: url("/assets/artwork-statue-chateau-s4.png");
   background-size: cover;
   background-position: center left;
   background-repeat: no-repeat;
 }
 
 .background--lecture {
-  background-image: url("../assets/artwork-lecture-s4.png");
+  background-image: url("/assets/artwork-lecture-s4.png");
   background-size: cover;
   background-position: center left;
   background-repeat: no-repeat;
