@@ -119,7 +119,7 @@ h2 {
   width: 100%;
 }
 
-@mixin theme($cover: url("../assets/background.jpg"), $position: center right) {
+@mixin theme($cover: url("/assets/background.jpg"), $position: center right) {
   background-image: $cover;
   background-size: cover;
   background-position: $position;
@@ -129,19 +129,19 @@ h2 {
   @include theme;
 }
 .background--suzuha {
-  @include theme($cover: url("../assets/artwork-suzuha.png"), $position: top center);
+  @include theme($cover: url("/assets/artwork-suzuha.png"), $position: top center);
 }
 .background--ede {
-  @include theme($cover: url("../assets/artwork-ede.png"), $position: center left);
+  @include theme($cover: url("/assets/artwork-ede.png"), $position: center left);
 }
 .background--vdy {
-  @include theme($cover: url("../assets/cover-renaissance-s4-1024.png"), $position: top right);
+  @include theme($cover: url("/assets/cover-renaissance-s4-1024.png"), $position: top right);
 }
 .background--renard {
-  @include theme($cover: url("../assets/artwork-statue-chateau-s4.png"), $position: center left);
+  @include theme($cover: url("/assets/artwork-statue-chateau-s4.png"), $position: center left);
 }
 .background--lecture {
-  @include theme($cover: url("../assets/artwork-lecture-s4.png"), $position: center left);
+  @include theme($cover: url("/assets/artwork-lecture-s4.png"), $position: center left);
 }
 
 .book {
