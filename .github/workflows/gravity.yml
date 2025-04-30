@@ -21,6 +21,7 @@ jobs:
           cache: pnpm
       - run: pnpm install
       - run: pnpm build
+      - run: ls -R /home/runner/work/site-books/site-books/dist/@embroider
       - run: npx @gravityci/cli ./dist
         env:
           GRAVITY_TOKEN: ${{ secrets.GRAVITY_TOKEN }}
