@@ -235,9 +235,11 @@ a.support-button {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
-  /* Prevent buttons to be larger than Ko-Fi button */
-  padding-left: 25px;
-  padding-right: 25px;
+  /* Prevent buttons to be larger than Ko-Fi button
+   * Must be >= 25px, can be tweaked depending on the
+   * number of buttons */
+  padding-left: 50px;
+  padding-right: 50px;
 }
 .rs-links a {
   padding: 0px;
