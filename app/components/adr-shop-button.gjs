@@ -1,6 +1,7 @@
 <template>
   <div>
-    <a class="pure-button pure-button--black"
+    <a
+      class="pure-button pure-button--black"
       target="_blank"
       rel="noopener noreferrer"
       href={{@link}}
