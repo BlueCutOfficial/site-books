@@ -1,0 +1,6 @@
+<template>
+  <div class="quote" data-test-quote>
+    <q><em>{{@content}}</em></q>
+    <span>-&nbsp;<strong>{{@author}}</strong></span>
+  </div>
+</template>
