@@ -1,0 +1,12 @@
+import AdrShopButton from './adr-shop-button';
+
+<template>
+  <div class="book-links">
+    <AdrShopButton @link={{@bookLink}}>
+      Commander le livre ({{@price}}€)
+    </AdrShopButton>
+    <AdrShopButton @link={{@ebookLink}}>
+      Télécharger l'e-book (0€)
+    </AdrShopButton>
+  </div>
+</template>
