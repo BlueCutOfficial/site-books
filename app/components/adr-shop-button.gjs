@@ -1,0 +1,12 @@
+<template>
+  <div>
+    <a
+      class="pure-button pure-button--black"
+      target="_blank"
+      rel="noopener noreferrer"
+      href={{@link}}
+    >
+      {{yield}}
+    </a>
+  </div>
+</template>

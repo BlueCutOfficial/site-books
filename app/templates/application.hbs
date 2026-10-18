@@ -1,9 +1,14 @@
 {{page-title "L'Académie des Renards"}}
 
 <div id="layout" class={{if this.isActive "active"}}>
-  {{!-- Menu toggle --}}
-  <a href="#menu" id="menuLink" class="{{if this.isActive "active "}}menu-link" {{on "click" this.toggleMenu}}>
-    {{!-- Hamburger icon --}}
+  {{! Menu toggle }}
+  <a
+    href="#menu"
+    id="menuLink"
+    class="{{if this.isActive 'active '}}menu-link"
+    {{on "click" this.toggleMenu}}
+  >
+    {{! Hamburger icon }}
     <span></span>
   </a>
 
@@ -12,7 +17,11 @@
       <div class="margin-bottom--medium">
         <div class="padding--small">
           <LinkTo @route="index">
-            <img src="assets/logo-adr-white.svg" width="80%" alt="L'Académie des Renards" />
+            <img
+              src="assets/logo-adr-white.svg"
+              width="80%"
+              alt="L'Académie des Renards"
+            />
           </LinkTo>
         </div>
         <ul class="pure-menu-list">
@@ -28,26 +37,64 @@
         </ul>
       </div>
       <div class="margin-bottom--medium">
-        <a class="pure-button support-button"
+        <a
+          class="pure-button support-button"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://ko-fi.com/academiedesrenards">
+          href="https://ko-fi.com/academiedesrenards"
+        >
           Soutenir sur Ko-Fi
         </a>
       </div>
-      <div class="rs-links"> 
-        <a href="https://mastodon.social/@BlueCut" rel="noopener noreferrer" target="_blank"><div class="rs-link">
-          <img src="assets/mastodon.webp" width="25px" height="25px" alt="Mastodon" />
-        </div></a>
-        <a href="https://panodyssey.com/fr/creative/room/user/3319" rel="noopener noreferrer" target="_blank"><div class="rs-link">
-          <img src="assets/panodyssey.svg" width="25px" height="25px" alt="Panodyssey" />
-        </div></a>
-        <a href="https://www.instagram.com/academiedesrenards/" rel="noopener noreferrer" target="_blank"><div class="rs-link">
-          <img src="assets/instagram.svg" width="25px" height="25px" alt="Instagram" />
-        </div></a>
-        <a href="https://www.facebook.com/academiedesrenards/" rel="noopener noreferrer" target="_blank"><div class="rs-link">
-          <img src="assets/facebook.svg" width="25px" height="25px" alt="Facebook" />
-        </div></a>
+      <div class="rs-links">
+        <a
+          href="https://mastodon.social/@BlueCut"
+          rel="noopener noreferrer"
+          target="_blank"
+        ><div class="rs-link">
+            <img
+              src="assets/mastodon.webp"
+              width="25px"
+              height="25px"
+              alt="Mastodon"
+            />
+          </div></a>
+        <a
+          href="https://panodyssey.com/fr/creative/room/user/3319"
+          rel="noopener noreferrer"
+          target="_blank"
+        ><div class="rs-link">
+            <img
+              src="assets/panodyssey.svg"
+              width="25px"
+              height="25px"
+              alt="Panodyssey"
+            />
+          </div></a>
+        <a
+          href="https://www.instagram.com/academiedesrenards/"
+          rel="noopener noreferrer"
+          target="_blank"
+        ><div class="rs-link">
+            <img
+              src="assets/instagram.svg"
+              width="25px"
+              height="25px"
+              alt="Instagram"
+            />
+          </div></a>
+        <a
+          href="https://www.facebook.com/academiedesrenards/"
+          rel="noopener noreferrer"
+          target="_blank"
+        ><div class="rs-link">
+            <img
+              src="assets/facebook.svg"
+              width="25px"
+              height="25px"
+              alt="Facebook"
+            />
+          </div></a>
       </div>
     </nav>
   </div>
@@ -59,12 +106,15 @@
 
   <footer class="footer padding--small">
     <p>
-      Pour échanger avec l'autrice : 
-      <a href="mailto:academiedesrenards@proton.me">academiedesrenards@proton.me</a>
+      Pour échanger avec l'autrice :
+      <a
+        href="mailto:academiedesrenards@proton.me"
+      >academiedesrenards@proton.me</a>
     </p>
     <div>
       <p class="mentions">
-        Hébergé par GitHub Inc - 88 Colin P Kelly Jr Street San Francisco, CA 94107 United States - 1-415-448-6673
+        Hébergé par GitHub Inc - 88 Colin P Kelly Jr Street San Francisco, CA
+        94107 United States - 1-415-448-6673
       </p>
     </div>
   </footer>

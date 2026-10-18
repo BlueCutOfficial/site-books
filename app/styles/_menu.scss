@@ -1,4 +1,4 @@
-@use 'variables';
+@use "variables";
 
 /* Pure-menu CSS override */
 .pure-img-responsive {
@@ -32,12 +32,12 @@
     a:hover {
       background: variables.$primary-color-light;
       color: variables.$primary-text-color;
-    } 
+    }
     a:focus {
       text-transform: none;
       background: variables.$second-color;
     }
-  } 
+  }
   .pure-menu-selected {
     text-transform: none;
     background: variables.$second-color;
@@ -83,7 +83,7 @@ This is the parent `<div>` that contains the menu and the content area.
 }
 
 #main {
-  width:100%;
+  width: 100%;
 }
 
 .content {
@@ -149,10 +149,11 @@ This is the parent `<div>` that contains the menu and the content area.
 
 #sorting-menu {
   display: flex;
-  
+
   a {
     margin-bottom: 0px;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: variables.$primary-text-color;
     }
   }
@@ -185,16 +186,18 @@ small screens.
   width: 2em;
   height: auto;
   padding: 2.1em 1.6em;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background: variables.$primary-color-light;
-  } 
+  }
   span {
     position: relative;
     display: block;
     background-color: variables.$primary-text-color;
     width: 100%;
     height: 0.2em;
-    &:before, &:after {
+    &:before,
+    &:after {
       background-color: variables.$primary-text-color;
       width: 100%;
       height: 0.2em;
@@ -229,7 +232,7 @@ a.support-button {
   a {
     padding: 0px;
     color: variables.$primary-text-color; /** BlueSky only **/
-    text-decoration: none;  /** BlueSky only **/
+    text-decoration: none; /** BlueSky only **/
   }
 }
 .rs-link {
@@ -239,7 +242,6 @@ a.support-button {
 a:focus .rs-link {
   background: variables.$primary-color-light;
 }
-
 
 /* -- Responsive Styles (Media Queries) ------------------------------------- */
 

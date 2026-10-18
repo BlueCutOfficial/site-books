@@ -1,37 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>L'Académie des Renards</title>
-    <meta name="description" content="Site officiel de l'Académie des Renards. Retrouvez tous les romans, ainsi que les liens vers les réseaux sociaux."/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Site officiel de l'Académie des Renards. Retrouvez tous les romans, ainsi que les liens vers les réseaux sociaux."
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     {{content-for "head"}}
 
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
-    <link integrity="" rel="stylesheet" href="/@embroider/virtual/vendor.css">
-    <link integrity="" rel="stylesheet" href="/@embroider/virtual/app.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css"
+    />
+    <link integrity="" rel="stylesheet" href="/@embroider/virtual/vendor.css" />
+    <link integrity="" rel="stylesheet" href="/@embroider/virtual/app.css" />
 
-    <link rel="apple-touch-icon" sizes="57x57" href="{{rootURL}}assets/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{rootURL}}assets/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{rootURL}}assets/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{rootURL}}assets/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{rootURL}}assets/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{rootURL}}assets/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{rootURL}}assets/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{rootURL}}assets/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{rootURL}}assets/icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{rootURL}}assets/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{rootURL}}assets/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{rootURL}}assets/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{rootURL}}assets/icons/favicon-16x16.png">
-    <link rel="icon" href="favicon.ico">
-    <link rel="manifest" href="manifest.webmanifest">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{rootURL}}assets/icons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="{{rootURL}}assets/icons/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="{{rootURL}}assets/icons/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="{{rootURL}}assets/icons/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="{{rootURL}}assets/icons/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="{{rootURL}}assets/icons/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="{{rootURL}}assets/icons/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="{{rootURL}}assets/icons/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="{{rootURL}}assets/icons/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{rootURL}}assets/icons/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="{{rootURL}}assets/icons/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{rootURL}}assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="{{rootURL}}assets/icons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{rootURL}}assets/icons/favicon-16x16.png"
+    />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="{{rootURL}}assets/icons/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
 
     {{content-for "head-footer"}}
   </head>
@@ -49,21 +117,27 @@
       // When the single page app is loaded further down in this file,
       // the correct url will be waiting in the browser's history for
       // the single page app to route accordingly.
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) {
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash,
           );
         }
-      }(window.location))
+      })(window.location);
     </script>
     <script src="/@embroider/virtual/vendor.js"></script>
     <script type="module">
-      import Application from './app/app';
-      import environment from './app/config/environment';
+      import Application from "./app/app";
+      import environment from "./app/config/environment";
 
       Application.create(environment.APP);
     </script>

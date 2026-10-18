@@ -1,0 +1,5 @@
+<template>
+  <div class="question-number">
+    <p>{{@questionIndex}}/{{@questionLength}}</p>
+  </div>
+</template>

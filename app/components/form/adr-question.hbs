@@ -2,13 +2,13 @@
   <p data-test-label>{{@question.label}}</p>
   {{#each @question.choices as |choice|}}
     <div>
-      <input 
-        type="radio" 
-        id={{choice.id}} 
-        name="question" 
-        value={{choice.id}} 
+      <input
+        type="radio"
+        id={{choice.id}}
+        name="question"
+        value={{choice.id}}
         {{on "input" this.selectAnswer}}
-      >
+      />
       <label for={{choice.id}}>{{choice.label}}</label>
     </div>
   {{/each}}

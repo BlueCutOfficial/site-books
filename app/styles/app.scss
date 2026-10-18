@@ -1,7 +1,7 @@
-@use 'variables';
-@use 'adr-article-button';
-@use 'menu';
-@use 'what-to-read';
+@use "variables";
+@use "adr-article-button";
+@use "menu";
+@use "what-to-read";
 
 /* Pure override */
 .pure-g [class*="pure-u"] {
@@ -129,26 +129,41 @@ h2 {
   @include theme;
 }
 .background--suzuha {
-  @include theme($cover: url("/assets/artwork-suzuha.png"), $position: top center);
+  @include theme(
+    $cover: url("/assets/artwork-suzuha.png"),
+    $position: top center
+  );
 }
 .background--ede {
-  @include theme($cover: url("/assets/artwork-ede.png"), $position: center left);
+  @include theme(
+    $cover: url("/assets/artwork-ede.png"),
+    $position: center left
+  );
 }
 .background--vdy {
-  @include theme($cover: url("/assets/cover-renaissance-s4-1024.png"), $position: top right);
+  @include theme(
+    $cover: url("/assets/cover-renaissance-s4-1024.png"),
+    $position: top right
+  );
 }
 .background--renard {
-  @include theme($cover: url("/assets/artwork-statue-chateau-s4.png"), $position: center left);
+  @include theme(
+    $cover: url("/assets/artwork-statue-chateau-s4.png"),
+    $position: center left
+  );
 }
 .background--lecture {
-  @include theme($cover: url("/assets/artwork-lecture-s4.png"), $position: center left);
+  @include theme(
+    $cover: url("/assets/artwork-lecture-s4.png"),
+    $position: center left
+  );
 }
 
 .book {
   background-color: variables.$second-color-faded;
 }
 
-.quote{
+.quote {
   text-align: center;
   padding: variables.$space-tiny;
   margin-bottom: variables.$space-small;
@@ -204,8 +219,9 @@ h2 {
 .primary-button {
   background-color: variables.$second-color-faded;
   font-weight: bold;
-  &:hover, &:focus {
-    background-color: variables.$second-color; 
+  &:hover,
+  &:focus {
+    background-color: variables.$second-color;
   }
 }
 
@@ -215,7 +231,7 @@ h2 {
   color: variables.$primary-text-color;
 }
 
-/** Book links **/ 
+/** Book links **/
 .book-links {
   display: flex;
   flex-flow: row wrap;

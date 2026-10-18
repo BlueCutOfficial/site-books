@@ -1,0 +1,17 @@
+<template>
+  <a
+    class="pure-button pure-button--black article-button"
+    target="_blank"
+    rel="noopener noreferrer"
+    href={{@link}}
+  >
+    <div class="pure-g">
+      <div class="article-button-icon pure-u-3-24">🔗</div>
+      <div class="pure-u-21-24">
+        <strong data-test-title>{{@title}}</strong>
+        <br />
+        <span data-test-platform>sur {{@platform}}</span>
+      </div>
+    </div>
+  </a>
+</template>
